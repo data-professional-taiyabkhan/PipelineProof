@@ -1,0 +1,18 @@
+{
+  "p01_clean": "clean",
+  "p02_target_leak": "post-outcome feature",
+  "p03_random_split": "group leakage (random row split)",
+  "p04_scaler_before_split": "preprocessing fitted before split",
+  "p05_unseeded": "unseeded / non-reproducible",
+  "p06_local_file": "undeclared local file",
+  "p07_undeclared_dep": "undeclared dependency",
+  "p08_inflated_claim": "claim does not reproduce",
+  "p09_tune_on_test": "model selection on the test split",
+  "p10_network": "network dependency",
+  "p11_test_in_fit": "test rows used in fitting",
+  "p12_notebook_clean": "clean (notebook)",
+  "p13_xgboost_leak": "post-outcome feature (XGBoost)",
+  "p14_lightgbm_clean": "clean (LightGBM)",
+  "p15_deletes_trace": "deletes its own trace",
+  "p16_notebook_scaler_first": "preprocessing fitted before split (notebook)"
+}

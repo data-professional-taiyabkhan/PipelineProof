@@ -1,0 +1,1501 @@
+row_id,customer_id,snapshot_month,tenure_months,contract_type,plan_type,region,signup_channel,payment_method,monthly_spend,data_usage_gb,num_devices,support_tickets_90d,payment_failures_90d,last_login_days,discount_pct,retention_offer_sent
+5000000,900000,2026-01,48,monthly,standard,South East,partner,direct_debit,31.77,69.0,4,0,0,3.5,10,0
+5000001,900001,2025-10,30,two_year,standard,WALES,partner,invoice,36.5,149.2,3,1,0,0.2,0,0
+5000002,900002,2026-02,40,annual,basic,London,store,direct_debit,28.71,127.8,2,1,1,3.3,0,0
+5000003,900003,2025-12,14,two_year,basic,Wales,phone,direct_debit,22.86,184.8,2,0,0,9.4,0,0
+5000004,900004,2025-11,34,two_year,basic,London,web,direct_debit,36.74,77.7,2,0,0,7.4,0,0
+5000005,900005,2025-11,13,monthly,basic,Scotland,web,card,40.68,139.9,4,0,0,3.1,0,0
+5000006,900006,2025-11,26,annual,premium,Scotland,web,direct_debit,53.69,144.2,5,0,0,0.1,0,0
+5000007,900007,2026-01,5,monthly,premium,MIDLANDS,web,direct_debit,58.79,127.6,3,0,0,3.4,0,0
+5000008,900008,2025-12,3,annual,basic,Scotland,store,direct_debit,42.39,107.7,3,0,1,2.6,0,0
+5000009,900009,2026-01,14,two_year,basic,north west,partner,card,19.41,174.4,4,1,1,6.2,0,0
+5000010,900010,2026-02,43,two_year,basic,Scotland,partner,direct_debit,27.15,195.6,3,0,0,,0,0
+5000011,900011,2026-02,34,two_year,standard,South East,store,direct_debit,84.64,183.8,2,0,0,0.8,0,0
+5000012,900012,2026-03,17,monthly,premium,North West,web,direct_debit,104.23,34.2,1,0,1,23.3,0,0
+5000013,900013,2026-01,13,monthly,basic,Scotland,store,direct_debit,37.32,114.9,2,1,0,7.2,0,0
+5000014,900014,2026-01,47,monthly,standard,Wales,store,direct_debit,92.73,123.5,4,0,0,2.7,0,0
+5000015,900015,2025-12,37,monthly,basic,North West,partner,direct_debit,51.04,51.1,3,1,0,6.2,10,0
+5000016,900016,2026-01,13,annual,premium,Midlands,partner,direct_debit,47.31,212.1,2,0,0,4.6,10,0
+5000017,900017,2025-11,12,annual,basic,Wales,phone,direct_debit,68.05,151.9,1,0,1,12.6,0,0
+5000018,900018,2026-01,43,annual,standard,North West,web,direct_debit,51.03,183.8,2,1,0,10.1,0,0
+5000019,900019,2026-01,44,monthly,standard,Wales,web,card,81.43,41.5,1,0,0,14.5,10,0
+5000020,900020,2025-11,26,monthly,basic,North West,web,direct_debit,30.73,183.1,1,0,0,0.0,0,0
+5000021,900021,2025-12,7,annual,premium,North West,phone,direct_debit,,52.3,5,4,0,14.7,0,0
+5000022,900022,2025-11,24,two_year,premium,Scotland,web,card,49.28,77.1,3,1,0,4.2,0,0
+5000023,900023,2025-12,32,monthly,basic,Scotland,store,card,36.57,299.9,5,0,0,3.7,0,0
+5000024,900024,2025-12,46,two_year,premium,North West,partner,direct_debit,102.36,155.7,3,3,0,7.6,0,0
+5000025,900025,2025-11,22,annual,standard,London,partner,direct_debit,19.18,122.6,5,2,1,0.7,0,0
+5000026,900026,2026-02,35,monthly,standard,Scotland,phone,card,37.21,74.1,4,1,0,1.1,0,0
+5000027,900027,2026-01,49,monthly,basic,South East,web,direct_debit,33.34,119.7,5,1,0,7.2,10,0
+5000028,900028,2025-12,27,monthly,basic,South East,store,card,36.13,230.9,1,2,0,18.7,0,0
+5000029,900029,2026-03,52,annual,standard,South East,web,direct_debit,60.7,37.8,1,2,1,7.0,0,0
+5000030,900030,2025-12,7,annual,premium,North West,web,card,81.54,22.5,2,0,0,5.7,0,0
+5000031,900031,2026-01,45,annual,basic,Wales,web,direct_debit,35.63,73.0,3,1,2,11.5,0,0
+5000032,900032,2026-01,13,monthly,basic,Midlands,store,direct_debit,,96.8,5,0,0,4.5,10,0
+5000033,900033,2026-03,11,monthly,standard,North West,partner,direct_debit,26.25,347.5,4,3,1,,0,0
+5000034,900034,2025-12,24,two_year,basic,Scotland,partner,direct_debit,32.79,120.1,5,0,0,1.2,0,0
+5000035,900035,2026-01,32,two_year,premium,Scotland,web,invoice,69.41,122.9,1,0,0,,0,0
+5000036,900036,2025-12,24,annual,standard,Midlands,web,direct_debit,33.69,104.7,4,0,0,1.3,0,0
+5000037,900037,2025-12,38,monthly,basic,Midlands,phone,direct_debit,43.48,50.5,4,0,0,15.5,0,0
+5000038,900038,2025-11,16,annual,basic,South East,web,card,26.56,28.4,5,0,0,,0,0
+5000039,900039,2025-11,15,annual,premium,London,partner,direct_debit,72.59,67.9,5,0,0,,0,0
+5000040,900040,2025-11,4,two_year,premium,North West,phone,direct_debit,117.0,71.5,3,0,0,7.8,0,0
+5000041,900041,2026-02,40,monthly,premium,South East,web,direct_debit,61.53,42.6,2,0,0,5.1,0,0
+5000042,900042,2025-10,8,monthly,standard,Scotland,store,card,29.64,99.2,3,0,0,18.8,0,0
+5000043,900043,2026-02,28,monthly,standard,Midlands,web,invoice,41.21,60.6,1,2,0,11.7,0,0
+5000044,900044,2025-11,38,annual,standard,North West,web,invoice,58.59,139.6,2,0,1,9.6,10,0
+5000045,900045,2025-10,25,monthly,standard,South East,web,card,30.17,69.4,4,0,0,0.3,0,0
+5000046,900046,2025-11,43,annual,basic,London,partner,direct_debit,39.49,98.1,5,1,0,2.8,0,0
+5000047,900047,2025-11,34,monthly,standard,South East,web,card,52.13,113.8,3,0,0,3.0,0,0
+5000048,900048,2026-02,33,monthly,basic,London,web,card,24.25,39.0,5,2,0,23.0,0,0
+5000049,900049,2025-11,35,monthly,standard,Wales,web,direct_debit,34.46,178.8,3,0,0,1.3,0,0
+5000050,900050,2025-11,43,monthly,basic,scotland,web,card,37.71,77.8,5,0,0,5.0,0,0
+5000051,900051,2026-02,42,two_year,standard,South East,phone,direct_debit,52.9,124.2,5,1,0,14.9,0,0
+5000052,900052,2025-12,11,two_year,basic,London,web,direct_debit,36.9,186.8,4,0,1,27.4,0,0
+5000053,900053,2026-01,10,annual,standard,South East,store,direct_debit,49.99,265.7,3,1,0,3.7,10,0
+5000054,900054,2025-11,3,annual,basic,London,web,direct_debit,71.22,134.3,5,0,0,9.9,0,0
+5000055,900055,2025-12,46,annual,basic,North West,phone,direct_debit,48.43,46.6,1,0,0,0.7,0,0
+5000056,900056,2025-12,43,monthly,premium,WALES,store,invoice,,279.1,5,2,1,10.3,20,0
+5000057,900057,2026-02,13,annual,basic,South East,store,direct_debit,50.86,113.2,4,0,1,2.2,0,0
+5000058,900058,2025-12,41,two_year,premium,Scotland,web,direct_debit,48.99,126.2,4,1,0,1.4,0,0
+5000059,900059,2025-11,9,annual,standard,South East,partner,card,51.11,182.1,1,0,0,17.2,10,0
+5000060,900060,2026-01,10,two_year,basic,scotland,web,direct_debit,46.85,50.5,4,0,1,13.3,10,0
+5000061,900061,2026-01,23,annual,standard,North West,web,card,29.33,83.3,1,2,0,2.7,10,0
+5000062,900062,2025-12,29,monthly,basic,North West,web,direct_debit,35.47,102.8,5,1,0,7.6,0,0
+5000063,900063,2026-01,22,annual,basic,scotland,partner,direct_debit,59.33,230.1,5,1,1,,0,0
+5000064,900064,2025-11,40,two_year,standard,South East,store,card,40.38,267.4,1,3,0,3.6,0,0
+5000065,900065,2026-02,11,monthly,standard,Midlands,web,direct_debit,41.89,119.2,2,0,1,26.8,0,0
+5000066,900066,2026-02,33,monthly,basic,North West,web,direct_debit,25.03,55.5,1,1,0,5.2,0,0
+5000067,900067,2026-01,17,monthly,standard,Scotland,web,card,60.45,53.9,4,1,1,5.8,0,0
+5000068,900068,2025-10,9,annual,standard,SOUTH EAST,partner,card,49.66,47.1,5,0,0,0.7,20,0
+5000069,900069,2025-12,14,two_year,standard,North West,partner,direct_debit,32.62,51.6,3,0,0,0.4,10,0
+5000070,900070,2025-10,33,monthly,standard,Scotland,store,direct_debit,46.63,134.3,2,1,0,8.0,0,0
+5000071,900071,2025-12,22,monthly,basic,SCOTLAND,store,direct_debit,24.67,148.8,4,1,0,0.6,0,0
+5000072,900072,2026-02,36,monthly,standard,Scotland,store,card,38.3,76.0,1,1,0,16.5,0,0
+5000073,900073,2026-01,23,annual,basic,North West,phone,direct_debit,34.77,44.8,1,0,1,,0,0
+5000074,900074,2026-02,19,annual,standard,Wales,store,direct_debit,36.32,181.5,4,0,0,23.2,0,0
+5000075,900075,2025-11,33,annual,basic,Wales,web,card,,239.2,2,0,0,6.1,0,0
+5000076,900076,2025-12,43,monthly,standard,Wales,web,direct_debit,26.09,35.5,3,0,0,12.3,0,0
+5000077,900077,2025-12,28,monthly,basic,Midlands,store,card,35.54,52.1,1,1,1,12.8,10,0
+5000078,900078,2026-02,30,annual,basic,London,web,direct_debit,16.8,213.5,2,1,0,2.9,20,0
+5000079,900079,2025-10,27,two_year,basic,London,web,invoice,25.08,30.9,4,0,0,2.6,0,0
+5000080,900080,2026-01,36,annual,standard,Midlands,store,card,38.09,232.5,5,0,0,1.8,0,0
+5000081,900081,2025-12,20,monthly,basic,North West,phone,direct_debit,4.72,89.5,2,1,0,25.3,0,0
+5000082,900082,2025-11,24,monthly,standard,North West,partner,direct_debit,42.76,61.0,4,0,0,8.2,0,0
+5000083,900083,2026-01,22,annual,basic,South East,web,direct_debit,,196.2,4,1,0,19.3,0,0
+5000084,900084,2025-11,36,two_year,standard,Midlands,web,direct_debit,45.01,62.9,5,1,0,4.3,0,0
+5000085,900085,2026-01,26,monthly,basic,Midlands,store,invoice,42.62,157.6,1,2,0,10.9,20,0
+5000086,900086,2026-01,13,annual,basic,Midlands,web,direct_debit,53.33,22.4,4,1,0,33.5,0,0
+5000087,900087,2025-10,15,two_year,standard,Scotland,partner,direct_debit,40.92,39.8,2,0,0,0.6,0,0
+5000088,900088,2025-12,3,monthly,basic,Midlands,partner,direct_debit,28.63,127.3,4,1,0,23.6,0,0
+5000089,900089,2025-10,32,annual,premium,Midlands,web,direct_debit,52.47,187.4,4,1,0,6.2,0,0
+5000090,900090,2026-01,22,monthly,standard,North West,store,direct_debit,38.32,130.8,3,0,0,1.8,0,0
+5000091,900091,2026-02,32,two_year,basic,Midlands,partner,direct_debit,22.58,150.2,4,1,0,48.2,0,0
+5000092,900092,2025-12,26,two_year,basic,North West,store,direct_debit,21.54,57.0,3,0,1,5.7,0,0
+5000093,900093,2026-03,51,monthly,premium,Wales,partner,card,83.1,27.3,1,0,2,14.1,0,0
+5000094,900094,2025-11,39,monthly,premium,WALES,web,direct_debit,,77.0,5,1,0,0.7,10,0
+5000095,900095,2025-12,25,monthly,standard,Wales,store,card,50.42,132.2,4,0,0,46.0,0,0
+5000096,900096,2026-02,22,monthly,basic,North West,store,card,48.94,118.2,5,0,0,0.8,0,0
+5000097,900097,2025-11,6,annual,basic,Midlands,store,card,21.52,87.0,4,1,0,2.4,20,0
+5000098,900098,2026-02,10,annual,basic,Midlands,phone,card,26.12,185.2,4,0,0,,10,0
+5000099,900099,2025-10,13,two_year,premium,North West,web,direct_debit,41.17,160.0,5,1,0,6.3,0,0
+5000100,900100,2025-11,48,annual,premium,Midlands,web,direct_debit,45.26,166.8,2,1,1,5.2,0,0
+5000101,900101,2026-01,12,monthly,basic,wales,web,invoice,9.6,282.5,4,1,0,21.5,0,0
+5000102,900102,2025-12,38,two_year,basic,Midlands,web,direct_debit,21.31,163.9,5,1,0,23.2,0,0
+5000103,900103,2025-11,48,monthly,basic,South East,web,card,33.5,38.7,1,0,0,0.4,0,0
+5000104,900104,2025-12,13,two_year,standard,scotland,web,direct_debit,33.86,90.5,4,0,0,1.0,0,0
+5000105,900105,2025-10,30,two_year,standard,Scotland,web,invoice,36.72,45.2,3,1,0,0.7,0,0
+5000106,900106,2026-01,17,two_year,premium,North West,store,direct_debit,64.25,86.8,5,0,0,4.4,0,0
+5000107,900107,2025-11,15,annual,basic,North West,web,direct_debit,55.26,173.9,1,1,0,2.9,20,0
+5000108,900108,2025-12,45,two_year,basic,North West,phone,direct_debit,34.49,50.3,3,0,0,10.2,0,0
+5000109,900109,2026-01,49,annual,basic,London,partner,direct_debit,39.8,80.7,3,0,0,7.3,0,0
+5000110,900110,2026-01,17,two_year,standard,North West,web,direct_debit,46.08,90.1,2,0,0,1.5,10,0
+5000111,900111,2025-11,21,two_year,standard,Scotland,partner,direct_debit,60.58,58.1,2,0,0,0.0,10,0
+5000112,900112,2026-03,48,monthly,standard,Midlands,partner,direct_debit,50.26,94.3,2,1,0,15.4,0,0
+5000113,900113,2025-12,28,monthly,standard,Wales,web,card,47.93,322.4,1,3,0,34.4,0,0
+5000114,900114,2025-11,9,two_year,basic,London,phone,direct_debit,27.56,118.0,4,1,0,,0,0
+5000115,900115,2026-03,18,annual,basic,London,partner,direct_debit,30.01,86.3,3,0,0,25.4,0,0
+5000116,900116,2025-10,1,monthly,basic,South East,web,direct_debit,51.35,49.1,3,1,0,0.2,10,0
+5000117,900117,2025-12,24,monthly,standard,Wales,partner,card,106.95,168.5,5,1,0,0.2,0,0
+5000118,900118,2026-02,23,annual,basic,London,web,direct_debit,40.71,365.0,1,2,0,0.8,0,0
+5000119,900119,2025-12,38,monthly,basic,London,partner,card,74.83,157.7,4,1,0,6.7,0,0
+5000120,900120,2026-03,13,annual,standard,Midlands,store,direct_debit,98.04,128.3,4,1,0,62.1,10,0
+5000121,900121,2025-11,12,annual,basic,SCOTLAND,partner,direct_debit,19.37,76.6,2,1,0,1.3,0,0
+5000122,900122,2026-02,35,two_year,standard,North West,store,invoice,62.79,171.7,2,1,0,35.3,10,0
+5000123,900123,2026-01,9,annual,standard,North West,store,invoice,43.43,96.6,5,4,0,5.6,0,0
+5000124,900124,2026-02,36,two_year,standard,South East,web,direct_debit,37.82,44.9,4,1,0,2.7,0,0
+5000125,900125,2026-01,25,annual,standard,Wales,partner,card,41.4,263.3,4,0,0,21.6,0,0
+5000126,900126,2026-03,28,two_year,basic,Midlands,store,card,18.33,30.7,3,0,0,0.7,0,0
+5000127,900127,2026-02,9,monthly,basic,Midlands,partner,direct_debit,29.78,173.5,2,0,0,8.4,0,0
+5000128,900128,2025-10,46,two_year,standard,Wales,store,card,61.12,109.3,4,0,1,5.3,0,0
+5000129,900129,2026-01,42,annual,basic,South East,store,direct_debit,,65.7,2,3,1,12.1,0,0
+5000130,900130,2025-11,33,monthly,premium,South East,web,direct_debit,72.47,234.3,1,1,0,1.6,0,0
+5000131,900131,2026-03,16,monthly,basic,London,phone,direct_debit,38.07,67.3,2,1,0,,10,0
+5000132,900132,2026-01,3,annual,basic,South East,web,card,56.18,143.1,4,3,0,7.1,10,0
+5000133,900133,2026-03,41,two_year,premium,London,web,invoice,77.86,87.1,1,1,0,2.1,0,0
+5000134,900134,2025-12,44,monthly,standard,Scotland,web,direct_debit,50.85,151.0,3,1,1,44.6,0,0
+5000135,900135,2025-10,42,two_year,basic,London,web,card,4.93,93.8,1,0,0,5.1,0,0
+5000136,900136,2025-12,8,monthly,basic,London,web,direct_debit,35.05,169.4,4,0,0,1.3,0,0
+5000137,900137,2025-11,47,monthly,standard,North West,web,card,36.05,167.7,4,0,1,6.0,0,0
+5000138,900138,2026-02,32,monthly,standard,North West,web,direct_debit,70.98,40.1,4,1,0,4.5,0,0
+5000139,900139,2026-01,41,monthly,standard,North West,web,invoice,40.41,74.5,3,1,0,2.2,0,0
+5000140,900140,2026-02,45,monthly,basic,Midlands,web,direct_debit,35.66,72.4,1,0,0,1.6,0,0
+5000141,900141,2025-12,20,monthly,basic,North West,store,invoice,9.29,104.2,5,1,1,,0,0
+5000142,900142,2025-11,9,annual,standard,Scotland,partner,invoice,56.05,97.9,1,1,0,10.5,0,0
+5000143,900143,2026-01,46,annual,standard,North West,phone,direct_debit,27.92,120.8,3,0,1,18.7,0,0
+5000144,900144,2025-11,36,monthly,standard,Midlands,phone,card,50.9,42.5,2,1,0,2.2,0,0
+5000145,900145,2025-12,6,annual,basic,SCOTLAND,phone,direct_debit,19.09,51.0,4,1,0,2.6,0,0
+5000146,900146,2025-12,5,monthly,standard,Midlands,store,direct_debit,30.96,59.6,2,0,0,0.0,0,0
+5000147,900147,2026-02,28,annual,premium,SOUTH EAST,web,direct_debit,53.59,57.5,5,1,0,,0,0
+5000148,900148,2025-12,37,two_year,standard,Wales,store,direct_debit,67.51,95.1,2,0,0,1.9,0,0
+5000149,900149,2025-11,16,monthly,standard,Midlands,web,invoice,44.67,158.7,2,1,1,0.2,0,0
+5000150,900150,2025-11,8,monthly,standard,north west,web,card,31.5,76.5,4,1,0,,0,0
+5000151,900151,2026-01,48,annual,standard,North West,web,card,48.51,86.6,1,1,1,21.8,0,0
+5000152,900152,2025-10,18,monthly,premium,Wales,store,direct_debit,96.22,123.9,5,1,0,0.5,0,0
+5000153,900153,2026-02,14,two_year,basic,London,web,invoice,20.47,106.9,3,2,0,16.7,0,0
+5000154,900154,2025-11,24,monthly,standard,Wales,web,card,79.0,307.7,3,2,0,0.6,0,0
+5000155,900155,2026-01,39,two_year,standard,Scotland,web,direct_debit,40.03,68.1,1,0,0,,0,0
+5000156,900156,2026-02,23,two_year,basic,Wales,web,direct_debit,27.67,120.0,2,0,0,0.0,0,0
+5000157,900157,2025-12,47,monthly,basic,Scotland,web,direct_debit,14.97,37.3,5,1,0,8.5,0,0
+5000158,900158,2025-12,3,monthly,standard,South East,phone,invoice,48.02,160.0,5,2,0,11.2,10,0
+5000159,900159,2025-12,24,annual,premium,Midlands,web,card,43.84,135.4,1,0,0,7.1,0,0
+5000160,900160,2025-11,26,annual,standard,Midlands,partner,direct_debit,35.61,110.2,3,1,0,25.5,0,0
+5000161,900161,2025-12,4,monthly,standard,Midlands,store,direct_debit,67.82,293.0,5,1,0,6.5,0,0
+5000162,900162,2025-12,43,monthly,premium,London,web,card,48.26,206.7,2,0,2,43.5,0,0
+5000163,900163,2025-12,20,annual,basic,South East,web,direct_debit,36.79,145.8,3,2,0,7.6,0,0
+5000164,900164,2026-03,42,annual,standard,london,phone,direct_debit,61.05,69.9,4,0,0,2.6,0,0
+5000165,900165,2025-10,40,monthly,basic,South East,partner,direct_debit,38.97,274.1,4,0,0,0.2,0,0
+5000166,900166,2025-11,40,monthly,basic,Midlands,store,direct_debit,-72.45,127.5,5,0,0,0.1,0,0
+5000167,900167,2025-10,38,monthly,basic,North West,web,direct_debit,37.63,60.2,1,0,0,0.6,0,0
+5000168,900168,2026-01,47,two_year,premium,South East,phone,direct_debit,70.33,212.6,2,1,1,31.1,0,0
+5000169,900169,2026-02,20,annual,basic,Midlands,partner,direct_debit,29.8,47.4,3,1,0,4.5,0,0
+5000170,900170,2025-12,33,monthly,standard,South East,web,direct_debit,29.19,100.6,4,0,0,3.0,10,0
+5000171,900171,2025-10,34,two_year,basic,London,partner,card,40.01,133.3,2,1,0,0.7,0,0
+5000172,900172,2025-11,3,annual,standard,South East,partner,card,63.23,57.2,3,0,1,17.2,0,0
+5000173,900173,2025-11,39,two_year,standard,Wales,partner,card,78.92,95.4,4,0,0,0.0,0,0
+5000174,900174,2026-02,32,two_year,standard,North West,phone,card,43.88,56.6,5,0,0,1.3,0,0
+5000175,900175,2025-12,38,two_year,basic,North West,web,direct_debit,121.86,133.2,3,0,0,10.2,0,0
+5000176,900176,2025-11,37,monthly,standard,South East,web,direct_debit,53.96,141.2,1,2,0,10.5,0,0
+5000177,900177,2025-10,46,monthly,basic,Wales,store,direct_debit,35.58,78.3,4,0,0,1.6,0,0
+5000178,900178,2025-11,36,annual,standard,north west,partner,card,24.89,76.4,4,0,2,9.4,0,0
+5000179,900179,2025-11,19,monthly,premium,London,phone,card,87.87,50.5,4,0,0,1.2,0,0
+5000180,900180,2025-12,37,monthly,standard,South East,web,direct_debit,49.85,83.3,4,0,0,1.1,0,0
+5000181,900181,2025-10,3,monthly,basic,Scotland,web,direct_debit,19.25,179.1,2,0,0,0.2,0,0
+5000182,900182,2025-11,34,monthly,standard,Scotland,phone,direct_debit,-25.63,71.6,2,1,1,0.3,0,0
+5000183,900183,2025-12,26,monthly,standard,South East,store,card,35.25,138.1,4,0,0,13.6,0,0
+5000184,900184,2026-01,48,monthly,standard,Midlands,web,direct_debit,97.69,86.2,1,2,1,0.1,0,0
+5000185,900185,2026-01,35,annual,standard,Scotland,web,direct_debit,17.4,24.2,3,1,0,7.8,10,0
+5000186,900186,2025-11,35,monthly,standard,Midlands,phone,card,49.14,239.2,2,0,0,,10,0
+5000187,900187,2026-02,11,monthly,standard,wales,store,direct_debit,40.62,87.8,1,0,1,1.6,0,0
+5000188,900188,2025-12,38,monthly,basic,Midlands,store,direct_debit,30.19,197.1,4,0,0,2.1,0,0
+5000189,900189,2025-10,38,annual,basic,Midlands,partner,direct_debit,16.7,109.9,5,0,0,,0,0
+5000190,900190,2025-12,42,annual,standard,South East,web,direct_debit,25.7,200.3,3,0,0,5.3,0,0
+5000191,900191,2025-12,5,monthly,standard,Wales,store,card,56.36,52.4,1,2,1,5.5,0,0
+5000192,900192,2026-02,22,annual,basic,North West,store,invoice,21.32,189.0,2,0,0,0.1,20,0
+5000193,900193,2026-01,18,annual,basic,Wales,web,card,49.85,180.6,5,0,0,,0,0
+5000194,900194,2025-12,35,monthly,premium,MIDLANDS,web,card,94.62,66.3,1,2,4,4.8,0,0
+5000195,900195,2026-01,47,monthly,premium,North West,web,direct_debit,62.79,130.9,5,2,1,4.9,10,0
+5000196,900196,2026-01,8,monthly,standard,Scotland,web,card,43.49,115.7,4,1,1,7.5,0,0
+5000197,900197,2025-11,1,annual,standard,Scotland,web,direct_debit,77.34,106.2,3,0,0,2.2,0,0
+5000198,900198,2026-01,17,monthly,standard,London,web,direct_debit,107.63,213.4,3,1,0,16.2,0,0
+5000199,900199,2025-11,29,monthly,basic,Midlands,store,direct_debit,35.31,62.5,5,2,0,3.1,10,0
+5000200,900200,2026-03,30,two_year,standard,Midlands,store,card,40.21,107.4,4,0,0,1.4,0,0
+5000201,900201,2026-01,12,annual,standard,Midlands,phone,card,20.48,108.7,2,1,0,,0,0
+5000202,900202,2025-12,17,monthly,basic,London,web,direct_debit,47.75,238.4,2,1,0,,0,0
+5000203,900203,2025-11,39,annual,premium,North West,web,direct_debit,69.32,115.3,4,0,0,5.2,0,0
+5000204,900204,2025-12,14,monthly,basic,Midlands,web,direct_debit,14.91,61.8,5,0,1,2.0,0,0
+5000205,900205,2026-01,37,monthly,premium,MIDLANDS,web,direct_debit,72.7,291.2,3,0,0,0.5,0,0
+5000206,900206,2026-02,17,monthly,standard,North West,partner,card,22.85,37.6,2,2,1,4.6,10,0
+5000207,900207,2025-12,23,annual,standard,Scotland,web,card,41.36,88.1,4,2,1,,0,0
+5000208,900208,2025-11,31,two_year,basic,Wales,web,direct_debit,31.24,116.5,5,2,0,11.9,0,0
+5000209,900209,2025-12,28,monthly,premium,london,web,card,56.56,156.0,3,0,0,0.1,0,0
+5000210,900210,2025-11,18,annual,standard,north west,phone,card,36.24,12.6,4,0,0,,0,0
+5000211,900211,2025-10,5,two_year,premium,Scotland,partner,direct_debit,103.46,77.2,4,0,0,,0,0
+5000212,900212,2026-01,26,monthly,basic,Wales,web,direct_debit,22.38,50.1,2,0,0,1.3,0,0
+5000213,900213,2025-10,5,monthly,standard,Wales,web,card,76.62,350.0,2,2,1,6.5,0,0
+5000214,900214,2026-02,4,annual,standard,Scotland,partner,direct_debit,28.92,110.5,2,0,0,14.5,0,0
+5000215,900215,2025-12,16,monthly,premium,North West,store,card,75.85,53.7,5,0,0,5.7,10,0
+5000216,900216,2026-02,32,monthly,standard,wales,web,card,39.47,142.8,1,1,0,6.4,10,0
+5000217,900217,2025-12,27,monthly,premium,Midlands,web,direct_debit,49.43,151.5,2,0,0,,0,0
+5000218,900218,2025-10,41,annual,standard,North West,web,direct_debit,72.22,101.7,5,1,0,24.8,10,0
+5000219,900219,2026-02,42,annual,basic,Midlands,partner,card,41.84,139.2,3,3,0,,10,0
+5000220,900220,2025-12,44,monthly,basic,Midlands,store,direct_debit,25.38,194.7,1,1,1,21.3,0,0
+5000221,900221,2025-12,7,annual,standard,North West,web,direct_debit,54.45,46.9,3,0,1,21.2,0,0
+5000222,900222,2026-01,16,two_year,standard,Wales,web,direct_debit,68.77,100.0,2,1,0,12.2,0,0
+5000223,900223,2025-12,3,annual,basic,London,store,card,24.29,58.9,4,0,0,5.2,0,0
+5000224,900224,2025-12,25,annual,basic,Wales,web,card,32.37,135.6,4,1,0,8.7,0,0
+5000225,900225,2026-01,10,annual,basic,North West,phone,card,22.8,183.4,3,1,0,7.6,10,0
+5000226,900226,2026-01,13,annual,standard,midlands,partner,invoice,49.56,127.7,3,1,1,2.1,0,0
+5000227,900227,2025-12,32,monthly,standard,London,web,direct_debit,37.82,37.3,2,0,1,8.8,0,0
+5000228,900228,2026-02,6,two_year,basic,Midlands,partner,direct_debit,77.29,227.2,4,1,1,16.7,10,0
+5000229,900229,2026-02,20,monthly,basic,Midlands,partner,card,52.53,80.6,3,1,2,7.6,20,0
+5000230,900230,2026-01,24,monthly,basic,Midlands,partner,direct_debit,16.92,48.1,2,0,0,0.4,0,0
+5000231,900231,2025-12,18,monthly,standard,North West,store,direct_debit,52.73,171.8,1,1,0,7.2,0,0
+5000232,900232,2026-01,19,annual,standard,London,web,card,69.45,28.5,2,0,1,11.6,0,0
+5000233,900233,2026-01,9,annual,basic,scotland,web,direct_debit,-78.97,145.6,5,1,0,3.1,0,0
+5000234,900234,2025-11,22,two_year,basic,Wales,phone,direct_debit,56.59,74.6,3,4,0,3.4,0,0
+5000235,900235,2026-02,43,monthly,standard,Scotland,web,direct_debit,35.34,68.7,3,0,0,4.3,0,0
+5000236,900236,2026-01,33,monthly,basic,London,store,direct_debit,32.52,153.0,5,1,0,0.5,0,0
+5000237,900237,2025-11,8,monthly,standard,Scotland,partner,card,49.97,106.7,2,0,0,6.4,0,0
+5000238,900238,2025-12,16,annual,standard,North West,web,direct_debit,77.24,88.7,5,0,0,0.1,0,0
+5000239,900239,2025-11,3,annual,basic,Scotland,web,invoice,46.17,71.8,4,0,0,2.7,0,0
+5000240,900240,2026-01,41,two_year,basic,Scotland,phone,direct_debit,37.17,72.5,4,0,0,9.5,0,0
+5000241,900241,2026-02,29,annual,standard,South East,partner,card,43.06,241.1,1,0,0,3.6,0,0
+5000242,900242,2026-02,37,monthly,standard,North West,web,direct_debit,40.73,111.0,2,1,1,3.6,10,0
+5000243,900243,2026-01,36,monthly,premium,Scotland,web,direct_debit,35.36,40.3,1,0,0,12.0,10,0
+5000244,900244,2025-10,45,monthly,basic,Scotland,store,invoice,,149.0,5,0,0,3.7,0,0
+5000245,900245,2025-12,25,annual,basic,London,phone,direct_debit,20.61,107.5,5,1,0,,0,0
+5000246,900246,2026-01,8,two_year,standard,Wales,partner,direct_debit,70.03,114.0,1,1,1,1.2,10,0
+5000247,900247,2026-01,20,monthly,basic,North West,phone,card,50.16,116.4,5,2,0,59.3,10,0
+5000248,900248,2026-02,25,monthly,standard,London,partner,direct_debit,36.48,59.2,5,0,0,7.6,0,0
+5000249,900249,2025-10,5,monthly,standard,Wales,phone,direct_debit,32.8,47.8,3,0,0,0.3,10,0
+5000250,900250,2026-01,42,two_year,standard,London,partner,direct_debit,63.98,123.3,5,0,0,2.0,0,0
+5000251,900251,2025-11,41,monthly,premium,Midlands,store,direct_debit,39.84,58.0,1,1,0,12.3,0,0
+5000252,900252,2025-10,38,two_year,basic,South East,web,card,21.3,57.3,1,1,0,1.6,0,0
+5000253,900253,2026-01,4,monthly,basic,Scotland,web,card,40.31,98.4,4,0,0,20.6,0,0
+5000254,900254,2025-10,24,monthly,standard,London,partner,card,,255.5,1,1,0,0.6,0,0
+5000255,900255,2025-12,24,annual,basic,Scotland,web,direct_debit,53.31,50.7,5,0,0,12.6,0,0
+5000256,900256,2026-03,7,monthly,premium,Scotland,phone,direct_debit,70.88,52.3,3,2,2,0.6,20,0
+5000257,900257,2025-12,40,annual,basic,Midlands,store,direct_debit,28.78,38.1,4,0,0,9.7,0,0
+5000258,900258,2025-10,9,annual,standard,North West,store,card,41.99,125.8,1,1,0,14.0,0,0
+5000259,900259,2026-02,43,monthly,standard,Scotland,partner,direct_debit,58.89,72.9,3,3,2,5.2,0,0
+5000260,900260,2025-10,1,two_year,standard,Midlands,partner,direct_debit,41.34,334.9,1,0,0,1.6,0,0
+5000261,900261,2026-01,16,monthly,basic,Wales,web,direct_debit,39.31,371.1,5,0,1,4.8,0,0
+5000262,900262,2025-12,6,monthly,standard,London,web,direct_debit,51.94,133.4,4,0,0,,0,0
+5000263,900263,2025-11,39,monthly,standard,north west,partner,direct_debit,36.36,260.5,3,0,0,4.0,10,0
+5000264,900264,2026-02,27,monthly,basic,Scotland,web,direct_debit,28.93,151.8,4,0,0,1.1,20,0
+5000265,900265,2025-11,19,monthly,basic,Wales,store,direct_debit,30.51,106.1,4,0,0,12.0,0,0
+5000266,900266,2026-02,7,annual,basic,Scotland,web,invoice,18.13,243.8,2,1,0,1.0,0,0
+5000267,900267,2025-11,33,annual,basic,Scotland,web,direct_debit,33.09,238.7,4,0,0,45.3,0,0
+5000268,900268,2026-01,40,annual,basic,Wales,web,direct_debit,23.35,53.1,5,0,1,3.6,10,0
+5000269,900269,2025-12,16,monthly,standard,North West,web,card,36.7,87.3,3,0,2,9.4,0,0
+5000270,900270,2026-01,6,annual,basic,South East,phone,direct_debit,19.64,44.8,3,1,0,0.8,0,0
+5000271,900271,2025-10,18,two_year,premium,North West,web,direct_debit,60.28,114.4,4,0,0,,0,0
+5000272,900272,2026-01,16,monthly,standard,Wales,partner,card,33.29,81.6,3,1,0,0.9,10,0
+5000273,900273,2025-10,20,annual,basic,Midlands,store,card,28.61,106.3,5,1,0,,0,0
+5000274,900274,2026-01,17,monthly,standard,London,web,direct_debit,97.07,99.5,5,0,0,0.0,10,0
+5000275,900275,2025-11,36,monthly,basic,London,web,direct_debit,24.18,15.5,5,1,0,8.6,0,0
+5000276,900276,2026-01,31,monthly,basic,scotland,web,direct_debit,17.82,102.1,5,1,1,6.9,0,0
+5000277,900277,2025-12,37,annual,standard,North West,phone,card,37.41,114.5,1,0,0,12.3,0,0
+5000278,900278,2026-01,37,monthly,premium,Midlands,partner,direct_debit,49.62,51.3,2,1,1,12.1,0,0
+5000279,900279,2025-11,16,monthly,premium,South East,partner,direct_debit,38.61,63.3,2,1,0,,0,0
+5000280,900280,2025-12,24,two_year,basic,Midlands,web,direct_debit,54.15,84.9,3,1,0,5.9,20,0
+5000281,900281,2026-01,5,monthly,premium,Midlands,store,direct_debit,47.48,156.6,5,0,0,2.0,0,0
+5000282,900282,2026-02,13,monthly,standard,Wales,web,direct_debit,45.83,83.0,4,1,0,0.8,20,0
+5000283,900283,2026-02,50,annual,basic,Scotland,web,card,31.91,40.5,1,2,0,5.8,20,0
+5000284,900284,2026-02,36,two_year,basic,North West,web,direct_debit,20.7,43.7,4,0,0,7.7,0,0
+5000285,900285,2025-10,27,monthly,basic,North West,web,direct_debit,21.45,75.6,5,1,0,0.5,10,0
+5000286,900286,2025-10,20,two_year,standard,Wales,web,direct_debit,34.49,54.8,2,0,0,2.5,0,0
+5000287,900287,2026-03,39,annual,premium,Wales,web,direct_debit,71.81,80.9,3,2,0,6.6,0,0
+5000288,900288,2026-02,10,monthly,basic,North West,web,card,42.66,60.7,3,3,0,0.4,0,0
+5000289,900289,2025-10,9,monthly,basic,Scotland,partner,direct_debit,40.78,192.0,3,1,2,7.4,0,0
+5000290,900290,2025-12,16,annual,standard,South East,partner,card,31.47,105.5,2,0,0,1.8,0,0
+5000291,900291,2026-01,28,two_year,standard,midlands,web,invoice,49.46,231.7,2,0,0,10.5,0,0
+5000292,900292,2025-11,16,two_year,basic,Wales,web,direct_debit,95.4,38.9,4,2,0,0.2,0,0
+5000293,900293,2026-03,29,annual,standard,north west,partner,card,18.57,151.9,4,2,0,4.3,0,0
+5000294,900294,2026-01,11,annual,standard,Scotland,store,card,33.44,113.0,5,1,1,8.7,0,0
+5000295,900295,2025-12,43,annual,premium,Midlands,web,direct_debit,54.92,151.1,3,2,0,10.5,10,0
+5000296,900296,2025-11,20,monthly,standard,London,web,direct_debit,64.96,287.1,1,0,1,11.4,0,0
+5000297,900297,2026-01,25,monthly,standard,South East,web,direct_debit,57.92,106.6,3,0,0,3.0,0,0
+5000298,900298,2025-12,20,annual,standard,scotland,store,card,,168.1,1,0,0,1.1,10,0
+5000299,900299,2026-02,37,monthly,basic,South East,web,direct_debit,95.89,111.3,2,0,1,4.1,0,0
+5000300,900300,2025-11,45,annual,premium,North West,web,card,80.76,169.4,5,1,0,2.8,0,0
+5000301,900301,2026-02,28,two_year,premium,London,web,direct_debit,50.01,61.4,2,0,1,6.8,0,0
+5000302,900302,2025-10,47,two_year,basic,North West,store,card,43.96,38.4,1,1,0,14.4,0,0
+5000303,900303,2025-12,45,monthly,premium,South East,web,direct_debit,55.65,326.5,1,1,0,,0,0
+5000304,900304,2026-01,49,monthly,basic,London,web,card,64.66,81.1,5,0,0,0.0,0,0
+5000305,900305,2025-10,37,monthly,basic,London,web,card,44.88,101.4,4,0,0,2.5,0,0
+5000306,900306,2025-12,19,annual,basic,London,web,direct_debit,,109.3,4,0,1,18.5,0,0
+5000307,900307,2025-10,6,two_year,basic,Scotland,store,invoice,28.64,33.8,4,0,0,8.9,0,0
+5000308,900308,2026-03,20,two_year,basic,South East,web,direct_debit,39.25,65.9,3,0,0,,0,0
+5000309,900309,2025-12,16,annual,basic,LONDON,store,direct_debit,22.86,116.3,1,2,0,,0,0
+5000310,900310,2025-11,13,monthly,standard,South East,partner,direct_debit,44.88,56.8,4,1,0,7.8,0,0
+5000311,900311,2025-11,23,annual,basic,Scotland,partner,invoice,35.41,101.4,3,0,1,0.7,0,0
+5000312,900312,2026-02,35,monthly,standard,London,web,invoice,26.72,174.1,2,0,0,15.3,0,0
+5000313,900313,2026-02,13,monthly,basic,scotland,web,direct_debit,27.37,72.3,3,2,0,7.3,0,0
+5000314,900314,2025-11,12,annual,premium,MIDLANDS,web,card,48.48,112.7,2,0,0,,0,0
+5000315,900315,2026-02,21,monthly,standard,Wales,web,invoice,45.48,124.7,1,0,0,1.5,10,0
+5000316,900316,2026-01,33,annual,standard,South East,web,card,44.22,87.7,4,0,1,4.7,0,0
+5000317,900317,2026-02,21,two_year,standard,WALES,store,direct_debit,37.19,120.5,3,0,0,2.2,0,0
+5000318,900318,2026-03,39,annual,premium,Wales,web,card,51.28,76.0,2,0,0,3.1,0,0
+5000319,900319,2025-12,34,annual,premium,South East,web,card,38.44,236.9,2,1,0,1.4,0,0
+5000320,900320,2026-02,18,annual,basic,Midlands,web,card,56.92,180.4,4,2,0,33.7,10,0
+5000321,900321,2025-12,13,annual,standard,london,web,direct_debit,19.89,238.1,2,0,0,2.6,0,0
+5000322,900322,2025-10,35,monthly,basic,North West,web,invoice,20.09,45.0,1,0,0,7.6,0,0
+5000323,900323,2025-12,38,monthly,standard,Midlands,web,direct_debit,19.81,175.5,1,0,0,4.5,0,0
+5000324,900324,2025-12,9,annual,standard,Scotland,web,direct_debit,37.91,37.2,3,1,2,8.0,0,0
+5000325,900325,2025-12,23,annual,basic,South East,phone,direct_debit,16.59,68.4,1,1,0,5.2,0,0
+5000326,900326,2026-01,49,monthly,basic,North West,web,direct_debit,33.4,178.8,5,0,0,2.1,10,0
+5000327,900327,2026-03,10,two_year,standard,Midlands,partner,direct_debit,39.95,16.7,3,0,0,0.7,10,0
+5000328,900328,2026-01,3,annual,basic,Wales,partner,invoice,25.83,200.8,5,0,0,,0,0
+5000329,900329,2026-01,12,monthly,standard,London,web,direct_debit,39.88,169.8,5,0,0,1.5,0,0
+5000330,900330,2025-12,39,two_year,standard,North West,web,card,41.76,221.4,2,1,0,1.9,0,0
+5000331,900331,2025-12,17,two_year,basic,Scotland,web,direct_debit,27.55,23.3,3,0,0,18.3,0,0
+5000332,900332,2025-10,14,monthly,premium,Midlands,partner,direct_debit,57.49,37.3,5,1,0,0.4,0,0
+5000333,900333,2025-12,42,annual,basic,Wales,web,invoice,53.97,35.0,4,2,0,18.9,10,0
+5000334,900334,2025-12,14,monthly,standard,Midlands,web,direct_debit,33.01,70.6,3,0,0,0.6,0,0
+5000335,900335,2026-01,40,monthly,basic,London,web,direct_debit,,160.6,5,1,0,0.9,10,0
+5000336,900336,2025-12,17,annual,basic,South East,store,direct_debit,25.14,38.9,4,1,1,7.6,0,0
+5000337,900337,2026-01,23,monthly,standard,London,web,invoice,61.85,81.8,5,1,0,,10,0
+5000338,900338,2025-11,15,monthly,standard,north west,web,direct_debit,28.22,114.1,3,0,0,0.8,0,0
+5000339,900339,2025-10,11,monthly,standard,NORTH WEST,web,direct_debit,38.09,131.0,4,1,0,2.3,0,0
+5000340,900340,2025-12,18,two_year,premium,Wales,store,direct_debit,71.47,194.7,4,1,0,2.5,0,0
+5000341,900341,2025-10,32,monthly,basic,Midlands,web,direct_debit,52.86,46.8,2,0,0,7.3,0,0
+5000342,900342,2025-12,44,annual,standard,South East,partner,direct_debit,54.97,101.5,1,2,0,3.4,0,0
+5000343,900343,2025-12,38,annual,standard,London,web,direct_debit,62.26,35.1,1,0,0,17.4,10,0
+5000344,900344,2026-02,21,annual,basic,Midlands,partner,invoice,,24.8,3,3,1,15.8,0,0
+5000345,900345,2025-11,14,monthly,premium,North West,web,card,62.14,165.3,4,0,0,0.6,0,0
+5000346,900346,2026-03,27,annual,standard,London,web,direct_debit,46.22,220.1,4,3,0,0.9,10,0
+5000347,900347,2026-02,8,annual,basic,wales,web,direct_debit,15.97,99.2,2,4,1,8.6,0,0
+5000348,900348,2025-10,12,monthly,standard,Wales,web,direct_debit,32.55,166.3,5,1,0,0.1,0,0
+5000349,900349,2026-03,37,annual,basic,Scotland,phone,direct_debit,52.31,290.4,4,1,1,6.6,0,0
+5000350,900350,2026-01,11,annual,basic,Wales,web,invoice,55.72,68.4,1,4,0,12.6,20,0
+5000351,900351,2026-01,4,monthly,premium,Wales,store,direct_debit,97.27,102.4,2,1,2,0.4,20,0
+5000352,900352,2025-12,26,monthly,premium,Wales,web,card,-51.62,196.0,5,0,0,3.2,0,0
+5000353,900353,2025-12,23,monthly,premium,South East,store,direct_debit,73.21,78.7,5,0,0,7.8,0,0
+5000354,900354,2025-10,45,two_year,standard,london,web,card,58.21,111.4,4,1,0,,0,0
+5000355,900355,2025-11,37,monthly,basic,South East,web,card,29.53,91.3,2,1,0,2.4,0,0
+5000356,900356,2025-10,41,annual,premium,Wales,phone,direct_debit,68.97,143.1,5,2,0,20.1,0,0
+5000357,900357,2025-11,17,annual,premium,wales,web,direct_debit,71.88,145.8,3,0,0,,0,0
+5000358,900358,2026-01,8,two_year,basic,Scotland,web,card,47.03,154.7,5,0,0,4.1,0,0
+5000359,900359,2026-02,47,monthly,basic,Midlands,web,card,,127.4,4,0,0,3.9,0,0
+5000360,900360,2025-11,16,annual,basic,South East,store,direct_debit,16.72,88.7,5,0,0,,0,0
+5000361,900361,2026-02,29,annual,basic,Scotland,web,card,20.33,74.0,1,1,1,3.5,0,0
+5000362,900362,2025-10,38,monthly,basic,London,web,direct_debit,24.83,369.6,4,1,0,,0,0
+5000363,900363,2025-11,44,annual,standard,London,web,card,42.29,71.9,3,1,0,10.2,0,0
+5000364,900364,2025-12,32,annual,standard,London,web,card,58.82,167.7,3,0,1,,0,0
+5000365,900365,2025-10,35,monthly,standard,Scotland,partner,card,35.55,277.9,5,1,0,8.8,0,0
+5000366,900366,2025-12,29,two_year,standard,South East,web,direct_debit,29.15,192.1,4,1,0,1.5,0,0
+5000367,900367,2025-10,31,annual,basic,Midlands,web,card,27.16,70.1,4,3,2,1.1,0,0
+5000368,900368,2025-10,11,two_year,standard,North West,web,card,41.89,35.7,3,1,0,8.7,0,0
+5000369,900369,2025-11,18,monthly,basic,Wales,web,direct_debit,11.4,247.2,1,2,0,0.9,0,0
+5000370,900370,2025-12,17,two_year,standard,Midlands,web,direct_debit,37.47,152.9,4,1,0,26.3,0,0
+5000371,900371,2026-02,16,two_year,standard,SOUTH EAST,web,card,51.53,76.1,1,0,0,0.9,0,0
+5000372,900372,2025-12,18,monthly,premium,London,partner,direct_debit,48.29,92.5,3,0,0,1.8,0,0
+5000373,900373,2025-11,2,annual,basic,Scotland,phone,direct_debit,13.33,115.2,5,1,0,6.9,0,0
+5000374,900374,2025-11,18,monthly,standard,Wales,web,card,63.28,183.4,4,2,0,0.2,0,0
+5000375,900375,2025-12,38,annual,standard,Midlands,web,card,44.73,174.8,3,0,0,0.7,10,0
+5000376,900376,2025-12,21,two_year,basic,London,store,direct_debit,25.65,112.8,2,1,1,14.4,0,0
+5000377,900377,2026-01,46,annual,standard,Scotland,store,direct_debit,71.87,94.2,2,0,0,,0,0
+5000378,900378,2025-11,32,annual,basic,south east,web,direct_debit,22.48,94.0,5,1,0,0.2,0,0
+5000379,900379,2026-02,34,monthly,standard,North West,web,direct_debit,24.63,67.3,5,1,0,7.8,0,0
+5000380,900380,2026-01,17,annual,basic,Midlands,web,direct_debit,41.48,133.7,2,0,0,34.1,0,0
+5000381,900381,2026-01,18,monthly,standard,Wales,phone,direct_debit,33.27,90.9,4,0,0,1.3,0,0
+5000382,900382,2026-02,49,monthly,basic,Scotland,partner,direct_debit,29.28,74.6,4,1,0,3.0,0,0
+5000383,900383,2025-11,48,annual,basic,North West,web,card,20.21,46.5,5,1,0,3.9,0,0
+5000384,900384,2025-10,31,two_year,premium,midlands,phone,card,68.58,356.0,4,0,0,5.7,0,0
+5000385,900385,2025-11,3,annual,basic,Midlands,phone,direct_debit,40.38,411.2,2,0,0,1.9,0,0
+5000386,900386,2026-02,14,annual,standard,Wales,web,direct_debit,41.08,132.4,5,0,0,7.6,0,0
+5000387,900387,2025-11,10,monthly,premium,South East,partner,card,53.69,88.5,3,1,0,1.0,0,0
+5000388,900388,2026-02,12,annual,standard,South East,web,direct_debit,35.71,65.8,1,4,0,17.0,0,0
+5000389,900389,2026-01,42,monthly,basic,London,web,direct_debit,21.05,224.1,1,0,0,4.2,0,0
+5000390,900390,2025-11,9,monthly,standard,North West,web,direct_debit,51.29,128.2,2,1,0,1.2,0,0
+5000391,900391,2025-12,41,monthly,basic,Wales,partner,direct_debit,17.56,8.3,4,0,0,0.5,10,0
+5000392,900392,2026-01,21,annual,basic,Scotland,web,direct_debit,42.48,192.3,2,0,0,0.3,10,0
+5000393,900393,2025-12,20,monthly,standard,London,web,card,36.22,40.5,1,1,0,,0,0
+5000394,900394,2026-02,42,monthly,basic,North West,web,card,14.81,53.3,1,0,0,38.4,0,0
+5000395,900395,2026-02,22,monthly,premium,Wales,partner,direct_debit,82.25,151.3,2,1,2,,0,0
+5000396,900396,2025-12,37,monthly,basic,London,store,direct_debit,17.0,118.4,3,2,0,0.0,0,0
+5000397,900397,2026-03,44,monthly,basic,Midlands,store,direct_debit,,75.6,1,1,0,0.5,0,0
+5000398,900398,2026-02,7,annual,premium,South East,partner,card,72.55,116.6,1,4,1,85.0,0,0
+5000399,900399,2026-03,15,monthly,standard,Scotland,partner,card,27.07,137.7,3,3,0,5.6,0,0
+5000400,900400,2025-10,34,monthly,premium,scotland,store,card,83.27,126.2,4,0,0,1.3,20,0
+5000401,900401,2026-02,43,annual,standard,South East,partner,card,54.96,98.7,3,0,1,0.4,0,0
+5000402,900402,2025-10,44,annual,standard,LONDON,phone,direct_debit,28.38,74.8,2,1,0,1.2,0,0
+5000403,900403,2026-01,12,monthly,standard,South East,web,direct_debit,23.36,83.6,1,1,0,,0,0
+5000404,900404,2026-01,23,annual,premium,London,store,invoice,54.62,44.8,3,0,0,12.8,0,0
+5000405,900405,2026-02,15,monthly,standard,North West,store,direct_debit,,131.1,2,1,0,8.2,10,0
+5000406,900406,2025-10,37,annual,basic,Scotland,store,direct_debit,46.62,11.8,5,0,0,0.1,0,0
+5000407,900407,2025-12,23,monthly,premium,south east,store,direct_debit,42.14,106.0,1,2,0,7.8,0,0
+5000408,900408,2026-01,30,two_year,premium,South East,web,card,65.99,200.3,3,1,0,0.6,10,0
+5000409,900409,2025-12,37,annual,standard,Scotland,web,card,52.95,214.2,3,0,0,0.5,10,0
+5000410,900410,2025-11,48,monthly,standard,London,partner,direct_debit,54.14,95.9,3,0,2,4.8,0,0
+5000411,900411,2025-12,3,monthly,standard,Scotland,store,direct_debit,43.88,50.0,1,2,1,3.3,0,0
+5000412,900412,2026-01,40,monthly,standard,North West,store,direct_debit,36.08,134.8,5,0,0,8.4,0,0
+5000413,900413,2026-01,15,two_year,basic,London,partner,direct_debit,10.93,57.5,5,2,0,13.8,0,0
+5000414,900414,2025-11,26,monthly,standard,Midlands,web,direct_debit,33.85,200.9,2,2,1,4.5,0,0
+5000415,900415,2025-11,38,annual,premium,Midlands,phone,invoice,50.79,102.3,2,1,0,,0,0
+5000416,900416,2026-02,24,monthly,standard,North West,web,card,34.44,54.3,5,0,0,0.8,0,0
+5000417,900417,2026-02,27,two_year,premium,Scotland,partner,direct_debit,,184.6,1,0,1,23.8,0,0
+5000418,900418,2025-10,26,monthly,standard,Midlands,web,direct_debit,34.23,28.7,4,0,1,4.3,0,0
+5000419,900419,2025-11,24,monthly,standard,Wales,web,direct_debit,,130.7,1,1,1,1.6,0,0
+5000420,900420,2025-11,18,annual,premium,North West,web,direct_debit,66.79,175.9,5,0,0,1.3,0,0
+5000421,900421,2025-10,47,monthly,premium,south east,web,direct_debit,60.36,62.0,5,1,1,4.4,0,0
+5000422,900422,2025-10,38,annual,standard,London,web,direct_debit,60.38,54.6,1,0,0,4.1,0,0
+5000423,900423,2025-12,30,monthly,basic,Midlands,web,direct_debit,12.23,142.1,5,2,0,21.9,0,0
+5000424,900424,2025-12,4,monthly,standard,Scotland,web,direct_debit,46.64,61.4,4,1,0,8.3,0,0
+5000425,900425,2025-12,24,monthly,standard,Midlands,phone,direct_debit,25.28,142.3,1,0,1,9.4,0,0
+5000426,900426,2026-02,46,monthly,standard,Midlands,store,direct_debit,24.97,152.5,4,2,0,35.6,10,0
+5000427,900427,2025-12,43,annual,basic,North West,partner,direct_debit,24.88,94.6,2,3,0,6.1,0,0
+5000428,900428,2026-02,23,annual,standard,Scotland,partner,direct_debit,69.35,29.7,4,1,0,7.2,0,0
+5000429,900429,2026-02,44,monthly,standard,Wales,partner,direct_debit,26.03,65.2,3,0,2,1.2,0,0
+5000430,900430,2026-01,20,annual,basic,Midlands,web,direct_debit,25.15,45.8,2,1,0,1.9,0,0
+5000431,900431,2025-10,30,monthly,standard,Midlands,web,direct_debit,100.32,89.9,1,1,0,1.3,0,0
+5000432,900432,2026-01,37,monthly,basic,London,phone,direct_debit,22.6,89.0,4,0,0,22.1,0,0
+5000433,900433,2026-02,49,monthly,basic,North West,store,invoice,46.7,55.9,5,1,0,8.1,10,0
+5000434,900434,2025-12,48,monthly,basic,South East,partner,card,,55.6,3,0,0,15.5,0,0
+5000435,900435,2026-02,50,annual,basic,Scotland,web,direct_debit,17.99,57.6,1,0,0,1.7,0,0
+5000436,900436,2026-01,35,monthly,basic,London,web,direct_debit,24.47,123.5,4,0,0,2.9,0,0
+5000437,900437,2026-02,7,monthly,basic,Scotland,store,direct_debit,16.01,74.5,1,0,0,1.2,0,0
+5000438,900438,2026-01,27,annual,basic,South East,store,direct_debit,32.92,32.3,1,2,0,15.3,0,0
+5000439,900439,2025-12,6,annual,standard,Scotland,web,direct_debit,39.95,124.0,4,0,0,8.0,0,0
+5000440,900440,2026-01,40,monthly,premium,north west,web,card,48.01,81.7,5,0,0,,0,0
+5000441,900441,2026-02,15,monthly,basic,Wales,store,invoice,15.03,55.0,1,0,0,0.8,0,0
+5000442,900442,2025-11,44,monthly,basic,Wales,web,card,9.19,108.3,1,0,0,4.1,0,0
+5000443,900443,2025-11,14,two_year,basic,Scotland,partner,direct_debit,49.46,125.2,2,2,0,7.5,0,0
+5000444,900444,2025-12,6,two_year,standard,south east,partner,card,32.65,171.4,3,0,0,4.7,0,0
+5000445,900445,2025-11,13,annual,standard,Scotland,partner,direct_debit,58.18,78.7,4,1,1,32.0,0,0
+5000446,900446,2026-02,37,monthly,basic,Scotland,store,direct_debit,31.88,102.4,5,0,0,9.2,0,0
+5000447,900447,2025-12,7,monthly,basic,London,store,card,21.35,40.5,2,3,0,7.8,0,0
+5000448,900448,2026-03,20,two_year,standard,London,store,direct_debit,,40.5,4,2,0,5.7,0,0
+5000449,900449,2025-12,44,annual,premium,Scotland,phone,direct_debit,56.4,146.3,3,5,0,20.9,10,0
+5000450,900450,2026-01,33,monthly,basic,North West,web,card,29.47,66.5,2,0,0,1.6,20,0
+5000451,900451,2025-12,27,monthly,standard,South East,web,card,50.97,133.2,2,1,0,27.7,0,0
+5000452,900452,2025-10,47,monthly,premium,Wales,store,card,-97.91,15.3,5,0,4,52.5,0,0
+5000453,900453,2025-12,41,monthly,premium,Midlands,partner,direct_debit,44.38,64.1,2,1,1,11.4,0,0
+5000454,900454,2026-01,5,monthly,standard,Wales,phone,direct_debit,34.88,121.0,4,0,0,,10,0
+5000455,900455,2026-01,12,monthly,standard,South East,web,card,41.19,42.8,5,0,1,1.5,0,0
+5000456,900456,2025-11,4,annual,basic,Scotland,store,card,,361.8,1,0,0,15.0,0,0
+5000457,900457,2025-10,45,monthly,standard,London,partner,card,33.59,97.2,3,0,0,13.7,0,0
+5000458,900458,2025-12,49,annual,standard,North West,web,card,68.5,47.4,4,0,0,,20,0
+5000459,900459,2026-01,34,monthly,premium,South East,web,direct_debit,77.43,128.2,5,3,0,39.6,0,0
+5000460,900460,2026-01,25,monthly,basic,Scotland,web,card,36.28,139.8,5,1,0,8.5,0,0
+5000461,900461,2026-02,40,annual,premium,North West,web,card,65.67,86.2,2,2,2,2.1,0,0
+5000462,900462,2025-11,8,annual,premium,Midlands,web,direct_debit,126.54,320.9,2,0,0,1.6,0,0
+5000463,900463,2026-02,16,two_year,basic,North West,web,direct_debit,34.14,56.2,4,0,0,9.0,0,0
+5000464,900464,2025-12,23,annual,standard,scotland,phone,direct_debit,45.78,78.2,2,0,0,3.7,0,0
+5000465,900465,2025-12,40,two_year,basic,Wales,store,card,43.88,14.4,5,2,0,0.5,0,0
+5000466,900466,2025-11,13,two_year,standard,Scotland,web,card,37.67,220.4,1,0,0,0.2,10,0
+5000467,900467,2025-11,15,monthly,standard,North West,web,direct_debit,43.51,106.9,5,1,2,,0,0
+5000468,900468,2025-12,7,monthly,basic,Midlands,store,direct_debit,13.04,44.8,2,0,0,0.9,0,0
+5000469,900469,2025-12,38,monthly,basic,Scotland,partner,card,24.17,305.0,1,0,0,2.4,0,0
+5000470,900470,2025-11,47,annual,standard,South East,partner,direct_debit,44.05,69.0,5,0,0,,0,0
+5000471,900471,2025-12,4,annual,premium,North West,store,direct_debit,63.5,315.3,3,2,1,7.4,0,0
+5000472,900472,2025-11,18,monthly,basic,South East,web,direct_debit,15.8,73.2,5,0,1,18.0,0,0
+5000473,900473,2025-11,18,annual,standard,Wales,store,direct_debit,45.9,98.4,2,0,0,10.7,10,0
+5000474,900474,2026-01,45,two_year,standard,north west,store,direct_debit,,71.5,4,4,1,11.8,0,0
+5000475,900475,2026-02,38,monthly,basic,North West,partner,direct_debit,36.29,30.0,5,1,1,8.7,0,0
+5000476,900476,2025-12,47,two_year,basic,Scotland,phone,invoice,33.54,49.5,5,1,1,6.0,10,0
+5000477,900477,2026-02,47,annual,basic,South East,web,direct_debit,35.09,171.2,4,0,0,6.9,0,0
+5000478,900478,2026-02,23,annual,basic,North West,phone,invoice,25.47,216.2,3,0,0,9.8,10,0
+5000479,900479,2025-11,14,monthly,basic,South East,web,card,37.56,117.3,2,0,0,14.7,0,0
+5000480,900480,2025-12,23,monthly,standard,Scotland,store,card,53.05,83.8,2,0,0,14.7,0,0
+5000481,900481,2026-02,48,monthly,basic,Midlands,web,direct_debit,40.69,147.6,3,2,0,61.1,10,0
+5000482,900482,2025-10,20,annual,standard,Midlands,store,invoice,30.16,190.3,2,0,0,12.9,0,0
+5000483,900483,2026-02,6,annual,basic,North West,store,card,30.31,29.1,3,1,1,27.6,0,0
+5000484,900484,2025-10,7,monthly,standard,South East,partner,direct_debit,,100.9,4,0,0,3.9,0,0
+5000485,900485,2025-11,2,two_year,basic,Wales,web,direct_debit,21.31,138.6,4,0,0,,0,0
+5000486,900486,2025-12,47,monthly,standard,Scotland,web,direct_debit,23.85,228.6,4,1,1,5.7,0,0
+5000487,900487,2026-03,26,two_year,premium,Scotland,web,direct_debit,55.61,49.0,2,2,0,5.6,0,0
+5000488,900488,2025-12,37,two_year,basic,Midlands,store,direct_debit,19.7,251.3,1,0,0,2.8,0,0
+5000489,900489,2026-01,39,two_year,premium,North West,web,card,47.16,28.1,3,0,1,14.3,0,0
+5000490,900490,2026-01,30,monthly,standard,Midlands,phone,direct_debit,50.15,358.4,4,2,0,12.3,0,0
+5000491,900491,2025-12,26,monthly,basic,LONDON,partner,card,44.26,173.7,4,4,2,40.4,0,0
+5000492,900492,2025-11,48,annual,premium,North West,web,card,51.14,44.1,2,1,0,8.1,0,0
+5000493,900493,2025-11,23,annual,premium,London,store,invoice,49.15,81.6,1,0,0,25.4,0,0
+5000494,900494,2025-12,26,annual,premium,Scotland,store,card,71.63,65.7,5,0,0,,0,0
+5000495,900495,2025-12,5,annual,standard,Wales,partner,direct_debit,43.36,37.8,3,1,0,9.9,0,0
+5000496,900496,2025-11,7,monthly,standard,london,store,direct_debit,44.45,169.5,3,1,0,0.9,0,0
+5000497,900497,2026-03,41,annual,premium,Scotland,web,card,59.92,52.2,2,1,0,2.0,0,0
+5000498,900498,2025-12,31,monthly,premium,LONDON,partner,card,44.47,92.1,4,0,0,34.1,0,0
+5000499,900499,2026-02,31,annual,standard,Scotland,web,direct_debit,44.87,209.2,2,1,1,6.0,0,0
+5000500,900500,2025-12,22,annual,standard,Scotland,store,direct_debit,41.75,215.2,5,1,0,4.6,0,0
+5000501,900501,2026-01,15,two_year,premium,Midlands,web,direct_debit,80.62,76.4,3,1,0,0.3,0,0
+5000502,900502,2026-01,26,annual,basic,Midlands,web,direct_debit,63.85,140.5,2,0,0,1.0,0,0
+5000503,900503,2025-12,27,monthly,standard,Wales,web,direct_debit,80.35,129.2,5,0,0,0.4,0,0
+5000504,900504,2026-02,42,annual,standard,London,partner,card,39.88,97.3,3,1,0,23.2,0,0
+5000505,900505,2025-11,29,monthly,basic,Wales,partner,direct_debit,,119.2,1,0,0,,0,0
+5000506,900506,2025-11,16,monthly,standard,north west,web,direct_debit,56.42,72.7,3,0,0,0.3,0,0
+5000507,900507,2025-10,34,annual,premium,South East,partner,direct_debit,84.67,84.4,1,0,0,24.8,0,0
+5000508,900508,2026-02,38,annual,basic,South East,web,direct_debit,36.66,32.0,4,0,0,13.7,0,0
+5000509,900509,2025-12,40,annual,standard,London,store,direct_debit,-28.97,105.9,1,0,0,1.1,20,0
+5000510,900510,2025-12,13,monthly,basic,Midlands,partner,direct_debit,42.03,207.1,2,2,0,11.3,10,0
+5000511,900511,2025-11,38,two_year,premium,South East,web,direct_debit,58.58,155.8,3,0,0,2.1,0,0
+5000512,900512,2025-12,13,monthly,basic,Midlands,web,direct_debit,47.34,76.2,5,0,0,4.2,10,0
+5000513,900513,2025-11,21,monthly,standard,Scotland,store,direct_debit,53.13,267.3,2,1,0,26.9,10,0
+5000514,900514,2025-12,4,monthly,basic,London,web,direct_debit,57.0,286.1,1,2,1,6.4,10,0
+5000515,900515,2025-12,40,monthly,standard,london,web,card,61.95,194.1,5,0,1,,20,0
+5000516,900516,2026-01,47,two_year,premium,South East,store,card,54.42,271.5,1,0,1,0.6,0,0
+5000517,900517,2025-12,39,monthly,premium,MIDLANDS,partner,card,58.72,129.5,5,2,0,5.3,0,0
+5000518,900518,2025-10,9,two_year,standard,London,web,direct_debit,,104.2,4,2,0,8.3,10,0
+5000519,900519,2025-12,35,annual,basic,Scotland,partner,direct_debit,37.59,93.0,5,0,0,6.0,0,0
+5000520,900520,2025-11,35,monthly,basic,London,web,direct_debit,55.56,81.0,3,2,1,7.9,10,0
+5000521,900521,2025-12,29,annual,standard,Midlands,web,direct_debit,26.1,71.3,2,0,0,2.4,10,0
+5000522,900522,2025-10,25,annual,basic,North West,web,card,20.75,322.5,1,0,0,1.2,0,0
+5000523,900523,2025-12,29,monthly,basic,South East,web,card,31.71,40.6,5,0,0,4.5,0,0
+5000524,900524,2025-12,10,two_year,standard,North West,partner,direct_debit,43.36,62.0,5,0,0,,10,0
+5000525,900525,2025-12,45,monthly,standard,South East,partner,card,56.94,48.0,2,6,2,7.1,0,0
+5000526,900526,2026-01,24,monthly,premium,london,web,direct_debit,57.42,142.7,1,2,0,19.3,0,0
+5000527,900527,2025-12,3,two_year,basic,London,store,card,14.88,232.6,2,1,0,7.0,0,0
+5000528,900528,2026-02,15,annual,standard,Wales,web,card,48.26,75.2,5,1,0,,20,0
+5000529,900529,2025-11,2,monthly,premium,South East,phone,direct_debit,57.74,178.1,4,0,0,7.4,0,0
+5000530,900530,2026-01,6,monthly,premium,North West,web,card,101.02,50.4,5,0,0,8.0,0,0
+5000531,900531,2025-11,10,annual,basic,London,web,direct_debit,21.88,245.4,4,0,0,0.2,10,0
+5000532,900532,2026-01,9,monthly,standard,Scotland,store,card,,151.3,2,0,0,2.9,0,0
+5000533,900533,2026-01,10,two_year,basic,MIDLANDS,web,direct_debit,39.75,106.5,1,1,0,1.4,0,0
+5000534,900534,2026-02,14,monthly,basic,North West,web,direct_debit,23.33,76.0,3,1,0,23.8,0,0
+5000535,900535,2025-11,30,monthly,premium,Midlands,web,direct_debit,65.14,60.2,2,0,0,11.3,10,0
+5000536,900536,2026-01,21,two_year,basic,Wales,web,card,37.4,152.8,3,0,0,,0,0
+5000537,900537,2025-12,20,annual,basic,Wales,store,direct_debit,45.6,57.4,4,1,0,40.7,0,0
+5000538,900538,2025-12,29,monthly,basic,Midlands,partner,card,18.96,48.3,2,0,0,1.0,10,0
+5000539,900539,2025-11,40,monthly,standard,wales,partner,direct_debit,55.29,120.8,5,0,0,4.2,10,0
+5000540,900540,2025-11,15,annual,basic,North West,web,direct_debit,,93.7,4,0,0,1.4,0,0
+5000541,900541,2025-11,24,annual,standard,South East,partner,direct_debit,34.29,79.8,1,1,1,9.0,0,0
+5000542,900542,2026-01,40,annual,standard,Scotland,web,invoice,88.88,181.9,3,1,0,21.0,0,0
+5000543,900543,2026-01,17,monthly,basic,North West,store,direct_debit,38.99,33.9,3,0,0,2.8,0,0
+5000544,900544,2026-01,12,monthly,basic,North West,phone,card,19.63,64.4,1,0,1,9.0,10,0
+5000545,900545,2026-03,11,annual,standard,South East,partner,card,40.11,50.5,5,0,0,1.4,0,0
+5000546,900546,2026-01,37,two_year,standard,North West,web,invoice,59.36,109.7,2,3,0,2.8,10,0
+5000547,900547,2025-12,35,monthly,basic,Midlands,web,card,14.37,670.8,1,1,0,2.0,0,0
+5000548,900548,2026-01,37,annual,basic,South East,web,card,40.9,165.1,3,1,0,0.7,0,0
+5000549,900549,2025-11,43,annual,standard,Midlands,store,direct_debit,24.05,253.0,1,0,0,0.9,0,0
+5000550,900550,2026-02,13,two_year,standard,Wales,web,invoice,24.44,291.2,4,0,0,6.0,0,0
+5000551,900551,2025-12,4,two_year,standard,wales,web,invoice,33.43,17.4,4,1,0,,0,0
+5000552,900552,2025-11,33,annual,standard,Wales,web,direct_debit,40.18,150.8,5,5,1,30.3,0,0
+5000553,900553,2026-03,38,monthly,standard,North West,web,card,49.62,43.7,4,0,0,0.7,0,0
+5000554,900554,2025-12,4,annual,standard,Wales,phone,direct_debit,46.5,89.5,1,1,0,,0,0
+5000555,900555,2026-02,37,annual,premium,South East,web,direct_debit,52.68,93.4,2,0,0,12.9,0,0
+5000556,900556,2026-01,29,monthly,premium,Wales,store,direct_debit,51.22,67.2,5,0,0,1.1,0,0
+5000557,900557,2025-12,30,monthly,premium,Wales,web,direct_debit,41.18,99.4,2,0,0,0.3,0,0
+5000558,900558,2025-12,46,monthly,standard,Midlands,store,card,50.77,71.9,2,0,0,1.6,0,0
+5000559,900559,2025-11,35,annual,basic,Wales,web,direct_debit,22.93,70.1,3,1,0,2.6,10,0
+5000560,900560,2025-11,17,monthly,standard,South East,web,invoice,42.63,24.9,3,3,0,3.9,0,0
+5000561,900561,2025-11,4,monthly,standard,Midlands,web,direct_debit,47.26,70.6,2,1,0,3.7,0,0
+5000562,900562,2026-01,6,two_year,basic,Midlands,web,direct_debit,19.6,162.9,1,2,0,0.2,0,0
+5000563,900563,2025-10,20,annual,basic,Scotland,store,direct_debit,13.82,115.2,1,1,0,0.2,10,0
+5000564,900564,2025-10,29,monthly,standard,London,web,card,36.77,42.1,1,1,0,12.4,0,0
+5000565,900565,2026-01,4,annual,standard,Midlands,web,card,54.4,192.0,1,0,0,1.3,10,0
+5000566,900566,2025-11,20,annual,basic,Scotland,store,direct_debit,45.67,111.2,2,2,0,3.1,0,0
+5000567,900567,2025-10,31,monthly,standard,South East,phone,card,48.88,153.7,3,0,0,5.7,0,0
+5000568,900568,2025-12,25,annual,basic,London,partner,direct_debit,45.71,108.1,1,0,0,6.2,0,0
+5000569,900569,2026-01,21,monthly,standard,north west,web,direct_debit,42.46,88.3,2,1,0,3.0,0,0
+5000570,900570,2026-01,19,monthly,premium,Midlands,store,direct_debit,116.33,147.4,4,0,0,10.6,0,0
+5000571,900571,2026-01,19,annual,standard,Scotland,store,direct_debit,-17.43,153.0,3,1,0,,10,0
+5000572,900572,2025-10,45,annual,standard,wales,web,direct_debit,39.31,96.8,3,1,0,,0,0
+5000573,900573,2025-12,42,monthly,basic,Scotland,web,direct_debit,19.68,51.9,1,0,0,10.5,0,0
+5000574,900574,2025-11,3,two_year,basic,London,store,direct_debit,57.01,55.2,1,1,0,6.6,0,0
+5000575,900575,2026-02,31,monthly,standard,Scotland,partner,direct_debit,50.44,120.1,4,4,1,1.3,0,0
+5000576,900576,2025-12,16,monthly,basic,Scotland,web,direct_debit,9.32,76.6,3,1,0,7.0,0,0
+5000577,900577,2026-02,35,two_year,premium,Wales,web,direct_debit,,87.4,1,1,0,0.1,0,0
+5000578,900578,2026-02,43,annual,premium,North West,partner,card,43.66,106.5,5,1,0,6.8,0,0
+5000579,900579,2026-02,24,monthly,basic,London,phone,direct_debit,33.15,83.2,3,2,0,17.7,0,0
+5000580,900580,2025-11,41,two_year,standard,North West,store,direct_debit,35.15,74.3,3,0,0,,0,0
+5000581,900581,2025-12,32,monthly,premium,South East,store,card,65.43,203.7,1,0,0,0.9,20,0
+5000582,900582,2026-02,29,annual,basic,london,partner,direct_debit,10.81,74.3,1,0,1,3.3,0,0
+5000583,900583,2026-01,42,annual,basic,London,web,invoice,41.33,169.1,1,2,2,15.9,20,0
+5000584,900584,2026-02,45,monthly,basic,North West,web,card,24.39,66.7,1,3,0,1.9,0,0
+5000585,900585,2025-10,19,two_year,standard,Midlands,partner,direct_debit,67.55,69.7,1,0,0,,0,0
+5000586,900586,2025-11,25,two_year,premium,North West,web,direct_debit,87.54,18.5,1,1,0,5.8,0,0
+5000587,900587,2026-01,30,two_year,premium,Scotland,web,direct_debit,47.18,88.8,4,1,0,14.1,0,0
+5000588,900588,2026-02,21,two_year,basic,North West,web,card,29.77,71.3,5,1,0,38.6,0,0
+5000589,900589,2025-11,44,monthly,basic,Scotland,store,direct_debit,16.87,141.8,3,4,2,4.2,0,0
+5000590,900590,2025-12,31,annual,standard,South East,store,card,32.74,201.8,1,0,0,0.9,0,0
+5000591,900591,2025-11,16,monthly,standard,North West,web,card,41.91,56.7,3,1,0,0.4,0,0
+5000592,900592,2025-11,4,annual,standard,south east,web,card,35.18,68.6,5,0,0,18.6,0,0
+5000593,900593,2025-12,39,monthly,basic,North West,partner,card,66.64,74.6,5,4,0,18.0,0,0
+5000594,900594,2025-11,35,monthly,basic,North West,web,card,56.86,185.8,3,0,1,2.7,0,0
+5000595,900595,2025-12,45,monthly,premium,London,web,direct_debit,53.8,157.5,3,0,1,5.3,0,0
+5000596,900596,2025-12,27,two_year,standard,London,phone,card,41.66,94.5,2,0,0,7.2,10,0
+5000597,900597,2025-12,26,annual,standard,London,partner,direct_debit,35.38,102.3,2,0,0,6.7,0,0
+5000598,900598,2025-12,12,two_year,basic,SOUTH EAST,web,card,47.12,130.5,4,0,0,1.2,0,0
+5000599,900599,2025-10,44,monthly,standard,North West,store,direct_debit,47.19,94.0,2,0,0,10.9,0,0
+5000600,900600,2025-12,8,two_year,premium,North West,web,invoice,79.11,87.9,2,2,0,0.5,10,0
+5000601,900601,2026-01,46,annual,standard,north west,store,card,52.67,95.0,1,1,0,33.9,0,0
+5000602,900602,2026-01,17,two_year,premium,Midlands,store,card,51.57,78.2,3,0,0,,10,0
+5000603,900603,2025-11,23,monthly,standard,South East,web,direct_debit,31.68,108.0,5,1,0,9.4,0,0
+5000604,900604,2026-02,29,two_year,standard,south east,web,card,59.87,71.6,2,3,0,0.0,10,0
+5000605,900605,2025-11,35,two_year,standard,London,web,direct_debit,36.86,179.6,4,0,0,,0,0
+5000606,900606,2025-11,26,annual,basic,London,partner,direct_debit,33.93,208.6,1,3,0,9.5,0,0
+5000607,900607,2025-10,4,monthly,standard,Midlands,partner,card,75.46,26.0,3,0,0,,0,0
+5000608,900608,2025-12,27,monthly,basic,Scotland,store,direct_debit,58.98,104.7,5,0,0,4.4,10,0
+5000609,900609,2025-11,16,two_year,standard,Wales,partner,card,46.5,183.3,4,0,0,9.4,0,0
+5000610,900610,2026-02,27,annual,standard,Midlands,web,direct_debit,47.11,21.6,4,0,0,3.6,0,0
+5000611,900611,2025-11,9,annual,standard,Wales,web,invoice,33.7,128.1,5,1,1,14.0,0,0
+5000612,900612,2026-01,37,monthly,standard,Wales,web,direct_debit,35.93,84.6,3,1,0,4.3,0,0
+5000613,900613,2026-01,35,two_year,basic,North West,partner,direct_debit,53.94,71.6,1,0,0,0.8,10,0
+5000614,900614,2025-12,18,annual,basic,Midlands,web,direct_debit,11.49,115.8,2,0,0,0.5,0,0
+5000615,900615,2025-10,3,monthly,standard,wales,store,direct_debit,36.01,138.6,5,1,1,6.6,0,0
+5000616,900616,2026-01,31,monthly,standard,Scotland,web,card,45.21,83.3,2,2,0,60.1,20,0
+5000617,900617,2026-01,37,two_year,standard,Midlands,web,direct_debit,80.32,236.6,3,0,0,2.2,0,0
+5000618,900618,2026-01,37,annual,basic,Scotland,partner,direct_debit,27.21,146.6,2,0,0,2.1,10,0
+5000619,900619,2026-02,38,two_year,basic,Scotland,web,direct_debit,17.08,100.0,4,1,0,,0,0
+5000620,900620,2026-01,47,two_year,standard,Scotland,partner,direct_debit,54.47,81.6,2,2,0,1.9,0,0
+5000621,900621,2025-12,1,monthly,standard,North West,phone,invoice,67.63,127.4,4,2,1,23.5,0,0
+5000622,900622,2026-01,11,monthly,basic,Midlands,web,direct_debit,37.4,14.6,1,2,0,26.9,0,0
+5000623,900623,2026-02,7,annual,standard,Wales,web,direct_debit,79.49,127.3,3,2,0,10.2,0,0
+5000624,900624,2026-03,45,annual,basic,Wales,web,invoice,22.2,82.9,4,0,0,0.0,10,0
+5000625,900625,2025-12,30,monthly,premium,South East,store,card,136.3,104.6,5,0,0,11.5,0,0
+5000626,900626,2026-01,31,monthly,standard,Midlands,web,card,51.25,91.9,5,0,0,2.2,20,0
+5000627,900627,2025-12,39,annual,basic,Wales,web,direct_debit,25.94,111.3,4,1,0,15.9,0,0
+5000628,900628,2026-02,26,annual,standard,South East,web,direct_debit,59.96,72.2,5,0,1,0.3,0,0
+5000629,900629,2026-02,27,monthly,premium,south east,web,direct_debit,78.01,48.3,4,2,1,9.6,0,0
+5000630,900630,2025-12,12,monthly,basic,Wales,phone,card,11.1,94.8,4,1,0,16.4,20,0
+5000631,900631,2025-11,37,annual,basic,wales,web,card,15.12,152.9,3,0,0,7.3,0,0
+5000632,900632,2025-12,18,annual,standard,South East,web,direct_debit,40.65,36.1,3,0,0,23.7,0,0
+5000633,900633,2026-01,48,monthly,basic,North West,web,invoice,48.69,92.4,3,1,0,6.2,0,0
+5000634,900634,2025-12,47,monthly,premium,London,web,direct_debit,80.07,45.9,4,0,0,2.3,0,0
+5000635,900635,2025-12,34,monthly,basic,North West,phone,direct_debit,59.85,150.1,3,1,0,8.9,0,0
+5000636,900636,2025-12,31,annual,basic,Scotland,web,invoice,13.39,175.9,2,2,0,12.5,0,0
+5000637,900637,2025-12,24,two_year,standard,Wales,store,direct_debit,30.54,130.5,5,0,1,5.5,0,0
+5000638,900638,2026-01,46,monthly,basic,South East,store,card,29.36,140.2,4,0,0,13.2,0,0
+5000639,900639,2025-12,28,monthly,basic,North West,web,direct_debit,-77.07,123.1,4,1,1,34.6,0,0
+5000640,900640,2026-01,16,monthly,basic,Scotland,web,card,20.49,174.5,5,1,2,3.1,0,0
+5000641,900641,2026-02,47,monthly,basic,South East,web,card,57.06,114.4,2,0,0,,0,0
+5000642,900642,2025-11,39,two_year,basic,North West,partner,direct_debit,56.73,47.5,3,2,1,2.0,0,0
+5000643,900643,2026-02,49,monthly,standard,London,web,direct_debit,27.66,95.6,4,2,2,,0,0
+5000644,900644,2025-10,42,annual,standard,Midlands,web,direct_debit,,288.3,5,0,1,12.2,20,0
+5000645,900645,2026-02,29,two_year,standard,South East,store,card,51.44,155.9,1,1,0,0.4,0,0
+5000646,900646,2025-10,47,two_year,basic,South East,web,direct_debit,,72.0,2,0,0,1.9,0,0
+5000647,900647,2025-12,41,annual,standard,London,partner,direct_debit,55.72,33.3,3,0,1,3.9,10,0
+5000648,900648,2025-12,14,annual,basic,London,web,direct_debit,26.13,225.6,2,0,0,4.7,0,0
+5000649,900649,2025-11,46,two_year,standard,Wales,store,card,82.62,10.8,4,0,0,2.9,0,0
+5000650,900650,2025-12,29,monthly,standard,North West,web,card,50.56,161.4,5,0,0,,0,0
+5000651,900651,2025-10,5,monthly,standard,South East,phone,direct_debit,69.0,70.9,1,0,0,2.0,0,0
+5000652,900652,2026-01,27,two_year,basic,Midlands,store,invoice,14.55,70.3,1,2,1,46.3,0,0
+5000653,900653,2025-12,20,monthly,premium,London,web,direct_debit,55.83,73.7,4,2,1,8.1,20,0
+5000654,900654,2026-01,34,monthly,premium,North West,web,direct_debit,,134.1,3,0,1,,0,0
+5000655,900655,2025-10,22,annual,basic,South East,phone,card,69.84,76.1,3,1,0,3.3,0,0
+5000656,900656,2025-11,47,monthly,premium,Midlands,web,direct_debit,75.74,147.4,3,0,0,5.1,10,0
+5000657,900657,2025-12,10,monthly,basic,North West,store,invoice,16.35,67.2,2,1,0,4.4,0,0
+5000658,900658,2025-11,11,monthly,basic,South East,web,card,24.33,224.7,3,0,2,8.9,10,0
+5000659,900659,2025-12,24,two_year,standard,North West,web,direct_debit,27.49,114.2,2,0,0,,0,0
+5000660,900660,2026-01,37,monthly,premium,North West,phone,direct_debit,55.89,141.4,2,2,1,8.8,0,0
+5000661,900661,2025-10,46,annual,standard,London,store,card,37.75,217.6,1,1,0,2.3,10,0
+5000662,900662,2026-01,47,annual,standard,North West,web,card,27.96,128.4,4,0,0,9.3,0,0
+5000663,900663,2025-11,2,annual,basic,Wales,phone,card,20.87,75.9,2,4,1,86.7,0,0
+5000664,900664,2025-10,31,monthly,basic,South East,web,direct_debit,26.06,82.7,3,1,0,5.1,20,0
+5000665,900665,2025-10,11,monthly,basic,South East,web,card,24.95,47.9,2,1,0,8.3,0,0
+5000666,900666,2025-10,13,annual,basic,Wales,partner,direct_debit,34.05,95.9,4,0,0,16.7,0,0
+5000667,900667,2025-12,16,two_year,standard,London,phone,direct_debit,32.21,97.9,4,1,0,1.9,0,0
+5000668,900668,2025-10,25,two_year,basic,London,store,card,,42.9,4,0,0,2.8,0,0
+5000669,900669,2025-10,17,annual,standard,Wales,store,card,43.29,179.2,2,0,0,5.6,0,0
+5000670,900670,2025-10,26,two_year,basic,Scotland,web,direct_debit,,65.8,2,0,0,10.1,10,0
+5000671,900671,2025-12,38,annual,standard,South East,store,direct_debit,29.65,154.3,2,2,1,,10,0
+5000672,900672,2026-01,17,two_year,basic,South East,web,direct_debit,8.57,198.1,4,1,0,3.5,0,0
+5000673,900673,2025-11,6,annual,basic,Midlands,web,direct_debit,53.27,92.8,4,0,0,3.6,0,0
+5000674,900674,2025-10,7,monthly,standard,North West,partner,direct_debit,96.52,166.3,4,4,0,1.2,0,0
+5000675,900675,2025-12,36,two_year,premium,South East,web,card,86.24,74.1,4,0,0,0.1,0,0
+5000676,900676,2025-12,33,monthly,standard,North West,phone,direct_debit,66.64,102.7,5,1,0,,0,0
+5000677,900677,2025-10,4,annual,basic,Wales,web,direct_debit,18.12,45.0,5,0,0,,0,0
+5000678,900678,2026-01,46,monthly,premium,London,store,card,57.37,167.2,4,1,0,12.2,0,0
+5000679,900679,2025-12,25,annual,premium,North West,web,invoice,61.91,14.8,3,0,0,10.2,0,0
+5000680,900680,2025-12,16,two_year,premium,Scotland,partner,card,42.03,149.4,2,1,0,3.2,10,0
+5000681,900681,2025-10,24,monthly,premium,Scotland,store,card,47.55,49.2,2,0,0,1.1,0,0
+5000682,900682,2025-12,13,monthly,standard,Scotland,web,card,66.62,201.7,3,0,0,1.7,10,0
+5000683,900683,2026-01,16,two_year,basic,North West,web,direct_debit,16.47,43.3,3,0,0,0.7,0,0
+5000684,900684,2026-01,37,monthly,standard,South East,phone,card,25.12,60.7,5,0,0,,0,0
+5000685,900685,2026-02,25,monthly,basic,North West,partner,card,21.51,173.9,1,0,0,6.0,0,0
+5000686,900686,2025-10,29,annual,standard,Wales,web,direct_debit,27.07,66.3,2,0,0,,0,0
+5000687,900687,2025-12,10,annual,basic,London,store,direct_debit,32.44,141.7,5,2,0,50.1,0,0
+5000688,900688,2025-10,1,two_year,standard,North West,store,direct_debit,39.61,129.3,3,0,0,1.9,0,0
+5000689,900689,2025-11,17,monthly,basic,London,partner,card,,96.6,2,0,0,7.5,10,0
+5000690,900690,2026-01,28,monthly,basic,Scotland,store,direct_debit,61.48,80.8,1,1,0,1.5,0,0
+5000691,900691,2025-11,45,annual,basic,london,web,direct_debit,,74.7,4,0,0,1.2,0,0
+5000692,900692,2026-01,8,two_year,standard,South East,partner,direct_debit,54.6,112.3,1,0,1,4.7,0,0
+5000693,900693,2026-01,45,monthly,premium,london,partner,direct_debit,50.26,268.1,4,2,0,19.9,10,0
+5000694,900694,2025-10,43,two_year,basic,North West,web,card,56.8,73.3,4,0,0,0.0,10,0
+5000695,900695,2026-01,3,monthly,standard,North West,partner,direct_debit,30.01,88.9,3,2,2,19.9,0,0
+5000696,900696,2026-01,49,monthly,basic,London,web,invoice,31.93,136.8,4,2,0,12.5,0,0
+5000697,900697,2025-12,47,monthly,standard,South East,web,direct_debit,34.17,37.6,4,0,1,5.2,0,0
+5000698,900698,2025-11,14,monthly,basic,South East,web,direct_debit,36.39,251.3,4,1,1,28.6,0,0
+5000699,900699,2025-12,48,annual,standard,North West,web,direct_debit,35.7,131.0,1,2,0,1.2,0,0
+5000700,900700,2025-10,45,monthly,basic,Midlands,web,direct_debit,23.4,89.5,4,2,1,8.1,0,0
+5000701,900701,2025-12,41,monthly,basic,wales,web,card,19.67,100.9,4,1,0,,0,0
+5000702,900702,2025-10,8,two_year,premium,Scotland,phone,direct_debit,50.34,58.0,1,0,0,0.6,0,0
+5000703,900703,2025-12,23,monthly,premium,Scotland,phone,direct_debit,60.46,221.9,2,1,1,7.0,0,0
+5000704,900704,2025-10,29,monthly,basic,Wales,store,card,49.28,100.0,5,0,0,2.2,0,0
+5000705,900705,2026-03,24,monthly,basic,London,phone,direct_debit,,121.2,4,3,1,,10,0
+5000706,900706,2025-11,14,monthly,standard,Midlands,web,direct_debit,-37.36,91.6,5,0,0,6.5,0,0
+5000707,900707,2025-11,43,monthly,basic,North West,phone,direct_debit,103.05,121.2,3,0,0,0.7,0,0
+5000708,900708,2026-01,1,monthly,basic,South East,store,invoice,11.82,322.2,3,0,0,4.9,0,0
+5000709,900709,2025-11,35,annual,premium,London,partner,direct_debit,69.84,114.5,5,0,0,0.9,10,0
+5000710,900710,2025-12,25,monthly,standard,Scotland,partner,card,24.75,73.0,3,1,0,,20,0
+5000711,900711,2026-02,31,annual,basic,North West,web,card,73.6,164.8,4,1,1,31.8,0,0
+5000712,900712,2025-12,12,monthly,basic,South East,web,card,29.26,92.7,1,1,0,8.7,0,0
+5000713,900713,2025-10,15,two_year,basic,Scotland,web,card,16.86,151.3,4,0,1,3.9,0,0
+5000714,900714,2025-10,45,monthly,basic,North West,phone,card,4.4,348.5,3,2,0,,0,0
+5000715,900715,2025-11,28,two_year,basic,South East,store,card,20.5,216.8,4,1,0,13.5,0,0
+5000716,900716,2026-02,25,annual,basic,Scotland,web,direct_debit,21.49,26.1,4,0,0,7.3,0,0
+5000717,900717,2025-10,11,monthly,standard,South East,partner,card,37.19,189.9,1,0,1,10.3,20,0
+5000718,900718,2026-02,34,two_year,standard,North West,web,direct_debit,37.64,135.7,5,1,1,8.1,10,0
+5000719,900719,2026-01,7,two_year,basic,Scotland,web,card,42.87,111.5,3,0,0,0.4,0,0
+5000720,900720,2025-12,32,two_year,standard,South East,web,card,26.05,121.4,2,1,0,3.3,0,0
+5000721,900721,2025-11,6,monthly,basic,Midlands,web,card,44.14,40.4,3,0,1,,0,0
+5000722,900722,2025-12,44,annual,basic,North West,web,direct_debit,36.29,320.8,5,1,0,,0,0
+5000723,900723,2025-10,44,monthly,basic,Midlands,store,card,38.85,58.2,2,1,0,1.7,10,0
+5000724,900724,2026-01,43,monthly,standard,South East,store,direct_debit,39.46,96.2,2,0,0,14.3,0,0
+5000725,900725,2026-01,14,annual,premium,Scotland,web,direct_debit,40.48,129.7,5,2,0,0.4,0,0
+5000726,900726,2026-01,9,monthly,basic,Midlands,web,direct_debit,39.38,46.3,3,1,1,,0,0
+5000727,900727,2025-11,30,monthly,standard,wales,web,invoice,29.95,94.9,2,1,0,3.7,0,0
+5000728,900728,2026-01,37,two_year,standard,south east,web,direct_debit,87.34,35.9,1,1,0,0.2,10,0
+5000729,900729,2026-01,21,annual,standard,Scotland,store,direct_debit,,259.5,1,2,1,4.7,0,0
+5000730,900730,2025-11,33,monthly,basic,Wales,phone,card,29.46,110.8,5,0,0,22.3,0,0
+5000731,900731,2025-10,14,annual,premium,London,store,direct_debit,52.7,72.1,2,1,0,9.3,0,0
+5000732,900732,2026-01,44,monthly,basic,London,web,direct_debit,24.36,254.5,1,0,0,5.4,10,0
+5000733,900733,2025-10,9,monthly,standard,SOUTH EAST,phone,direct_debit,93.53,141.8,2,0,1,15.4,10,0
+5000734,900734,2025-10,16,two_year,basic,London,web,direct_debit,37.88,117.4,5,1,0,,0,0
+5000735,900735,2025-11,9,monthly,standard,Midlands,partner,card,22.94,21.0,3,3,1,22.3,0,0
+5000736,900736,2025-11,10,monthly,basic,Wales,web,direct_debit,12.79,80.0,5,1,0,5.7,0,0
+5000737,900737,2026-01,28,annual,basic,Scotland,web,direct_debit,26.82,110.3,4,0,0,2.6,0,0
+5000738,900738,2025-12,46,annual,standard,South East,partner,invoice,26.0,97.9,4,0,0,1.4,0,0
+5000739,900739,2025-12,2,monthly,premium,Scotland,web,direct_debit,-46.26,38.7,5,3,0,5.5,0,0
+5000740,900740,2026-01,8,annual,basic,Scotland,web,direct_debit,51.87,126.2,4,0,2,,0,0
+5000741,900741,2025-11,36,monthly,premium,north west,partner,direct_debit,45.93,62.6,2,0,0,0.7,0,0
+5000742,900742,2025-10,2,monthly,basic,London,store,invoice,37.59,34.9,3,1,1,1.9,0,0
+5000743,900743,2025-12,22,annual,basic,North West,web,direct_debit,,53.8,2,1,0,2.0,0,0
+5000744,900744,2026-03,29,annual,standard,WALES,web,direct_debit,,89.9,5,0,0,42.2,0,0
+5000745,900745,2025-12,13,monthly,premium,North West,web,card,61.56,121.8,1,0,0,5.9,10,0
+5000746,900746,2026-01,21,monthly,standard,scotland,store,direct_debit,20.61,12.7,4,3,0,6.5,10,0
+5000747,900747,2025-12,18,annual,basic,London,partner,card,13.56,55.8,2,0,0,8.7,10,0
+5000748,900748,2026-02,8,annual,standard,South East,web,direct_debit,33.62,106.7,4,1,0,5.9,0,0
+5000749,900749,2025-11,19,annual,premium,wales,web,card,60.98,106.4,4,3,0,,0,0
+5000750,900750,2025-11,45,annual,standard,Midlands,web,direct_debit,75.4,46.5,1,1,0,6.0,0,0
+5000751,900751,2025-10,19,annual,standard,North West,partner,direct_debit,33.98,174.0,3,3,1,5.3,0,0
+5000752,900752,2025-12,3,annual,standard,London,web,card,,279.4,3,0,0,,0,0
+5000753,900753,2026-01,44,monthly,premium,North West,web,direct_debit,95.32,170.2,1,3,2,12.9,0,0
+5000754,900754,2026-01,25,two_year,standard,Wales,store,direct_debit,45.73,62.8,4,1,1,0.5,0,0
+5000755,900755,2025-11,6,monthly,basic,South East,web,card,30.47,109.1,2,0,0,2.6,0,0
+5000756,900756,2026-01,16,monthly,standard,Scotland,web,card,28.95,60.1,3,1,0,3.4,0,0
+5000757,900757,2026-01,30,annual,premium,Midlands,partner,direct_debit,67.42,55.7,5,1,2,14.8,20,0
+5000758,900758,2026-01,4,annual,basic,Midlands,phone,invoice,102.86,142.6,4,0,0,3.3,0,0
+5000759,900759,2025-12,27,annual,basic,north west,store,card,48.47,195.9,2,0,0,9.0,10,0
+5000760,900760,2025-10,29,monthly,standard,South East,web,direct_debit,,119.9,3,1,0,21.7,0,0
+5000761,900761,2025-10,26,annual,basic,Scotland,partner,direct_debit,15.86,159.9,3,0,0,10.7,0,0
+5000762,900762,2026-02,46,monthly,standard,North West,web,direct_debit,31.58,147.4,1,2,2,4.3,0,0
+5000763,900763,2025-12,19,two_year,basic,Midlands,store,direct_debit,44.04,108.5,3,1,1,1.4,10,0
+5000764,900764,2025-11,32,monthly,basic,Wales,web,direct_debit,45.42,137.0,1,0,0,0.1,0,0
+5000765,900765,2026-01,24,monthly,premium,Scotland,phone,direct_debit,82.49,61.6,5,1,0,4.1,0,0
+5000766,900766,2025-11,18,two_year,premium,South East,store,card,30.97,51.6,4,0,0,6.9,0,0
+5000767,900767,2026-02,29,annual,premium,scotland,web,direct_debit,83.34,146.7,5,0,0,,0,0
+5000768,900768,2025-12,5,annual,standard,South East,store,invoice,99.7,125.8,1,0,0,5.9,0,0
+5000769,900769,2026-01,22,two_year,premium,South East,web,direct_debit,66.02,146.3,2,1,1,3.8,0,0
+5000770,900770,2025-11,18,monthly,standard,London,partner,card,31.12,127.8,2,0,0,4.4,0,0
+5000771,900771,2026-01,35,monthly,basic,Midlands,phone,card,92.79,147.1,5,3,1,,0,0
+5000772,900772,2025-10,4,two_year,basic,London,partner,card,20.37,67.8,5,1,1,5.1,0,0
+5000773,900773,2026-01,24,annual,basic,Wales,store,direct_debit,29.42,78.5,5,2,0,0.0,0,0
+5000774,900774,2025-12,35,annual,premium,Midlands,web,direct_debit,45.94,61.5,3,0,1,28.2,0,0
+5000775,900775,2026-01,10,monthly,standard,South East,partner,direct_debit,,175.8,3,0,0,4.8,20,0
+5000776,900776,2025-11,25,monthly,basic,Scotland,store,direct_debit,6.85,78.4,5,0,0,23.2,0,0
+5000777,900777,2025-10,10,two_year,standard,London,web,direct_debit,22.65,25.4,4,0,1,4.0,0,0
+5000778,900778,2025-11,39,annual,basic,Scotland,store,invoice,79.78,254.0,5,1,2,15.5,10,0
+5000779,900779,2026-01,21,two_year,standard,London,store,card,64.06,112.7,4,0,0,1.0,0,0
+5000780,900780,2025-12,43,two_year,standard,North West,partner,direct_debit,39.1,135.1,3,0,0,,0,0
+5000781,900781,2026-02,38,annual,standard,London,web,card,51.17,37.5,3,0,0,21.4,0,0
+5000782,900782,2025-11,23,monthly,basic,Midlands,store,direct_debit,,319.2,1,3,0,2.0,0,0
+5000783,900783,2025-12,11,monthly,basic,Midlands,partner,direct_debit,51.67,159.3,1,0,0,5.0,10,0
+5000784,900784,2025-12,20,annual,standard,London,web,direct_debit,52.42,100.5,3,0,0,14.9,0,0
+5000785,900785,2026-02,47,two_year,basic,Scotland,web,direct_debit,18.46,65.2,5,1,1,2.2,0,0
+5000786,900786,2026-01,13,monthly,basic,South East,web,card,39.29,105.6,1,0,0,0.4,0,0
+5000787,900787,2026-02,42,monthly,basic,South East,web,direct_debit,32.28,51.4,2,4,0,61.0,10,0
+5000788,900788,2025-12,28,annual,premium,Midlands,web,direct_debit,47.3,52.1,1,0,1,29.3,0,0
+5000789,900789,2025-12,32,monthly,standard,North West,web,direct_debit,67.03,205.6,1,0,2,20.6,0,0
+5000790,900790,2026-01,40,monthly,basic,Scotland,web,direct_debit,,120.3,5,0,0,4.5,0,0
+5000791,900791,2026-01,6,monthly,basic,Midlands,phone,card,,145.7,4,0,0,0.1,0,0
+5000792,900792,2026-01,16,two_year,premium,Midlands,web,direct_debit,61.59,185.4,5,1,0,1.2,0,0
+5000793,900793,2026-01,49,two_year,standard,Midlands,web,direct_debit,28.01,45.9,1,0,0,5.3,0,0
+5000794,900794,2025-11,35,monthly,premium,Scotland,web,direct_debit,67.2,57.4,4,1,1,6.8,20,0
+5000795,900795,2026-01,15,monthly,standard,London,phone,direct_debit,43.39,90.2,2,0,0,7.7,0,0
+5000796,900796,2025-11,12,monthly,standard,South East,web,direct_debit,35.35,121.4,4,1,1,13.0,10,0
+5000797,900797,2025-11,26,two_year,premium,Midlands,partner,direct_debit,84.42,191.6,3,1,0,16.9,20,0
+5000798,900798,2025-10,20,monthly,standard,London,phone,card,57.15,134.9,5,1,0,10.8,10,0
+5000799,900799,2026-02,42,two_year,standard,London,partner,card,68.58,67.4,1,3,1,,10,0
+5000800,900800,2025-12,18,annual,premium,North West,partner,direct_debit,98.21,25.3,1,2,0,5.1,0,0
+5000801,900801,2025-10,29,annual,standard,LONDON,partner,direct_debit,,159.3,2,2,1,10.8,0,0
+5000802,900802,2025-12,8,annual,premium,London,partner,card,60.87,67.0,4,0,0,,0,0
+5000803,900803,2025-11,2,annual,premium,London,web,direct_debit,,84.8,4,1,0,10.2,0,0
+5000804,900804,2026-02,48,two_year,standard,South East,web,direct_debit,,35.3,4,0,0,0.3,0,0
+5000805,900805,2025-11,32,two_year,premium,Midlands,web,card,117.4,459.0,3,2,0,2.4,10,0
+5000806,900806,2025-10,45,annual,premium,london,web,direct_debit,51.87,67.3,2,1,0,4.3,0,0
+5000807,900807,2026-01,15,two_year,standard,Midlands,web,card,,143.0,1,1,0,6.0,10,0
+5000808,900808,2025-12,27,monthly,basic,London,partner,card,50.18,55.0,3,1,2,1.3,0,0
+5000809,900809,2026-02,6,monthly,basic,Scotland,partner,invoice,33.75,64.7,3,4,2,6.6,0,0
+5000810,900810,2026-02,46,annual,standard,Midlands,store,card,41.05,208.6,1,1,0,,0,0
+5000811,900811,2026-02,45,two_year,basic,Midlands,web,card,59.85,222.0,3,1,0,,0,0
+5000812,900812,2025-10,14,annual,basic,South East,store,direct_debit,13.18,195.2,3,0,0,1.4,10,0
+5000813,900813,2026-02,29,monthly,basic,South East,web,card,58.7,90.7,2,0,0,8.0,0,0
+5000814,900814,2025-11,38,annual,basic,London,web,invoice,22.3,292.7,4,0,0,7.2,0,0
+5000815,900815,2025-12,10,annual,basic,Scotland,store,direct_debit,12.38,95.2,2,1,0,11.6,0,0
+5000816,900816,2025-10,3,monthly,basic,North West,web,card,71.84,128.3,4,0,0,2.8,0,0
+5000817,900817,2026-02,11,monthly,standard,Scotland,web,invoice,54.92,80.1,4,1,0,0.0,0,0
+5000818,900818,2025-10,36,annual,standard,Midlands,web,direct_debit,38.83,95.7,4,0,0,2.2,0,0
+5000819,900819,2025-11,20,monthly,basic,LONDON,web,direct_debit,14.33,94.9,2,1,0,1.2,0,0
+5000820,900820,2025-12,3,two_year,basic,Scotland,web,card,58.9,175.4,1,0,0,5.2,0,0
+5000821,900821,2025-10,12,monthly,standard,Scotland,phone,direct_debit,42.51,88.9,2,1,0,17.4,0,0
+5000822,900822,2025-12,46,annual,standard,Scotland,partner,card,68.87,361.7,3,0,0,6.9,0,0
+5000823,900823,2025-12,32,annual,standard,Wales,web,card,122.75,75.4,2,0,0,0.5,20,0
+5000824,900824,2026-01,38,monthly,standard,Scotland,partner,direct_debit,66.13,58.6,4,3,1,25.0,10,0
+5000825,900825,2026-02,5,two_year,standard,London,store,direct_debit,29.73,42.8,4,0,0,7.7,20,0
+5000826,900826,2025-10,37,annual,standard,South East,web,card,51.25,41.1,2,1,0,0.0,0,0
+5000827,900827,2025-11,3,annual,basic,Wales,web,card,51.29,130.6,2,0,0,1.0,0,0
+5000828,900828,2026-02,38,monthly,premium,London,store,direct_debit,64.31,91.5,4,1,1,12.5,10,0
+5000829,900829,2025-12,23,monthly,basic,South East,web,card,42.68,121.9,1,0,0,34.4,0,0
+5000830,900830,2025-11,8,annual,basic,WALES,partner,direct_debit,32.52,31.2,4,1,0,14.7,0,0
+5000831,900831,2025-12,44,annual,premium,london,web,direct_debit,102.2,129.6,1,0,2,16.5,0,0
+5000832,900832,2026-01,19,monthly,basic,Midlands,web,card,32.63,214.4,1,1,0,1.6,0,0
+5000833,900833,2025-10,35,monthly,standard,London,partner,card,34.59,95.0,3,1,0,11.3,10,0
+5000834,900834,2025-10,31,monthly,premium,North West,store,direct_debit,46.76,169.0,3,1,1,13.9,0,0
+5000835,900835,2026-01,28,monthly,standard,Midlands,partner,direct_debit,,152.5,5,0,0,1.0,0,0
+5000836,900836,2025-10,27,monthly,basic,South East,partner,direct_debit,31.74,49.2,3,0,0,1.0,0,0
+5000837,900837,2026-01,37,two_year,basic,Wales,partner,direct_debit,3.38,71.3,3,1,2,17.0,20,0
+5000838,900838,2026-01,41,monthly,standard,wales,partner,card,47.51,53.0,2,1,1,18.8,0,0
+5000839,900839,2026-02,39,monthly,basic,Midlands,store,direct_debit,22.75,253.7,3,1,0,26.2,0,0
+5000840,900840,2026-02,42,annual,basic,london,web,card,23.66,142.3,1,1,0,6.5,20,0
+5000841,900841,2026-01,35,monthly,basic,London,phone,direct_debit,27.52,59.0,5,0,0,7.2,0,0
+5000842,900842,2026-01,16,two_year,standard,Wales,store,direct_debit,37.42,350.9,3,0,0,12.4,0,0
+5000843,900843,2025-12,4,monthly,standard,LONDON,store,direct_debit,34.5,264.0,5,1,0,2.6,0,0
+5000844,900844,2026-02,2,two_year,standard,London,web,direct_debit,43.24,101.9,1,2,2,3.2,0,0
+5000845,900845,2026-01,41,monthly,standard,south east,web,invoice,53.43,99.5,2,0,0,9.7,0,0
+5000846,900846,2025-10,31,monthly,basic,South East,partner,direct_debit,52.3,153.3,3,0,0,3.4,0,0
+5000847,900847,2026-01,40,monthly,basic,Wales,partner,direct_debit,,125.0,3,2,2,6.3,0,0
+5000848,900848,2026-02,25,two_year,standard,Midlands,store,direct_debit,14.52,108.9,2,0,0,0.6,0,0
+5000849,900849,2025-10,12,monthly,basic,Midlands,web,direct_debit,50.35,46.3,1,1,0,,0,0
+5000850,900850,2025-11,3,two_year,standard,Scotland,web,card,30.21,135.7,5,0,0,0.1,10,0
+5000851,900851,2026-02,22,two_year,basic,Midlands,web,direct_debit,26.29,109.7,1,1,0,7.0,0,0
+5000852,900852,2025-10,26,annual,premium,Wales,phone,direct_debit,104.29,370.4,1,1,0,1.4,0,0
+5000853,900853,2025-10,13,monthly,standard,Midlands,web,card,26.27,133.6,2,1,2,15.5,0,0
+5000854,900854,2025-10,20,annual,basic,Scotland,partner,invoice,20.98,112.1,4,1,0,1.7,0,0
+5000855,900855,2025-12,7,monthly,standard,north west,partner,invoice,56.2,126.4,2,0,0,0.4,0,0
+5000856,900856,2025-11,38,monthly,premium,Wales,web,direct_debit,58.34,97.0,5,0,1,5.8,0,0
+5000857,900857,2025-12,14,monthly,premium,Wales,web,card,40.4,137.7,3,0,0,2.3,0,0
+5000858,900858,2026-02,30,two_year,standard,Midlands,partner,direct_debit,32.53,177.9,2,1,3,1.0,10,0
+5000859,900859,2025-10,8,annual,basic,Wales,phone,direct_debit,49.54,62.1,3,0,0,1.3,0,0
+5000860,900860,2026-01,19,two_year,basic,london,web,direct_debit,20.87,135.3,2,1,0,14.1,0,0
+5000861,900861,2026-02,51,monthly,basic,London,web,direct_debit,44.25,97.3,4,0,0,48.1,0,0
+5000862,900862,2025-10,5,two_year,standard,London,store,direct_debit,58.73,200.8,4,1,1,0.3,0,0
+5000863,900863,2025-12,39,annual,basic,Midlands,store,direct_debit,34.58,101.1,1,0,0,1.4,0,0
+5000864,900864,2026-01,24,annual,basic,Wales,partner,card,,34.1,2,2,3,16.8,20,0
+5000865,900865,2025-12,42,monthly,basic,Scotland,store,direct_debit,25.24,129.6,2,2,0,13.2,0,0
+5000866,900866,2025-12,33,two_year,standard,Scotland,store,direct_debit,27.92,149.9,4,3,1,2.9,0,0
+5000867,900867,2025-11,14,annual,basic,North West,web,card,46.2,67.3,5,1,0,10.9,0,0
+5000868,900868,2025-10,10,monthly,basic,North West,partner,card,21.15,299.8,5,0,0,0.3,0,0
+5000869,900869,2025-12,40,monthly,basic,Midlands,store,direct_debit,20.3,161.5,3,0,0,0.2,0,0
+5000870,900870,2025-10,35,monthly,standard,Midlands,store,direct_debit,24.75,69.4,2,0,0,,0,0
+5000871,900871,2026-02,38,monthly,premium,South East,store,card,124.9,83.0,2,0,1,,0,0
+5000872,900872,2025-10,31,annual,premium,London,store,direct_debit,60.4,123.9,4,0,0,0.2,0,0
+5000873,900873,2025-12,35,annual,standard,wales,web,card,,79.7,4,2,1,,10,0
+5000874,900874,2025-12,36,annual,standard,Wales,web,invoice,89.7,162.0,1,0,1,,0,0
+5000875,900875,2025-12,24,annual,basic,Midlands,web,direct_debit,13.13,59.3,4,0,0,1.4,0,0
+5000876,900876,2026-02,39,annual,standard,Scotland,partner,direct_debit,,65.4,3,0,0,1.8,0,0
+5000877,900877,2026-01,47,monthly,basic,Wales,store,direct_debit,21.32,11.4,2,0,0,0.7,0,0
+5000878,900878,2026-01,39,annual,premium,Midlands,web,card,75.83,46.5,2,0,0,0.8,0,0
+5000879,900879,2025-12,6,annual,basic,London,phone,direct_debit,44.05,97.8,2,0,0,,0,0
+5000880,900880,2026-02,47,two_year,basic,north west,store,direct_debit,23.56,124.1,1,0,0,5.5,0,0
+5000881,900881,2025-12,4,two_year,standard,Wales,store,direct_debit,49.46,114.2,4,1,0,19.6,0,0
+5000882,900882,2025-12,9,monthly,basic,Scotland,partner,direct_debit,42.34,222.6,2,1,0,3.5,0,0
+5000883,900883,2025-12,30,monthly,premium,wales,store,invoice,89.76,52.7,5,2,1,2.1,0,0
+5000884,900884,2025-11,31,annual,basic,North West,web,card,54.01,142.5,4,2,3,,0,0
+5000885,900885,2025-11,37,monthly,basic,North West,store,direct_debit,32.36,100.6,1,0,0,1.8,10,0
+5000886,900886,2026-03,18,two_year,basic,Midlands,phone,card,69.53,47.9,5,4,2,,0,0
+5000887,900887,2025-12,10,annual,basic,South East,store,direct_debit,45.28,169.3,5,0,0,1.5,0,0
+5000888,900888,2026-02,9,annual,standard,London,phone,direct_debit,28.5,124.4,5,0,0,,0,0
+5000889,900889,2026-01,3,two_year,basic,London,partner,direct_debit,28.7,141.9,5,2,1,18.3,0,0
+5000890,900890,2026-02,8,annual,standard,London,web,direct_debit,48.52,104.6,1,1,0,11.5,0,0
+5000891,900891,2026-01,28,monthly,standard,London,web,direct_debit,31.99,58.0,2,0,0,8.9,0,0
+5000892,900892,2025-10,16,annual,basic,London,store,card,40.29,95.9,3,1,0,0.6,0,0
+5000893,900893,2025-12,14,monthly,standard,London,web,direct_debit,46.82,227.5,5,1,0,3.1,0,0
+5000894,900894,2026-01,37,monthly,basic,South East,phone,direct_debit,29.35,161.9,2,0,0,2.4,0,0
+5000895,900895,2025-10,29,annual,standard,Wales,store,direct_debit,22.17,162.9,3,0,0,0.0,0,0
+5000896,900896,2025-11,40,annual,standard,Scotland,store,card,104.38,101.6,2,2,0,2.8,0,0
+5000897,900897,2026-01,48,two_year,basic,South East,web,direct_debit,38.11,93.1,1,1,1,1.8,0,0
+5000898,900898,2025-10,14,annual,standard,Wales,partner,card,28.3,41.7,4,1,0,3.5,0,0
+5000899,900899,2026-01,24,annual,basic,North West,web,card,56.24,75.5,4,1,0,8.0,0,0
+5000900,900900,2025-11,26,annual,premium,South East,web,direct_debit,54.31,90.1,5,1,0,5.4,0,0
+5000901,900901,2026-01,17,monthly,standard,Scotland,store,card,37.32,185.5,1,4,1,44.6,0,0
+5000902,900902,2025-11,6,two_year,standard,South East,web,card,39.1,83.6,3,0,0,0.0,0,0
+5000903,900903,2026-01,4,annual,basic,South East,store,direct_debit,16.62,54.8,3,1,0,6.3,0,0
+5000904,900904,2025-12,8,monthly,premium,London,partner,direct_debit,67.54,12.1,2,1,2,11.3,0,0
+5000905,900905,2025-11,21,two_year,standard,Midlands,web,direct_debit,40.81,118.9,5,0,0,0.8,10,0
+5000906,900906,2025-10,3,two_year,standard,NORTH WEST,web,direct_debit,26.34,116.4,5,0,0,1.0,0,0
+5000907,900907,2025-11,38,monthly,basic,Scotland,phone,card,27.35,220.4,3,0,1,8.3,10,0
+5000908,900908,2025-12,2,two_year,premium,North West,store,card,34.03,56.6,5,0,0,2.2,20,0
+5000909,900909,2026-02,34,monthly,standard,Wales,store,card,63.42,160.6,4,0,0,12.3,0,0
+5000910,900910,2025-10,16,annual,standard,Scotland,store,direct_debit,19.62,78.7,3,0,0,,10,0
+5000911,900911,2026-01,39,monthly,standard,Scotland,partner,direct_debit,81.51,293.0,2,0,0,,0,0
+5000912,900912,2025-11,29,monthly,basic,Scotland,web,direct_debit,,114.6,4,1,1,7.0,0,0
+5000913,900913,2025-12,10,annual,basic,Wales,partner,card,49.32,59.3,5,0,0,0.8,0,0
+5000914,900914,2026-01,14,monthly,basic,Midlands,phone,direct_debit,38.69,173.8,2,1,1,8.4,0,0
+5000915,900915,2026-02,10,two_year,standard,North West,phone,invoice,31.53,127.2,3,1,0,4.0,0,0
+5000916,900916,2026-02,31,annual,basic,Midlands,partner,card,23.35,41.8,3,1,0,5.2,0,0
+5000917,900917,2026-01,41,two_year,standard,South East,partner,card,50.28,82.3,2,1,0,2.1,0,0
+5000918,900918,2025-12,5,annual,standard,North West,web,direct_debit,35.31,277.3,3,1,0,3.2,0,0
+5000919,900919,2025-12,6,monthly,basic,South East,store,direct_debit,65.76,211.9,5,1,0,13.2,0,0
+5000920,900920,2025-12,34,two_year,standard,Wales,web,invoice,82.1,84.9,2,3,1,15.6,0,0
+5000921,900921,2026-01,47,two_year,standard,North West,store,card,39.25,46.1,1,2,0,8.1,0,0
+5000922,900922,2026-01,5,monthly,premium,Scotland,partner,direct_debit,44.29,70.5,4,0,1,2.5,0,0
+5000923,900923,2025-11,36,two_year,basic,Wales,store,card,60.25,31.8,5,0,1,8.7,10,0
+5000924,900924,2026-03,10,two_year,basic,midlands,web,card,40.39,75.0,5,0,0,,0,0
+5000925,900925,2025-12,34,two_year,premium,london,phone,direct_debit,49.28,197.9,5,1,0,6.9,0,0
+5000926,900926,2025-11,27,two_year,basic,London,store,direct_debit,47.71,64.6,4,0,0,3.4,10,0
+5000927,900927,2026-02,10,annual,premium,Scotland,web,card,83.75,73.6,5,0,0,1.6,0,0
+5000928,900928,2025-11,36,monthly,basic,London,web,card,75.38,64.5,3,2,0,0.5,0,0
+5000929,900929,2026-01,2,two_year,basic,south east,store,card,42.57,86.5,3,0,0,13.6,0,0
+5000930,900930,2025-11,44,monthly,basic,south east,store,direct_debit,27.0,263.0,1,0,0,1.6,0,0
+5000931,900931,2026-01,30,monthly,standard,South East,partner,direct_debit,37.54,71.7,2,1,0,0.7,0,0
+5000932,900932,2025-10,31,monthly,standard,Scotland,web,card,51.81,91.2,3,0,1,12.0,0,0
+5000933,900933,2026-03,8,annual,basic,London,store,card,,69.9,1,3,0,2.9,0,0
+5000934,900934,2025-12,12,monthly,standard,Midlands,web,card,40.44,230.9,1,0,0,1.0,10,0
+5000935,900935,2025-11,40,two_year,basic,scotland,store,direct_debit,55.0,79.5,3,1,0,6.4,0,0
+5000936,900936,2025-11,28,monthly,basic,North West,phone,direct_debit,,283.0,4,1,0,7.8,0,0
+5000937,900937,2025-10,21,monthly,standard,Scotland,store,direct_debit,36.48,36.4,2,0,0,3.5,10,0
+5000938,900938,2025-12,15,monthly,standard,Midlands,store,direct_debit,38.43,128.6,1,0,0,9.2,0,0
+5000939,900939,2025-10,32,annual,basic,Scotland,web,direct_debit,48.55,108.7,3,1,0,58.8,0,0
+5000940,900940,2025-11,15,two_year,basic,Wales,web,card,65.47,106.3,5,0,0,14.1,0,0
+5000941,900941,2026-01,20,annual,basic,London,web,card,23.74,145.5,3,1,1,4.2,0,0
+5000942,900942,2026-01,27,annual,basic,Wales,web,card,11.13,60.4,4,2,0,49.8,0,0
+5000943,900943,2025-11,35,annual,basic,London,store,direct_debit,68.39,84.4,1,0,0,1.8,0,0
+5000944,900944,2026-01,31,monthly,premium,South East,web,direct_debit,97.32,199.5,2,0,1,10.3,0,0
+5000945,900945,2026-02,29,annual,basic,Midlands,partner,direct_debit,18.4,212.9,4,2,0,7.2,0,0
+5000946,900946,2025-11,34,monthly,standard,Wales,web,direct_debit,-26.83,66.0,5,2,2,1.8,0,0
+5000947,900947,2026-01,35,monthly,standard,london,web,direct_debit,95.63,88.4,2,0,0,8.1,20,0
+5000948,900948,2026-03,51,annual,basic,London,store,direct_debit,32.25,43.7,3,2,0,,0,0
+5000949,900949,2026-02,34,monthly,standard,North West,web,card,66.2,287.8,3,2,0,15.7,0,0
+5000950,900950,2025-11,37,monthly,standard,midlands,web,card,15.94,59.5,4,1,2,37.1,0,0
+5000951,900951,2025-12,13,monthly,standard,North West,partner,invoice,40.77,69.9,1,1,0,0.5,0,0
+5000952,900952,2026-01,44,two_year,standard,London,web,card,64.75,302.8,4,1,0,3.5,10,0
+5000953,900953,2026-01,30,monthly,standard,London,web,direct_debit,40.38,79.7,4,2,1,1.6,0,0
+5000954,900954,2026-02,43,annual,basic,london,partner,direct_debit,31.56,36.6,1,3,0,7.2,0,0
+5000955,900955,2025-12,6,two_year,premium,South East,web,card,50.37,544.8,2,0,0,2.2,0,0
+5000956,900956,2026-01,26,two_year,basic,Wales,partner,direct_debit,51.31,63.9,3,0,0,15.1,0,0
+5000957,900957,2025-11,4,monthly,premium,Midlands,web,card,37.61,174.1,5,0,0,2.2,0,0
+5000958,900958,2026-01,4,annual,basic,Midlands,web,direct_debit,33.59,338.8,3,0,0,6.5,10,0
+5000959,900959,2025-10,36,monthly,basic,Scotland,store,card,41.95,24.0,5,0,0,0.2,0,0
+5000960,900960,2025-11,3,annual,standard,Wales,store,direct_debit,42.75,48.4,4,0,0,1.0,0,0
+5000961,900961,2026-01,14,monthly,premium,North West,phone,direct_debit,53.82,150.6,3,0,0,0.0,0,0
+5000962,900962,2026-02,9,annual,standard,Midlands,partner,card,59.35,53.2,5,4,1,17.7,0,0
+5000963,900963,2025-10,46,annual,standard,LONDON,phone,direct_debit,27.28,219.1,1,0,0,5.8,0,0
+5000964,900964,2026-01,30,monthly,premium,Scotland,web,direct_debit,66.0,66.7,5,0,0,2.1,0,0
+5000965,900965,2026-02,12,two_year,basic,Midlands,partner,invoice,41.22,78.3,3,1,0,6.7,0,0
+5000966,900966,2025-12,30,monthly,basic,South East,web,direct_debit,74.47,76.2,5,3,1,15.9,20,0
+5000967,900967,2026-01,28,annual,standard,Midlands,web,direct_debit,36.66,28.5,3,0,0,6.1,0,0
+5000968,900968,2025-10,32,annual,standard,Midlands,web,direct_debit,65.46,130.3,4,0,0,1.5,0,0
+5000969,900969,2026-02,29,annual,standard,North West,partner,card,47.22,243.0,5,0,0,0.8,0,0
+5000970,900970,2025-11,39,annual,standard,Scotland,web,direct_debit,39.31,73.2,4,0,0,,0,0
+5000971,900971,2025-12,37,annual,basic,Midlands,store,direct_debit,16.54,38.8,1,1,0,,0,0
+5000972,900972,2025-11,13,monthly,basic,London,store,card,17.38,126.8,4,0,0,4.5,0,0
+5000973,900973,2026-01,10,monthly,basic,Midlands,partner,card,28.43,133.7,1,5,0,6.7,0,0
+5000974,900974,2025-10,24,annual,premium,Wales,store,direct_debit,71.09,77.8,2,2,0,0.6,10,0
+5000975,900975,2025-12,46,monthly,basic,wales,web,direct_debit,36.33,44.7,4,1,0,7.5,0,0
+5000976,900976,2025-10,8,monthly,standard,Midlands,web,direct_debit,24.46,185.0,2,0,0,,0,0
+5000977,900977,2026-02,23,annual,standard,South East,store,invoice,67.03,75.1,3,0,0,6.0,0,0
+5000978,900978,2026-02,31,annual,premium,London,web,direct_debit,107.01,178.9,3,0,0,12.4,0,0
+5000979,900979,2025-11,6,monthly,premium,wales,web,direct_debit,49.61,49.3,4,1,0,7.4,0,0
+5000980,900980,2025-10,20,annual,premium,Wales,store,direct_debit,52.19,166.4,4,0,1,2.7,10,0
+5000981,900981,2025-11,34,monthly,standard,Scotland,web,direct_debit,32.26,91.0,2,1,1,3.4,0,0
+5000982,900982,2025-10,10,monthly,basic,North West,web,direct_debit,24.69,134.6,4,1,0,7.1,0,0
+5000983,900983,2025-12,46,monthly,standard,London,partner,direct_debit,67.73,172.8,1,1,0,2.7,0,0
+5000984,900984,2026-01,29,monthly,standard,Scotland,store,card,39.36,160.1,4,0,0,7.4,0,0
+5000985,900985,2025-10,22,monthly,premium,Scotland,phone,card,62.26,158.9,5,1,1,,0,0
+5000986,900986,2025-12,41,monthly,basic,South East,web,card,41.17,353.9,5,0,0,0.8,0,0
+5000987,900987,2025-11,8,two_year,standard,Midlands,store,direct_debit,37.38,107.2,2,0,0,0.4,0,0
+5000988,900988,2025-11,4,monthly,premium,North West,store,direct_debit,58.64,112.0,3,6,0,1.7,0,0
+5000989,900989,2025-12,35,annual,basic,Wales,web,direct_debit,39.68,87.7,1,4,1,2.5,10,0
+5000990,900990,2025-10,4,two_year,premium,London,web,direct_debit,52.47,285.8,1,0,0,12.3,0,0
+5000991,900991,2025-11,39,annual,basic,Wales,web,direct_debit,25.28,69.0,5,0,0,0.1,0,0
+5000992,900992,2025-10,39,two_year,premium,Midlands,phone,card,110.61,115.4,5,0,0,,0,0
+5000993,900993,2026-02,12,monthly,standard,Scotland,store,card,62.19,143.5,4,2,2,1.6,0,0
+5000994,900994,2026-01,22,annual,basic,South East,web,direct_debit,52.97,102.8,4,0,0,5.4,0,0
+5000995,900995,2025-11,40,two_year,basic,Midlands,web,direct_debit,37.85,58.5,1,1,0,13.8,0,0
+5000996,900996,2026-02,39,monthly,standard,South East,web,direct_debit,28.04,102.6,5,2,0,14.5,0,0
+5000997,900997,2026-01,20,monthly,basic,South East,web,invoice,29.15,70.9,4,1,0,2.2,0,0
+5000998,900998,2026-01,37,monthly,standard,North West,web,direct_debit,41.3,214.8,2,0,0,1.0,0,0
+5000999,900999,2025-11,37,annual,basic,Midlands,web,card,,77.3,3,1,0,0.4,0,0
+5001000,901000,2026-01,23,annual,premium,London,web,direct_debit,86.78,72.9,3,0,0,13.2,0,0
+5001001,901001,2025-11,30,monthly,basic,SCOTLAND,web,direct_debit,15.95,79.1,3,0,0,0.1,0,0
+5001002,901002,2025-12,12,annual,basic,North West,web,direct_debit,22.93,94.6,2,0,0,6.3,0,0
+5001003,901003,2026-01,32,annual,standard,Wales,store,direct_debit,32.37,128.0,2,0,0,0.2,0,0
+5001004,901004,2026-01,33,two_year,standard,london,web,direct_debit,46.93,75.6,4,0,0,13.1,0,0
+5001005,901005,2025-12,11,annual,basic,Midlands,store,direct_debit,42.1,212.2,1,0,0,0.6,0,0
+5001006,901006,2025-12,46,monthly,basic,Wales,partner,card,37.75,43.3,3,1,1,3.4,0,0
+5001007,901007,2026-03,18,annual,basic,London,web,direct_debit,69.69,58.9,5,0,0,29.7,0,0
+5001008,901008,2026-01,37,monthly,standard,South East,web,direct_debit,51.19,75.9,2,1,2,5.6,0,0
+5001009,901009,2025-11,5,annual,standard,London,web,direct_debit,45.63,113.5,4,1,0,4.2,0,0
+5001010,901010,2026-01,26,monthly,premium,South East,web,direct_debit,50.23,127.7,2,5,2,64.5,0,0
+5001011,901011,2025-12,36,monthly,standard,London,store,direct_debit,19.34,35.2,3,1,0,2.1,0,0
+5001012,901012,2025-12,28,two_year,premium,North West,web,card,54.67,99.3,3,1,1,4.1,0,0
+5001013,901013,2026-02,12,monthly,standard,South East,web,direct_debit,46.26,45.3,1,1,0,8.6,0,0
+5001014,901014,2026-01,48,monthly,premium,South East,web,direct_debit,91.34,276.4,2,0,0,1.1,0,0
+5001015,901015,2026-01,39,annual,standard,wales,store,direct_debit,68.41,163.1,2,0,2,4.4,10,0
+5001016,901016,2026-01,42,two_year,premium,London,web,direct_debit,41.5,115.1,1,0,0,2.9,0,0
+5001017,901017,2025-12,25,monthly,premium,London,phone,card,54.58,104.8,3,3,0,17.1,0,0
+5001018,901018,2025-11,30,two_year,standard,Scotland,web,direct_debit,43.25,80.5,3,1,0,7.8,0,0
+5001019,901019,2025-12,41,monthly,basic,London,web,direct_debit,9.93,213.4,5,0,1,3.8,0,0
+5001020,901020,2026-01,7,annual,premium,Scotland,partner,direct_debit,63.78,160.0,1,1,0,5.1,0,0
+5001021,901021,2026-02,32,monthly,premium,North West,web,card,56.51,176.5,3,0,0,1.7,0,0
+5001022,901022,2025-10,1,annual,basic,London,partner,direct_debit,42.55,156.3,3,1,0,2.2,0,0
+5001023,901023,2026-01,32,two_year,premium,Wales,web,direct_debit,39.25,42.9,4,0,3,15.3,0,0
+5001024,901024,2025-11,6,annual,premium,North West,web,direct_debit,82.47,252.0,2,0,0,1.7,0,0
+5001025,901025,2026-01,3,annual,basic,Wales,web,direct_debit,66.72,167.7,1,0,0,0.5,0,0
+5001026,901026,2026-01,8,two_year,standard,Scotland,web,card,32.92,155.9,4,3,0,1.2,0,0
+5001027,901027,2026-01,17,monthly,standard,North West,partner,invoice,77.5,111.5,1,0,1,7.0,0,0
+5001028,901028,2025-11,36,two_year,premium,London,web,card,54.51,237.5,4,0,0,8.9,0,0
+5001029,901029,2025-10,16,monthly,standard,Wales,store,direct_debit,36.62,81.0,3,1,0,2.3,0,0
+5001030,901030,2026-03,45,monthly,basic,Wales,web,card,43.22,77.4,1,0,0,0.5,0,0
+5001031,901031,2025-11,30,monthly,standard,North West,web,direct_debit,19.47,39.0,4,1,0,16.6,0,0
+5001032,901032,2025-10,20,annual,premium,Scotland,web,invoice,41.15,73.9,5,0,0,4.2,0,0
+5001033,901033,2026-01,40,annual,standard,London,web,direct_debit,39.52,90.4,1,0,0,6.2,10,0
+5001034,901034,2026-01,28,two_year,premium,South East,web,direct_debit,,97.9,5,0,0,2.1,0,0
+5001035,901035,2025-11,14,two_year,standard,South East,partner,direct_debit,97.53,42.2,5,0,0,0.1,0,0
+5001036,901036,2025-11,38,annual,basic,wales,partner,direct_debit,28.88,35.5,4,0,0,4.3,0,0
+5001037,901037,2025-12,30,annual,standard,North West,web,direct_debit,37.68,56.4,1,2,0,0.7,0,0
+5001038,901038,2025-12,16,annual,standard,Wales,web,invoice,38.49,144.2,4,4,1,3.8,0,0
+5001039,901039,2026-01,12,annual,basic,London,web,invoice,24.45,36.4,1,0,0,2.2,0,0
+5001040,901040,2025-12,3,monthly,standard,Scotland,web,card,37.43,120.8,1,0,0,0.2,0,0
+5001041,901041,2025-10,22,annual,basic,Wales,web,direct_debit,22.93,121.8,1,0,0,3.3,0,0
+5001042,901042,2025-11,8,annual,basic,Midlands,web,direct_debit,23.25,113.2,3,0,0,1.3,0,0
+5001043,901043,2026-03,28,annual,premium,Wales,web,invoice,,108.6,1,0,0,1.0,0,0
+5001044,901044,2026-01,35,monthly,basic,South East,store,invoice,12.74,268.6,1,1,1,13.9,10,0
+5001045,901045,2026-01,12,monthly,standard,Scotland,partner,card,46.49,66.3,2,1,1,40.8,0,0
+5001046,901046,2026-02,15,monthly,basic,North West,web,card,16.53,41.4,3,2,1,9.9,0,0
+5001047,901047,2026-01,32,monthly,basic,Midlands,phone,direct_debit,11.55,143.1,2,1,0,4.9,0,0
+5001048,901048,2025-10,29,monthly,standard,South East,web,direct_debit,22.52,146.4,5,0,0,,0,0
+5001049,901049,2025-11,45,monthly,basic,North West,store,direct_debit,32.9,45.2,1,0,0,2.9,0,0
+5001050,901050,2025-11,46,monthly,basic,Wales,partner,card,33.29,73.4,2,0,0,3.9,0,0
+5001051,901051,2025-10,38,monthly,premium,South East,web,card,53.56,152.9,2,0,1,4.8,0,0
+5001052,901052,2026-01,9,monthly,premium,Wales,web,invoice,64.02,195.4,1,0,0,1.0,0,0
+5001053,901053,2025-12,36,monthly,standard,London,store,direct_debit,41.94,206.0,1,0,0,13.4,0,0
+5001054,901054,2026-03,8,annual,basic,Scotland,store,invoice,32.54,45.7,5,1,0,22.3,0,0
+5001055,901055,2026-01,30,annual,premium,Midlands,web,direct_debit,61.32,168.0,2,0,0,1.5,0,0
+5001056,901056,2025-11,16,two_year,premium,Midlands,web,direct_debit,47.25,117.1,3,0,0,1.8,0,0
+5001057,901057,2026-01,34,monthly,basic,Midlands,web,invoice,27.85,131.8,1,0,0,0.4,0,0
+5001058,901058,2025-10,38,two_year,standard,Scotland,store,direct_debit,39.47,154.9,5,0,0,21.5,10,0
+5001059,901059,2025-12,48,monthly,basic,wales,partner,direct_debit,68.42,125.1,5,2,0,4.2,0,0
+5001060,901060,2026-02,42,two_year,basic,london,web,direct_debit,24.27,259.7,2,0,0,5.8,10,0
+5001061,901061,2026-01,2,annual,basic,Wales,phone,direct_debit,8.34,149.6,5,1,0,7.4,10,0
+5001062,901062,2026-01,41,two_year,basic,South East,web,direct_debit,39.81,28.0,5,0,0,9.4,0,0
+5001063,901063,2026-01,5,monthly,premium,North West,phone,direct_debit,44.25,155.0,2,0,0,19.6,0,0
+5001064,901064,2025-12,3,annual,standard,Scotland,web,card,63.58,116.1,1,1,0,1.0,0,0
+5001065,901065,2025-12,36,monthly,premium,Wales,partner,card,98.23,79.4,5,0,0,21.1,0,0
+5001066,901066,2025-12,44,annual,standard,Midlands,store,direct_debit,77.18,238.1,5,0,0,0.3,10,0
+5001067,901067,2026-02,45,two_year,basic,South East,store,card,33.09,59.7,2,0,0,1.0,10,0
+5001068,901068,2026-02,21,two_year,premium,London,partner,card,49.1,567.3,4,1,0,4.0,0,0
+5001069,901069,2025-10,22,annual,basic,London,web,card,46.55,90.6,4,0,0,14.9,0,0
+5001070,901070,2026-01,18,monthly,basic,Midlands,phone,direct_debit,15.63,106.7,3,2,0,6.7,0,0
+5001071,901071,2025-11,10,annual,premium,South East,web,direct_debit,66.81,22.6,2,2,1,0.7,0,0
+5001072,901072,2026-03,28,monthly,basic,Scotland,web,direct_debit,50.35,75.8,2,4,1,43.0,10,0
+5001073,901073,2025-10,5,monthly,standard,Midlands,store,direct_debit,20.02,41.0,1,1,1,5.9,0,0
+5001074,901074,2025-10,43,monthly,basic,Wales,web,direct_debit,33.44,110.7,2,0,0,7.5,0,0
+5001075,901075,2025-11,34,monthly,basic,Midlands,store,direct_debit,24.92,146.4,4,1,2,15.8,0,0
+5001076,901076,2026-01,22,monthly,standard,Scotland,web,card,87.68,127.0,5,0,0,0.1,0,0
+5001077,901077,2025-11,4,two_year,premium,London,partner,invoice,,63.7,5,0,0,16.8,0,0
+5001078,901078,2025-12,4,monthly,standard,Wales,web,card,40.34,177.1,1,1,0,6.7,0,0
+5001079,901079,2025-11,7,monthly,standard,North West,store,card,25.56,40.2,1,0,0,3.3,20,0
+5001080,901080,2025-11,46,monthly,standard,South East,web,direct_debit,25.62,150.6,4,5,1,3.0,0,0
+5001081,901081,2025-10,21,monthly,basic,London,store,direct_debit,63.08,88.6,1,1,1,4.8,10,0
+5001082,901082,2025-11,14,two_year,basic,Wales,partner,card,32.25,157.1,3,1,0,10.3,10,0
+5001083,901083,2025-11,22,annual,standard,London,partner,invoice,48.7,151.1,3,0,0,4.9,0,0
+5001084,901084,2025-12,43,monthly,standard,midlands,partner,direct_debit,38.01,98.9,4,0,1,9.6,0,0
+5001085,901085,2025-12,48,monthly,standard,london,web,invoice,,135.5,2,1,0,14.4,0,0
+5001086,901086,2026-02,23,monthly,basic,North West,partner,direct_debit,18.67,123.5,2,2,0,4.8,0,0
+5001087,901087,2025-12,7,annual,premium,London,partner,direct_debit,41.54,65.7,2,0,0,2.4,0,0
+5001088,901088,2025-12,16,two_year,basic,Scotland,web,direct_debit,12.86,182.1,1,0,0,0.2,0,0
+5001089,901089,2025-11,14,monthly,premium,Scotland,web,direct_debit,46.2,139.8,5,1,0,1.2,0,0
+5001090,901090,2026-01,6,monthly,premium,Wales,web,direct_debit,61.89,46.8,5,3,0,2.5,20,0
+5001091,901091,2025-12,12,annual,standard,Midlands,store,direct_debit,18.09,55.8,4,1,0,20.2,10,0
+5001092,901092,2026-01,1,two_year,basic,Wales,phone,direct_debit,31.77,151.9,5,0,0,3.9,0,0
+5001093,901093,2025-10,31,monthly,standard,South East,web,card,38.86,121.6,1,3,0,0.3,0,0
+5001094,901094,2025-12,10,monthly,standard,Midlands,partner,card,39.39,46.5,4,1,0,0.4,0,0
+5001095,901095,2025-12,41,annual,premium,Midlands,phone,card,48.44,202.8,4,0,0,4.3,0,0
+5001096,901096,2026-02,10,monthly,standard,SCOTLAND,partner,direct_debit,49.03,168.5,1,6,1,5.0,10,0
+5001097,901097,2025-11,28,annual,basic,Midlands,web,direct_debit,17.23,52.5,5,2,1,3.6,10,0
+5001098,901098,2025-11,45,monthly,basic,London,web,card,26.61,34.4,3,0,0,6.5,10,0
+5001099,901099,2025-11,31,monthly,standard,Scotland,phone,card,60.21,66.2,2,0,0,11.1,0,0
+5001100,901100,2025-11,8,monthly,standard,Scotland,partner,card,70.47,115.9,4,2,0,4.8,0,0
+5001101,901101,2025-11,26,monthly,standard,Wales,store,card,46.92,72.6,1,1,0,4.0,0,0
+5001102,901102,2026-01,45,annual,standard,North West,web,direct_debit,61.03,113.0,4,0,0,,20,0
+5001103,901103,2026-01,49,monthly,standard,London,store,invoice,41.97,43.3,3,1,0,7.1,0,0
+5001104,901104,2026-01,10,monthly,standard,South East,partner,direct_debit,28.07,144.3,3,0,0,0.9,0,0
+5001105,901105,2025-11,25,monthly,premium,Midlands,web,invoice,49.29,79.2,1,3,0,7.8,0,0
+5001106,901106,2025-12,29,monthly,basic,wales,partner,card,25.89,61.1,5,2,0,7.6,0,0
+5001107,901107,2026-02,8,two_year,standard,Midlands,partner,direct_debit,66.28,112.3,1,2,0,,10,0
+5001108,901108,2025-12,36,two_year,basic,North West,partner,direct_debit,25.45,97.2,5,2,1,5.9,0,0
+5001109,901109,2025-12,42,monthly,basic,South East,partner,direct_debit,44.65,187.2,5,1,0,10.4,0,0
+5001110,901110,2025-11,17,two_year,premium,London,web,direct_debit,38.66,73.3,2,0,0,0.2,0,0
+5001111,901111,2025-11,45,annual,basic,Midlands,store,direct_debit,33.21,242.0,3,1,0,3.1,0,0
+5001112,901112,2025-12,35,two_year,standard,Wales,phone,invoice,30.53,94.8,4,2,0,0.0,0,0
+5001113,901113,2025-10,18,monthly,standard,South East,web,card,53.29,170.5,5,0,0,6.6,0,0
+5001114,901114,2025-11,38,annual,basic,North West,store,direct_debit,24.6,71.7,1,0,0,15.5,0,0
+5001115,901115,2025-11,41,monthly,standard,Scotland,partner,direct_debit,39.6,64.3,5,1,0,3.4,0,0
+5001116,901116,2026-01,31,two_year,standard,North West,web,direct_debit,64.54,142.4,3,4,0,0.2,0,0
+5001117,901117,2026-01,34,monthly,standard,south east,store,card,,155.6,1,1,1,15.0,0,0
+5001118,901118,2026-02,34,annual,standard,South East,web,direct_debit,53.95,121.7,2,1,0,8.6,20,0
+5001119,901119,2025-11,14,annual,premium,South East,partner,card,39.73,100.8,1,1,0,6.9,0,0
+5001120,901120,2025-10,14,monthly,standard,Wales,phone,direct_debit,49.17,127.6,5,1,0,0.8,0,0
+5001121,901121,2026-01,26,annual,premium,North West,phone,direct_debit,80.32,244.9,2,0,0,,0,0
+5001122,901122,2025-10,18,monthly,basic,South East,store,direct_debit,56.22,83.8,3,1,1,2.0,0,0
+5001123,901123,2025-11,48,two_year,premium,London,store,card,50.8,175.4,3,0,0,0.3,0,0
+5001124,901124,2026-02,10,monthly,standard,Wales,web,direct_debit,42.98,143.8,2,1,0,5.3,0,0
+5001125,901125,2025-11,35,annual,basic,Wales,store,direct_debit,60.38,52.5,4,0,0,1.0,0,0
+5001126,901126,2026-03,35,monthly,basic,North West,store,direct_debit,45.67,68.8,4,1,2,0.2,0,0
+5001127,901127,2025-10,33,annual,basic,midlands,partner,direct_debit,81.01,73.0,4,1,0,8.5,0,0
+5001128,901128,2025-11,38,monthly,standard,Wales,web,card,,72.8,5,3,0,12.3,0,0
+5001129,901129,2025-12,30,annual,standard,wales,partner,direct_debit,24.34,126.5,4,0,0,8.9,0,0
+5001130,901130,2025-10,12,two_year,basic,London,web,card,48.08,219.4,3,0,0,7.8,0,0
+5001131,901131,2026-03,43,monthly,basic,Wales,web,invoice,28.11,160.2,4,0,0,24.1,0,0
+5001132,901132,2025-11,10,monthly,basic,scotland,web,direct_debit,30.24,286.2,4,2,1,1.2,0,0
+5001133,901133,2025-11,37,two_year,premium,Midlands,store,direct_debit,66.92,255.8,5,0,0,18.0,0,0
+5001134,901134,2025-11,6,annual,standard,Scotland,store,direct_debit,73.01,43.9,5,0,1,0.7,0,0
+5001135,901135,2025-11,8,annual,standard,London,web,direct_debit,83.77,138.4,4,0,1,9.5,0,0
+5001136,901136,2026-03,44,monthly,standard,Wales,store,direct_debit,43.69,51.6,5,1,0,3.8,0,0
+5001137,901137,2026-02,44,annual,standard,North West,phone,direct_debit,44.36,81.3,1,1,0,0.9,10,0
+5001138,901138,2025-11,9,monthly,basic,Wales,web,direct_debit,64.73,86.2,2,1,0,0.2,0,0
+5001139,901139,2026-01,29,two_year,standard,Scotland,store,direct_debit,32.02,42.8,5,1,1,9.7,10,0
+5001140,901140,2025-11,2,monthly,premium,Midlands,phone,card,34.26,40.1,1,1,0,58.3,0,0
+5001141,901141,2026-01,16,monthly,standard,Midlands,web,direct_debit,44.34,80.9,4,0,1,,0,0
+5001142,901142,2026-02,21,annual,standard,South East,store,direct_debit,42.72,128.3,4,0,0,6.9,0,0
+5001143,901143,2025-11,37,monthly,standard,Wales,partner,direct_debit,93.69,108.9,1,0,0,1.7,0,0
+5001144,901144,2026-02,48,monthly,premium,south east,store,invoice,37.57,122.5,1,0,0,2.9,0,0
+5001145,901145,2026-01,19,monthly,basic,Wales,web,direct_debit,29.15,235.8,2,2,0,4.3,0,0
+5001146,901146,2026-01,44,two_year,basic,london,store,invoice,62.68,52.3,5,0,0,7.4,0,0
+5001147,901147,2025-10,2,annual,standard,Midlands,store,direct_debit,36.17,68.2,2,1,0,2.0,0,0
+5001148,901148,2026-01,18,monthly,standard,Midlands,partner,direct_debit,28.53,104.5,4,1,0,4.5,10,0
+5001149,901149,2026-01,7,two_year,basic,south east,store,direct_debit,,156.4,5,3,1,9.2,0,0
+5001150,901150,2025-11,25,annual,premium,South East,partner,invoice,67.13,13.5,4,0,1,5.7,0,0
+5001151,901151,2025-12,26,monthly,premium,London,web,direct_debit,76.81,82.2,4,0,1,9.5,0,0
+5001152,901152,2025-10,8,two_year,standard,South East,phone,card,67.17,112.8,1,0,0,4.1,0,0
+5001153,901153,2026-01,26,annual,standard,Scotland,phone,card,38.7,61.6,2,0,1,2.2,20,0
+5001154,901154,2025-12,14,annual,basic,Scotland,web,direct_debit,17.11,34.6,2,0,0,5.7,0,0
+5001155,901155,2026-01,26,monthly,standard,Midlands,web,card,45.35,215.0,2,0,0,26.2,10,0
+5001156,901156,2025-11,18,two_year,premium,London,store,invoice,78.13,153.6,4,1,0,1.4,0,0
+5001157,901157,2026-01,18,monthly,basic,South East,store,direct_debit,19.76,246.9,2,0,1,0.7,0,0
+5001158,901158,2026-01,26,monthly,premium,London,web,card,43.88,47.7,2,1,0,6.8,0,0
+5001159,901159,2025-11,27,annual,standard,London,partner,direct_debit,25.82,149.0,2,3,0,4.7,20,0
+5001160,901160,2025-11,12,monthly,basic,SOUTH EAST,partner,direct_debit,39.79,209.7,1,2,0,15.4,0,0
+5001161,901161,2025-12,31,two_year,premium,South East,web,direct_debit,60.26,132.8,1,0,0,0.7,0,0
+5001162,901162,2025-10,27,monthly,basic,Midlands,web,card,49.37,177.4,5,1,0,3.3,0,0
+5001163,901163,2026-02,40,monthly,basic,Scotland,partner,card,28.33,139.2,5,1,1,0.5,0,0
+5001164,901164,2025-11,33,annual,standard,North West,web,direct_debit,49.83,163.4,5,0,0,1.5,0,0
+5001165,901165,2025-12,17,monthly,standard,London,web,card,37.74,52.5,1,0,0,7.5,0,0
+5001166,901166,2025-12,47,annual,basic,London,store,card,17.79,48.0,3,2,1,,10,0
+5001167,901167,2025-12,9,annual,standard,London,web,direct_debit,70.8,124.9,4,2,0,19.0,20,0
+5001168,901168,2025-12,19,monthly,standard,Wales,partner,direct_debit,34.68,96.4,4,0,0,0.3,0,0
+5001169,901169,2025-12,7,annual,standard,Midlands,store,card,23.64,188.9,2,0,1,12.9,0,0
+5001170,901170,2025-11,23,monthly,basic,Wales,partner,direct_debit,66.89,199.8,1,0,0,5.3,20,0
+5001171,901171,2026-01,44,annual,standard,Scotland,partner,direct_debit,34.02,137.1,2,3,1,,0,0
+5001172,901172,2025-12,32,two_year,premium,north west,web,direct_debit,101.58,128.3,2,0,0,1.6,0,0
+5001173,901173,2026-02,7,annual,basic,Scotland,partner,direct_debit,24.0,131.3,1,1,0,10.0,0,0
+5001174,901174,2025-12,21,annual,basic,Midlands,web,direct_debit,59.12,217.3,1,1,0,3.4,0,0
+5001175,901175,2026-01,31,two_year,basic,Wales,web,direct_debit,51.19,161.1,3,2,0,5.5,0,0
+5001176,901176,2025-11,29,two_year,standard,Scotland,partner,card,21.79,75.5,5,0,1,0.7,20,0
+5001177,901177,2026-01,10,two_year,premium,South East,web,invoice,41.55,146.0,3,0,0,50.4,0,0
+5001178,901178,2025-11,40,monthly,basic,North West,phone,direct_debit,24.83,224.1,3,0,0,2.5,0,0
+5001179,901179,2026-01,6,two_year,basic,Wales,partner,direct_debit,18.27,73.8,3,0,0,,0,0
+5001180,901180,2025-12,4,monthly,standard,Scotland,store,direct_debit,43.51,255.6,5,0,0,0.9,0,0
+5001181,901181,2026-03,6,monthly,standard,North West,phone,card,27.63,173.3,3,3,2,16.1,0,0
+5001182,901182,2026-03,8,monthly,standard,North West,store,card,28.01,71.2,5,1,1,2.4,0,0
+5001183,901183,2025-11,1,annual,standard,Scotland,web,direct_debit,35.74,67.9,1,1,1,21.1,10,0
+5001184,901184,2025-12,35,monthly,premium,WALES,web,direct_debit,53.62,212.7,2,0,0,39.2,0,0
+5001185,901185,2026-03,22,two_year,standard,Wales,store,direct_debit,25.24,302.8,3,1,0,1.5,0,0
+5001186,901186,2025-11,44,annual,standard,Wales,web,invoice,42.29,154.6,5,0,1,3.4,0,0
+5001187,901187,2025-11,7,monthly,premium,Scotland,web,invoice,122.76,24.3,3,1,0,18.3,0,0
+5001188,901188,2025-12,43,monthly,standard,North West,web,direct_debit,17.9,189.6,4,0,0,1.1,0,0
+5001189,901189,2025-12,7,monthly,premium,London,store,direct_debit,46.55,321.7,2,0,0,11.2,0,0
+5001190,901190,2026-02,40,monthly,standard,london,phone,direct_debit,67.37,83.7,5,0,0,12.9,0,0
+5001191,901191,2025-10,8,annual,standard,North West,store,invoice,47.72,108.3,5,1,0,5.2,10,0
+5001192,901192,2025-12,29,annual,basic,South East,partner,direct_debit,29.19,134.2,4,0,0,0.9,0,0
+5001193,901193,2025-10,2,annual,premium,Midlands,web,card,71.04,247.0,1,2,0,,0,0
+5001194,901194,2025-10,2,monthly,standard,Scotland,web,card,58.29,81.3,4,0,0,1.7,0,0
+5001195,901195,2025-11,9,monthly,standard,Midlands,web,direct_debit,27.39,61.7,3,0,0,0.9,0,0
+5001196,901196,2025-11,42,annual,basic,Midlands,store,direct_debit,42.08,291.0,4,0,1,19.3,0,0
+5001197,901197,2026-02,24,two_year,premium,Wales,web,direct_debit,53.77,48.5,1,2,0,33.4,10,0
+5001198,901198,2026-02,48,annual,basic,South East,partner,invoice,52.44,106.8,1,0,0,1.1,0,0
+5001199,901199,2025-10,31,annual,basic,scotland,store,card,22.74,157.6,1,1,0,4.4,10,0
+5001200,901200,2026-01,6,annual,standard,Midlands,phone,card,81.46,38.4,5,3,1,5.4,0,0
+5001201,901201,2026-02,41,annual,premium,North West,partner,card,36.72,56.3,3,1,0,12.4,0,0
+5001202,901202,2025-12,24,monthly,basic,Midlands,phone,direct_debit,30.06,258.8,5,1,0,19.5,0,0
+5001203,901203,2026-01,25,annual,standard,london,partner,direct_debit,35.26,56.4,5,1,0,9.4,0,0
+5001204,901204,2025-12,25,monthly,standard,Midlands,web,card,42.04,24.5,5,0,0,11.8,10,0
+5001205,901205,2025-11,38,monthly,basic,North West,store,card,74.98,61.5,3,2,1,7.9,0,0
+5001206,901206,2025-11,12,annual,standard,London,partner,direct_debit,72.98,143.5,4,1,0,6.1,10,0
+5001207,901207,2025-12,35,monthly,standard,London,partner,direct_debit,39.72,50.3,2,1,0,0.0,0,0
+5001208,901208,2025-10,26,annual,standard,London,partner,card,52.11,92.4,2,0,0,1.3,0,0
+5001209,901209,2026-02,21,monthly,standard,Midlands,web,direct_debit,40.32,140.8,2,0,0,5.1,0,0
+5001210,901210,2026-03,6,two_year,standard,NORTH WEST,phone,direct_debit,40.66,145.0,5,0,0,2.5,0,0
+5001211,901211,2026-02,21,monthly,standard,London,web,card,,200.1,1,0,0,4.4,0,0
+5001212,901212,2026-01,18,monthly,standard,North West,partner,invoice,87.8,154.6,4,0,1,0.5,10,0
+5001213,901213,2026-02,22,annual,premium,Wales,web,direct_debit,87.35,62.2,5,0,1,2.6,10,0
+5001214,901214,2026-02,2,annual,standard,LONDON,web,direct_debit,29.55,208.8,4,3,2,33.0,0,0
+5001215,901215,2026-02,26,monthly,premium,South East,web,card,41.84,117.9,4,3,0,7.9,0,0
+5001216,901216,2025-10,17,annual,basic,South East,web,direct_debit,22.0,86.2,5,0,1,22.4,20,0
+5001217,901217,2025-12,23,monthly,basic,South East,store,card,41.31,106.9,5,1,0,2.0,0,0
+5001218,901218,2026-01,24,annual,basic,south east,store,direct_debit,,167.3,1,1,0,5.8,0,0
+5001219,901219,2026-02,10,monthly,basic,South East,web,invoice,37.21,110.1,1,0,0,5.6,0,0
+5001220,901220,2025-11,30,monthly,basic,Scotland,phone,invoice,41.64,34.9,3,1,0,,0,0
+5001221,901221,2026-02,44,annual,basic,Wales,web,card,25.44,157.2,1,1,0,5.5,0,0
+5001222,901222,2025-12,43,monthly,standard,South East,web,direct_debit,54.02,87.7,2,0,0,6.1,0,0
+5001223,901223,2025-11,16,monthly,standard,South East,partner,direct_debit,27.72,31.2,2,2,0,,0,0
+5001224,901224,2026-01,38,two_year,basic,Midlands,web,card,36.06,43.2,2,0,0,13.7,0,0
+5001225,901225,2025-11,7,monthly,basic,Scotland,store,direct_debit,19.21,109.9,3,0,1,,10,0
+5001226,901226,2026-03,29,monthly,standard,Wales,phone,card,27.04,53.7,4,1,0,,0,0
+5001227,901227,2025-11,16,annual,basic,London,web,direct_debit,58.05,255.4,1,0,0,4.5,0,0
+5001228,901228,2025-12,7,monthly,premium,North West,partner,direct_debit,35.7,35.4,2,1,0,0.9,0,0
+5001229,901229,2026-01,7,annual,standard,Midlands,store,invoice,26.2,135.4,2,0,1,20.6,0,0
+5001230,901230,2025-12,34,annual,standard,South East,web,card,30.63,34.2,4,0,1,4.6,0,0
+5001231,901231,2025-10,17,two_year,basic,Midlands,partner,direct_debit,63.39,112.9,1,0,0,1.1,0,0
+5001232,901232,2025-12,24,annual,basic,North West,phone,direct_debit,41.9,120.4,1,0,0,0.4,0,0
+5001233,901233,2025-12,12,monthly,premium,Scotland,web,card,77.65,37.7,1,2,0,3.5,0,0
+5001234,901234,2025-11,43,monthly,standard,Midlands,store,direct_debit,39.07,124.4,3,0,0,0.9,10,0
+5001235,901235,2026-02,16,monthly,standard,Scotland,store,direct_debit,25.07,142.9,2,0,1,10.1,0,0
+5001236,901236,2025-11,23,annual,basic,London,partner,card,18.64,151.6,3,0,0,1.3,0,0
+5001237,901237,2025-11,43,annual,standard,South East,store,direct_debit,47.21,389.4,5,0,0,5.3,0,0
+5001238,901238,2025-11,9,monthly,standard,North West,web,direct_debit,40.33,355.1,5,2,0,4.9,0,0
+5001239,901239,2025-12,16,annual,basic,South East,partner,invoice,32.76,83.6,2,0,0,,20,0
+5001240,901240,2026-02,22,two_year,basic,Scotland,web,card,22.68,73.3,3,2,0,1.8,0,0
+5001241,901241,2026-03,18,two_year,premium,North West,web,card,54.76,92.6,4,0,0,1.8,0,0
+5001242,901242,2025-12,29,monthly,basic,London,web,direct_debit,37.25,116.5,3,1,0,7.1,0,0
+5001243,901243,2025-11,12,annual,standard,Wales,store,card,55.03,55.6,1,1,0,,10,0
+5001244,901244,2025-12,42,two_year,standard,Wales,web,direct_debit,20.54,13.7,3,1,0,,10,0
+5001245,901245,2025-11,17,monthly,premium,London,partner,direct_debit,85.05,37.5,3,1,0,4.4,10,0
+5001246,901246,2025-12,11,annual,standard,Wales,web,direct_debit,46.93,87.7,2,0,0,10.3,20,0
+5001247,901247,2026-01,16,annual,standard,scotland,web,card,31.81,55.6,5,0,0,0.7,0,0
+5001248,901248,2025-12,46,monthly,premium,South East,phone,card,76.08,28.7,1,1,1,6.6,0,0
+5001249,901249,2025-10,24,annual,standard,London,store,direct_debit,58.0,270.1,1,0,0,1.7,0,0
+5001250,901250,2026-01,46,monthly,premium,Scotland,web,direct_debit,49.55,117.1,5,0,0,2.5,0,0
+5001251,901251,2025-11,25,monthly,standard,Scotland,web,direct_debit,18.51,67.9,5,1,0,3.2,0,0
+5001252,901252,2025-10,42,monthly,standard,Midlands,partner,direct_debit,57.6,65.8,4,0,0,4.9,0,0
+5001253,901253,2026-02,49,two_year,basic,Midlands,web,invoice,19.01,180.1,3,1,0,16.2,10,0
+5001254,901254,2025-11,34,monthly,standard,Midlands,phone,direct_debit,73.08,44.7,4,0,1,18.6,0,0
+5001255,901255,2025-12,38,monthly,basic,Midlands,partner,card,60.67,237.4,4,2,1,10.6,20,0
+5001256,901256,2026-01,34,monthly,basic,Scotland,web,direct_debit,54.38,146.3,4,1,0,72.9,10,0
+5001257,901257,2025-10,19,monthly,basic,South East,partner,direct_debit,42.46,143.1,5,0,1,19.6,20,0
+5001258,901258,2026-03,7,two_year,basic,Scotland,web,card,24.36,164.2,2,0,0,,0,0
+5001259,901259,2026-02,11,monthly,premium,Scotland,phone,card,47.32,36.4,1,3,0,0.1,20,0
+5001260,901260,2026-01,7,annual,basic,Wales,web,direct_debit,11.54,86.0,1,0,0,5.5,0,0
+5001261,901261,2025-10,40,annual,basic,North West,web,card,21.99,96.2,2,1,0,1.2,0,0
+5001262,901262,2025-11,13,monthly,standard,South East,web,direct_debit,51.29,146.5,1,2,0,15.4,10,0
+5001263,901263,2026-01,40,monthly,standard,North West,partner,invoice,47.16,118.9,1,1,0,2.9,0,0
+5001264,901264,2025-12,11,two_year,basic,Scotland,store,card,28.3,136.0,4,0,0,3.0,0,0
+5001265,901265,2025-12,34,annual,standard,Scotland,web,card,54.73,84.6,1,0,0,0.1,0,0
+5001266,901266,2025-10,18,monthly,standard,South East,phone,direct_debit,51.71,180.2,3,3,0,6.9,10,0
+5001267,901267,2025-10,15,annual,basic,London,web,direct_debit,45.55,136.5,4,1,0,1.9,0,0
+5001268,901268,2026-02,16,annual,basic,Midlands,store,card,36.11,195.1,1,2,0,1.6,0,0
+5001269,901269,2026-01,25,annual,standard,Midlands,store,direct_debit,106.03,118.4,5,1,0,,0,0
+5001270,901270,2026-01,10,monthly,basic,Wales,web,direct_debit,26.4,152.0,5,0,0,1.5,0,0
+5001271,901271,2025-12,23,monthly,standard,South East,store,card,41.01,104.4,1,2,0,4.6,0,0
+5001272,901272,2025-12,19,monthly,basic,midlands,web,direct_debit,48.59,71.9,1,1,0,0.3,0,0
+5001273,901273,2025-10,27,annual,basic,London,web,invoice,31.21,214.5,3,0,0,6.7,0,0
+5001274,901274,2026-03,34,monthly,standard,Scotland,web,direct_debit,39.24,144.4,4,0,0,1.0,20,0
+5001275,901275,2025-12,21,monthly,basic,midlands,web,direct_debit,26.55,304.4,1,3,0,10.0,0,0
+5001276,901276,2026-01,19,annual,standard,North West,store,direct_debit,64.54,131.0,4,1,2,10.7,0,0
+5001277,901277,2025-11,36,monthly,premium,Wales,store,direct_debit,30.45,106.6,5,0,1,1.8,0,0
+5001278,901278,2026-01,8,two_year,standard,South East,phone,card,17.71,71.5,2,1,1,8.0,10,0
+5001279,901279,2025-11,44,annual,standard,South East,web,card,40.03,100.9,5,1,1,0.1,0,0
+5001280,901280,2026-02,31,annual,standard,South East,web,direct_debit,59.03,113.7,1,2,0,0.5,10,0
+5001281,901281,2025-11,12,two_year,standard,Wales,store,card,29.89,127.1,5,0,0,2.6,0,0
+5001282,901282,2026-01,32,two_year,standard,London,phone,direct_debit,71.68,90.6,4,0,0,1.0,0,0
+5001283,901283,2025-12,36,two_year,basic,Scotland,web,card,,48.3,3,0,0,3.0,0,0
+5001284,901284,2026-01,31,annual,premium,London,web,direct_debit,77.1,284.1,1,1,0,1.5,0,0
+5001285,901285,2025-11,7,two_year,basic,Scotland,web,direct_debit,79.62,184.5,5,1,0,7.3,10,0
+5001286,901286,2025-10,36,two_year,basic,London,phone,card,30.12,119.5,3,0,0,,0,0
+5001287,901287,2025-11,4,annual,standard,MIDLANDS,web,direct_debit,67.11,122.9,3,0,2,1.2,0,0
+5001288,901288,2026-03,38,monthly,standard,London,phone,direct_debit,26.47,154.8,4,0,0,10.5,10,0
+5001289,901289,2025-10,43,annual,basic,Scotland,partner,direct_debit,29.49,63.1,5,0,0,0.5,0,0
+5001290,901290,2025-12,11,two_year,basic,North West,web,direct_debit,54.91,136.2,4,0,0,10.2,20,0
+5001291,901291,2025-11,4,monthly,basic,Scotland,phone,invoice,77.53,158.5,5,2,0,49.1,0,0
+5001292,901292,2026-02,29,annual,basic,North West,store,direct_debit,10.47,21.8,3,5,0,6.3,0,0
+5001293,901293,2025-12,6,monthly,basic,London,phone,invoice,11.26,172.6,3,0,0,,10,0
+5001294,901294,2025-11,2,monthly,standard,London,store,card,33.44,74.2,3,2,0,14.5,0,0
+5001295,901295,2025-11,25,annual,premium,Midlands,web,direct_debit,61.31,196.2,3,0,0,1.1,0,0
+5001296,901296,2025-11,22,monthly,premium,London,phone,direct_debit,70.92,86.0,2,1,0,1.8,0,0
+5001297,901297,2026-02,42,annual,basic,North West,web,card,40.41,184.6,2,0,0,0.1,0,0
+5001298,901298,2025-12,38,annual,premium,London,web,direct_debit,62.09,62.5,5,0,0,0.7,0,0
+5001299,901299,2026-01,48,annual,basic,Wales,web,invoice,60.94,98.9,1,0,0,0.3,0,0
+5001300,901300,2025-12,46,annual,basic,LONDON,web,invoice,29.3,82.5,5,1,0,5.1,10,0
+5001301,901301,2025-10,7,monthly,standard,Midlands,web,card,65.58,38.4,5,1,0,9.6,0,0
+5001302,901302,2025-10,28,two_year,standard,Scotland,partner,direct_debit,42.07,80.0,4,0,1,1.6,10,0
+5001303,901303,2026-01,41,monthly,standard,London,store,card,26.86,45.9,2,1,0,5.5,20,0
+5001304,901304,2025-12,26,annual,basic,Wales,web,direct_debit,41.27,74.2,2,0,0,5.1,0,0
+5001305,901305,2025-11,21,monthly,basic,London,web,card,14.86,124.4,4,0,0,,0,0
+5001306,901306,2025-10,1,two_year,standard,Scotland,store,card,,158.7,4,1,0,33.8,0,0
+5001307,901307,2025-12,31,annual,basic,Midlands,web,card,12.36,74.2,5,1,0,,20,0
+5001308,901308,2025-10,9,two_year,basic,London,phone,direct_debit,46.39,121.0,4,0,1,14.9,10,0
+5001309,901309,2026-01,20,monthly,standard,London,phone,direct_debit,54.9,164.7,2,0,0,,10,0
+5001310,901310,2025-12,15,two_year,basic,Scotland,web,invoice,63.54,90.1,4,0,0,0.1,0,0
+5001311,901311,2025-12,11,two_year,standard,Midlands,partner,card,58.82,42.3,4,0,0,,0,0
+5001312,901312,2025-11,18,annual,standard,South East,web,card,91.52,81.2,4,0,0,0.2,0,0
+5001313,901313,2025-11,38,monthly,standard,Scotland,partner,card,94.51,40.7,4,1,0,9.9,0,0
+5001314,901314,2026-03,51,annual,standard,North West,store,card,28.24,163.8,5,1,0,,0,0
+5001315,901315,2025-12,8,monthly,standard,MIDLANDS,web,direct_debit,26.3,49.7,1,3,0,12.3,0,0
+5001316,901316,2025-12,42,monthly,standard,south east,web,direct_debit,58.53,61.7,4,1,0,11.0,20,0
+5001317,901317,2025-11,7,annual,premium,South East,web,direct_debit,69.2,30.6,3,1,0,15.1,0,0
+5001318,901318,2026-01,42,annual,basic,North West,web,direct_debit,39.8,110.3,3,1,0,9.1,10,0
+5001319,901319,2026-02,14,annual,standard,SOUTH EAST,web,direct_debit,52.96,98.1,2,0,0,1.7,0,0
+5001320,901320,2025-10,32,annual,basic,North West,web,direct_debit,37.04,299.6,2,0,0,,0,0
+5001321,901321,2025-11,45,two_year,basic,North West,store,direct_debit,38.52,37.7,3,2,2,29.4,0,0
+5001322,901322,2025-10,39,two_year,basic,Wales,web,direct_debit,35.77,34.3,5,2,1,22.8,0,0
+5001323,901323,2026-03,15,two_year,premium,Midlands,store,direct_debit,,29.9,2,0,0,0.2,0,0
+5001324,901324,2025-10,45,two_year,standard,London,web,direct_debit,43.45,261.9,3,0,0,1.0,10,0
+5001325,901325,2025-12,32,monthly,basic,London,store,direct_debit,58.06,69.1,3,0,0,1.6,10,0
+5001326,901326,2026-01,37,two_year,basic,Midlands,web,direct_debit,35.4,114.5,2,0,0,14.5,0,0
+5001327,901327,2025-12,31,monthly,standard,NORTH WEST,store,direct_debit,52.49,30.0,4,0,0,0.6,0,0
+5001328,901328,2025-12,33,annual,basic,Midlands,partner,direct_debit,25.29,167.7,1,0,0,4.3,0,0
+5001329,901329,2025-12,23,annual,basic,Wales,store,card,18.9,72.0,3,4,0,14.5,0,0
+5001330,901330,2025-11,42,monthly,basic,North West,store,card,62.15,133.7,3,0,0,4.8,10,0
+5001331,901331,2025-10,36,monthly,standard,wales,store,card,34.87,51.9,3,0,1,2.8,20,0
+5001332,901332,2025-12,25,two_year,standard,North West,web,direct_debit,40.37,183.6,4,1,1,14.0,0,0
+5001333,901333,2026-01,8,two_year,premium,Wales,web,direct_debit,58.29,57.6,5,1,0,1.2,20,0
+5001334,901334,2026-03,11,monthly,standard,London,web,card,35.42,186.1,3,1,0,9.3,0,0
+5001335,901335,2026-01,20,two_year,basic,North West,web,direct_debit,19.29,62.8,5,0,0,,0,0
+5001336,901336,2025-11,18,two_year,standard,Midlands,web,direct_debit,73.63,124.8,1,1,0,0.1,0,0
+5001337,901337,2026-01,40,two_year,premium,London,store,direct_debit,33.77,132.3,2,0,0,6.6,0,0
+5001338,901338,2025-11,9,monthly,basic,Scotland,store,direct_debit,-7.5,60.9,3,0,0,5.1,0,0
+5001339,901339,2026-02,47,monthly,basic,North West,store,direct_debit,35.06,137.0,5,0,0,15.0,0,0
+5001340,901340,2025-10,19,annual,premium,North West,web,direct_debit,49.06,116.0,2,0,0,4.8,0,0
+5001341,901341,2025-11,13,monthly,standard,North West,store,card,46.06,34.8,4,0,0,2.7,0,0
+5001342,901342,2025-11,11,annual,basic,Scotland,partner,direct_debit,19.12,103.8,5,2,1,,0,0
+5001343,901343,2026-02,10,two_year,premium,South East,web,direct_debit,86.02,88.3,3,0,0,14.4,0,0
+5001344,901344,2026-01,24,monthly,premium,South East,store,card,67.43,37.2,3,1,0,6.3,0,0
+5001345,901345,2026-01,24,two_year,basic,London,web,direct_debit,24.94,273.7,3,2,1,3.0,0,0
+5001346,901346,2026-01,15,annual,standard,Scotland,store,direct_debit,24.52,60.5,2,2,0,10.3,0,0
+5001347,901347,2025-11,35,annual,basic,London,partner,direct_debit,43.11,87.0,3,1,0,0.9,20,0
+5001348,901348,2026-01,17,annual,basic,North West,web,card,27.63,94.9,3,0,0,0.1,0,0
+5001349,901349,2025-11,20,monthly,basic,South East,web,direct_debit,31.72,64.1,4,1,0,4.1,0,0
+5001350,901350,2026-02,30,monthly,basic,Midlands,partner,direct_debit,25.93,157.7,5,0,1,9.4,10,0
+5001351,901351,2025-10,18,monthly,standard,North West,store,direct_debit,36.64,119.9,2,0,0,1.5,10,0
+5001352,901352,2025-10,17,two_year,standard,Wales,store,direct_debit,19.28,64.9,4,0,0,3.7,0,0
+5001353,901353,2025-12,20,two_year,basic,Wales,store,invoice,,173.8,5,0,0,7.4,0,0
+5001354,901354,2025-11,30,monthly,standard,North West,phone,card,68.65,59.2,5,0,0,18.0,0,0
+5001355,901355,2025-12,20,annual,premium,MIDLANDS,store,direct_debit,36.89,63.0,4,0,0,0.5,0,0
+5001356,901356,2026-01,17,monthly,standard,London,store,card,32.27,243.7,5,0,1,6.4,0,0
+5001357,901357,2026-02,30,annual,standard,North West,web,direct_debit,38.5,163.5,2,2,0,17.2,0,0
+5001358,901358,2025-11,39,monthly,premium,midlands,web,invoice,79.54,194.0,4,1,0,28.6,10,0
+5001359,901359,2026-02,48,annual,basic,south east,partner,direct_debit,19.43,65.9,5,0,0,3.7,0,0
+5001360,901360,2025-10,22,monthly,basic,Scotland,web,direct_debit,,80.1,5,0,0,5.9,0,0
+5001361,901361,2025-12,36,monthly,standard,London,partner,direct_debit,29.98,130.0,5,2,2,11.5,10,0
+5001362,901362,2025-12,45,annual,basic,Scotland,phone,card,50.57,217.8,3,0,0,0.2,10,0
+5001363,901363,2025-12,10,annual,standard,scotland,web,card,30.58,316.8,4,0,0,,0,0
+5001364,901364,2025-11,16,monthly,premium,London,store,direct_debit,46.58,199.0,1,0,0,8.9,10,0
+5001365,901365,2025-10,13,annual,basic,Midlands,phone,card,28.49,136.7,1,2,0,7.0,0,0
+5001366,901366,2026-03,49,monthly,basic,Wales,partner,direct_debit,82.2,200.3,4,2,0,3.8,0,0
+5001367,901367,2025-11,17,annual,basic,Midlands,partner,direct_debit,42.58,134.2,4,0,0,1.3,0,0
+5001368,901368,2025-11,22,annual,basic,North West,phone,direct_debit,53.5,311.5,3,1,1,3.0,0,0
+5001369,901369,2026-02,10,monthly,premium,Midlands,web,card,88.56,167.5,3,2,0,12.7,0,0
+5001370,901370,2026-02,30,two_year,basic,Scotland,web,direct_debit,9.61,173.1,1,2,1,3.6,0,0
+5001371,901371,2026-02,44,annual,standard,North West,phone,direct_debit,76.92,105.0,5,0,0,22.6,10,0
+5001372,901372,2025-11,13,monthly,standard,North West,web,direct_debit,51.71,148.7,5,2,0,20.3,0,0
+5001373,901373,2026-02,27,monthly,basic,Scotland,web,direct_debit,17.99,129.3,2,0,0,0.0,0,0
+5001374,901374,2026-02,17,two_year,basic,South East,web,card,40.85,68.2,4,0,0,0.1,0,0
+5001375,901375,2026-01,20,monthly,basic,Midlands,web,card,23.36,17.8,1,0,0,0.9,0,0
+5001376,901376,2025-11,3,annual,basic,Wales,web,direct_debit,42.52,58.0,3,0,0,3.1,10,0
+5001377,901377,2025-11,3,annual,premium,North West,partner,direct_debit,54.7,135.7,5,4,2,9.2,0,0
+5001378,901378,2025-10,19,monthly,standard,North West,web,card,42.94,210.7,5,2,0,5.8,0,0
+5001379,901379,2025-10,11,annual,basic,London,partner,direct_debit,45.51,130.3,1,1,0,6.5,0,0
+5001380,901380,2025-11,7,annual,basic,South East,web,card,23.48,32.7,5,0,0,9.6,0,0
+5001381,901381,2026-02,45,annual,basic,North West,web,direct_debit,15.03,116.4,3,0,2,9.7,0,0
+5001382,901382,2026-01,33,monthly,premium,Scotland,web,direct_debit,95.23,96.9,1,1,0,,0,0
+5001383,901383,2025-11,7,annual,standard,North West,partner,direct_debit,35.55,71.4,3,1,1,0.2,10,0
+5001384,901384,2025-11,41,monthly,standard,North West,web,direct_debit,21.0,153.0,2,3,0,,0,0
+5001385,901385,2026-01,50,monthly,standard,London,web,direct_debit,26.19,34.6,1,0,0,5.0,0,0
+5001386,901386,2026-02,41,annual,premium,South East,web,card,63.88,312.7,1,0,0,10.5,0,0
+5001387,901387,2026-01,10,annual,premium,South East,store,card,53.22,111.0,1,0,0,0.8,0,0
+5001388,901388,2026-01,38,annual,standard,North West,phone,direct_debit,28.68,60.0,4,2,0,1.4,0,0
+5001389,901389,2025-11,2,monthly,basic,London,web,direct_debit,33.05,58.1,1,2,1,30.8,0,0
+5001390,901390,2025-11,11,monthly,standard,North West,phone,direct_debit,39.0,93.0,2,1,1,5.9,0,0
+5001391,901391,2026-01,33,two_year,basic,Midlands,phone,card,13.27,183.5,4,0,0,10.5,0,0
+5001392,901392,2025-12,40,annual,basic,South East,web,direct_debit,24.48,174.6,5,0,0,,0,0
+5001393,901393,2025-12,36,monthly,standard,south east,web,invoice,51.36,89.7,3,0,0,3.2,0,0
+5001394,901394,2025-10,2,two_year,standard,North West,web,direct_debit,,136.6,2,0,0,1.0,0,0
+5001395,901395,2025-12,44,annual,standard,South East,partner,direct_debit,40.08,62.2,2,1,0,0.3,0,0
+5001396,901396,2025-10,39,two_year,basic,london,phone,card,39.73,102.7,5,1,0,28.8,10,0
+5001397,901397,2026-01,30,monthly,basic,South East,phone,direct_debit,17.4,213.6,1,0,0,0.4,0,0
+5001398,901398,2026-02,30,two_year,premium,South East,web,direct_debit,94.79,208.4,3,2,0,9.4,0,0
+5001399,901399,2026-03,14,annual,standard,Scotland,partner,direct_debit,29.65,162.4,3,0,0,20.4,0,0
+5001400,901400,2025-11,3,two_year,standard,Wales,web,card,31.98,30.3,5,0,0,6.6,0,0
+5001401,901401,2025-12,34,monthly,standard,South East,partner,direct_debit,21.05,128.4,4,0,0,2.0,0,0
+5001402,901402,2026-01,7,two_year,basic,Midlands,web,direct_debit,17.13,122.3,3,0,0,1.8,0,0
+5001403,901403,2025-12,13,monthly,standard,Wales,phone,card,54.38,46.3,4,1,2,0.5,0,0
+5001404,901404,2025-12,43,annual,basic,London,partner,direct_debit,18.19,286.5,5,0,0,5.8,0,0
+5001405,901405,2025-11,28,monthly,standard,Midlands,web,card,35.27,172.1,5,0,0,,0,0
+5001406,901406,2025-10,39,monthly,basic,North West,store,direct_debit,31.71,152.1,1,2,0,9.6,0,0
+5001407,901407,2026-02,6,annual,premium,Wales,phone,direct_debit,,86.1,2,0,0,0.6,0,0
+5001408,901408,2025-11,30,annual,basic,Scotland,store,card,28.29,41.6,3,1,0,2.9,0,0
+5001409,901409,2026-01,27,monthly,standard,South East,web,direct_debit,53.67,318.6,2,1,0,37.5,0,0
+5001410,901410,2025-12,2,monthly,premium,South East,web,direct_debit,44.86,39.1,2,1,0,0.7,0,0
+5001411,901411,2025-10,4,two_year,basic,South East,store,direct_debit,43.49,114.3,5,0,0,10.0,0,0
+5001412,901412,2026-03,9,annual,standard,midlands,web,direct_debit,32.23,74.5,3,0,0,25.2,10,0
+5001413,901413,2025-12,25,annual,basic,Midlands,web,direct_debit,23.53,112.8,5,1,1,4.0,0,0
+5001414,901414,2026-02,49,monthly,standard,Scotland,partner,direct_debit,63.23,33.6,3,3,2,9.3,0,0
+5001415,901415,2026-01,10,annual,basic,Scotland,partner,direct_debit,34.16,251.1,2,2,0,0.8,0,0
+5001416,901416,2025-10,11,monthly,basic,Wales,phone,invoice,110.37,121.3,1,1,0,6.9,0,0
+5001417,901417,2025-12,22,annual,standard,Scotland,store,direct_debit,33.26,51.8,3,0,0,0.5,0,0
+5001418,901418,2025-11,17,two_year,premium,South East,web,direct_debit,61.17,147.0,2,0,0,,10,0
+5001419,901419,2025-12,34,monthly,basic,London,partner,direct_debit,,280.1,2,1,1,1.8,0,0
+5001420,901420,2026-03,46,monthly,basic,South East,web,card,47.62,102.2,3,0,0,3.9,0,0
+5001421,901421,2025-12,9,annual,basic,north west,store,direct_debit,16.93,175.3,1,0,0,13.7,0,0
+5001422,901422,2025-11,18,monthly,basic,wales,web,card,24.61,87.4,3,2,1,2.4,0,0
+5001423,901423,2025-11,30,two_year,standard,NORTH WEST,partner,card,39.49,77.9,5,0,0,2.4,0,0
+5001424,901424,2025-12,46,monthly,standard,Wales,web,card,67.91,186.5,4,0,0,1.9,0,0
+5001425,901425,2025-10,20,annual,basic,North West,partner,card,30.67,82.6,3,1,0,4.6,0,0
+5001426,901426,2026-02,42,two_year,premium,South East,web,direct_debit,46.56,62.2,5,0,0,8.6,0,0
+5001427,901427,2025-12,36,annual,basic,Wales,partner,direct_debit,30.92,103.3,1,0,0,37.6,0,0
+5001428,901428,2025-12,33,monthly,basic,South East,web,direct_debit,56.72,248.5,1,0,1,11.5,0,0
+5001429,901429,2025-10,36,annual,basic,London,store,card,21.62,228.4,2,5,0,0.9,0,0
+5001430,901430,2025-12,7,monthly,standard,WALES,partner,direct_debit,106.61,252.3,3,0,0,4.8,0,0
+5001431,901431,2026-01,47,annual,standard,Midlands,web,direct_debit,25.5,167.6,3,1,0,1.2,0,0
+5001432,901432,2026-01,42,annual,basic,Wales,web,invoice,40.32,54.9,1,0,1,6.1,0,0
+5001433,901433,2025-10,8,annual,basic,North West,web,invoice,39.01,69.6,3,1,0,3.0,0,0
+5001434,901434,2025-10,34,annual,standard,London,store,direct_debit,80.44,211.3,4,1,1,6.2,0,0
+5001435,901435,2026-02,14,two_year,basic,Scotland,partner,direct_debit,39.45,109.3,2,0,1,0.6,0,0
+5001436,901436,2026-02,41,two_year,basic,Wales,web,card,-61.31,134.1,4,1,0,4.9,0,0
+5001437,901437,2025-10,43,monthly,standard,Midlands,store,card,26.53,57.2,1,1,0,8.6,0,0
+5001438,901438,2026-02,26,monthly,basic,Wales,partner,card,25.24,189.3,2,2,0,,0,0
+5001439,901439,2025-12,33,annual,basic,North West,web,direct_debit,12.43,125.9,1,0,0,27.5,10,0
+5001440,901440,2026-02,32,annual,basic,South East,phone,direct_debit,20.34,119.9,3,1,0,3.1,0,0
+5001441,901441,2025-10,12,two_year,standard,Scotland,partner,card,61.63,82.6,2,2,0,9.5,0,0
+5001442,901442,2026-03,10,annual,premium,Wales,web,invoice,52.12,157.4,3,2,1,18.0,10,0
+5001443,901443,2025-11,43,monthly,premium,North West,web,card,36.65,98.0,1,0,0,3.1,0,0
+5001444,901444,2025-11,16,monthly,standard,London,web,card,41.15,205.9,2,0,0,20.2,0,0
+5001445,901445,2025-10,22,monthly,standard,MIDLANDS,web,direct_debit,43.7,79.8,5,0,0,0.2,0,0
+5001446,901446,2026-01,41,annual,premium,South East,web,card,82.82,203.6,5,0,0,0.6,0,0
+5001447,901447,2026-02,29,monthly,standard,Midlands,partner,card,29.25,30.6,3,1,0,1.6,0,0
+5001448,901448,2025-12,32,annual,standard,North West,web,direct_debit,29.5,123.0,4,0,0,1.3,0,0
+5001449,901449,2025-11,5,two_year,basic,Midlands,store,direct_debit,23.37,198.6,3,1,0,1.7,0,0
+5001450,901450,2025-11,21,annual,premium,Wales,web,card,40.84,57.9,5,1,0,1.5,0,0
+5001451,901451,2025-12,34,two_year,standard,London,phone,direct_debit,24.69,76.5,2,1,0,7.0,0,0
+5001452,901452,2025-11,8,monthly,standard,London,web,direct_debit,47.96,72.3,2,0,0,5.5,0,0
+5001453,901453,2025-12,43,annual,standard,Scotland,store,direct_debit,33.57,42.7,4,0,0,8.9,0,0
+5001454,901454,2026-03,41,annual,basic,Midlands,web,direct_debit,41.61,129.4,2,0,0,10.4,0,0
+5001455,901455,2025-11,37,annual,basic,Midlands,web,card,15.56,43.8,1,0,0,0.6,0,0
+5001456,901456,2025-12,10,annual,premium,London,web,card,46.38,85.9,3,2,0,4.6,0,0
+5001457,901457,2025-11,10,monthly,standard,Midlands,phone,direct_debit,41.6,49.2,2,1,0,5.0,0,0
+5001458,901458,2025-11,12,monthly,premium,Midlands,web,direct_debit,52.79,86.8,5,0,0,1.9,0,0
+5001459,901459,2025-11,5,two_year,premium,London,partner,direct_debit,80.34,119.9,4,2,0,18.7,0,0
+5001460,901460,2026-02,12,monthly,standard,Wales,web,direct_debit,51.0,56.1,1,0,2,,10,0
+5001461,901461,2025-10,16,annual,standard,South East,web,card,18.44,118.5,4,0,1,6.8,0,0
+5001462,901462,2025-11,6,annual,standard,South East,partner,direct_debit,33.38,264.4,4,1,0,1.0,10,0
+5001463,901463,2025-12,3,monthly,basic,Wales,web,invoice,113.74,87.5,4,1,0,1.2,0,0
+5001464,901464,2026-01,9,monthly,premium,London,store,card,40.8,111.2,4,0,0,19.8,0,0
+5001465,901465,2025-12,41,two_year,premium,Wales,web,card,45.74,101.6,4,0,0,0.2,0,0
+5001466,901466,2026-01,8,monthly,standard,Midlands,web,direct_debit,90.96,53.0,1,1,1,0.2,0,0
+5001467,901467,2025-12,10,monthly,standard,North West,web,direct_debit,40.3,71.4,3,1,0,5.1,0,0
+5001468,901468,2025-12,37,annual,premium,London,store,card,53.47,312.3,5,2,0,14.1,0,0
+5001469,901469,2025-12,5,annual,basic,Wales,phone,card,52.9,30.8,5,1,1,4.0,0,0
+5001470,901470,2025-10,45,two_year,basic,North West,partner,direct_debit,9.53,175.6,3,1,0,9.2,0,0
+5001471,901471,2025-10,41,annual,basic,North West,web,card,52.32,60.0,5,0,0,8.0,0,0
+5001472,901472,2025-11,18,monthly,basic,Scotland,web,direct_debit,24.9,148.6,4,2,0,35.8,0,0
+5001473,901473,2026-02,26,annual,standard,Midlands,web,direct_debit,31.72,36.5,2,4,1,,0,0
+5001474,901474,2026-02,33,annual,premium,Scotland,web,card,-75.14,173.5,5,1,0,4.9,10,0
+5001475,901475,2026-01,38,monthly,standard,London,store,card,44.84,103.8,5,1,0,11.2,10,0
+5001476,901476,2025-10,20,monthly,standard,South East,web,direct_debit,59.58,143.0,3,0,0,9.1,10,0
+5001477,901477,2026-01,40,annual,standard,South East,web,direct_debit,42.73,254.8,5,1,1,5.5,10,0
+5001478,901478,2025-10,17,monthly,basic,Scotland,web,direct_debit,42.84,81.0,4,0,0,6.3,0,0
+5001479,901479,2025-10,33,annual,basic,Midlands,web,card,31.22,159.2,1,0,0,0.9,0,0
+5001480,901480,2025-12,7,two_year,basic,north west,web,direct_debit,48.75,105.7,1,2,0,8.1,0,0
+5001481,901481,2025-12,24,monthly,basic,north west,web,card,14.2,65.4,5,0,0,2.6,0,0
+5001482,901482,2026-01,21,monthly,basic,North West,web,card,8.46,44.7,2,2,2,2.7,0,0
+5001483,901483,2025-12,33,monthly,premium,midlands,partner,direct_debit,43.23,49.4,5,0,0,14.5,0,0
+5001484,901484,2025-11,45,monthly,standard,South East,web,direct_debit,40.9,87.3,4,1,0,0.2,10,0
+5001485,901485,2026-01,39,two_year,standard,North West,partner,card,32.04,84.8,4,0,1,0.4,10,0
+5001486,901486,2026-03,28,monthly,basic,Scotland,web,direct_debit,19.87,61.7,2,0,0,0.0,0,0
+5001487,901487,2025-11,1,monthly,standard,Midlands,web,direct_debit,37.43,99.6,3,0,0,4.2,0,0
+5001488,901488,2025-10,33,monthly,standard,Scotland,web,direct_debit,28.22,138.6,4,0,0,1.6,10,0
+5001489,901489,2025-10,5,annual,basic,London,web,direct_debit,30.03,152.7,2,1,0,4.5,0,0
+5001490,901490,2025-10,8,annual,premium,South East,web,card,41.47,174.7,2,1,0,5.9,0,0
+5001491,901491,2025-10,32,monthly,standard,North West,partner,direct_debit,64.71,151.4,4,0,0,0.4,0,0
+5001492,901492,2026-01,22,annual,standard,Wales,web,direct_debit,70.76,121.5,3,0,0,1.0,0,0
+5001493,901493,2025-12,30,two_year,basic,London,phone,invoice,12.08,66.7,2,1,0,0.5,10,0
+5001494,901494,2025-12,19,monthly,premium,Wales,partner,card,-51.81,203.6,1,1,1,7.5,0,0
+5001495,901495,2025-10,22,two_year,standard,Scotland,web,direct_debit,17.5,154.8,4,1,0,7.7,0,0
+5001496,901496,2026-02,16,monthly,standard,Scotland,partner,direct_debit,53.87,70.6,3,3,1,3.9,0,0
+5001497,901497,2026-01,14,monthly,standard,South East,store,direct_debit,27.3,257.5,2,2,0,5.6,0,0
+5001498,901498,2026-01,24,monthly,standard,Wales,store,card,55.15,7.1,5,0,0,1.3,0,0
+5001499,901499,2025-10,21,annual,premium,London,web,direct_debit,62.06,177.5,3,1,0,2.6,0,0

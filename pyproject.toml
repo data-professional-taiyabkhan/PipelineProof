@@ -1,0 +1,16 @@
+[project]
+name = "pipelineproof"
+version = "0.1.0"
+description = "Re-runs ML take-home submissions in a sandbox, checks claims against a holdout, and locates leakage"
+requires-python = ">=3.11"
+dependencies = ["pandas>=2.2", "numpy>=1.26", "scikit-learn>=1.5"]
+
+[project.optional-dependencies]
+modal = ["modal>=1.6"]
+dev = ["pytest>=8"]
+
+[tool.setuptools]
+packages = ["pipelineproof", "pipelineproof.runners"]
+
+[tool.setuptools.package-data]
+"pipelineproof" = ["instrument/*.py"]

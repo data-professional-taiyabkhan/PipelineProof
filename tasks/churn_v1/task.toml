@@ -1,0 +1,21 @@
+name = "Broadband churn, 60-day horizon"
+target = "churned_next_60d"
+id_column = "row_id"
+metric = "roc_auc"
+entity_column = "customer_id"
+time_column = "snapshot_month"
+post_outcome_columns = ["retention_offer_sent"]
+tolerance = 0.01
+time_cap_s = 600
+cpus = 2
+memory_mb = 4096
+
+[prediction_time_values]
+retention_offer_sent = 0
+
+# Did the code deal with the planted data problems? (shown to the reviewer as evidence, not proof)
+[probes]
+dedupes_rows = "drop_duplicates"
+normalises_region_case = 'region.*\.str\.(lower|upper|title|casefold)'
+handles_negative_spend = 'monthly_spend.*(clip|abs\(|<\s*0|lower=0)'
+handles_missing = '(SimpleImputer|fillna|HistGradientBoosting|IterativeImputer|XGB|LGBM)'
