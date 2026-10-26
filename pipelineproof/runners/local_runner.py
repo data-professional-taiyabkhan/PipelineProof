@@ -98,6 +98,8 @@ class LocalRunner(Runner):
                     e = json.loads(line)
                 except json.JSONDecodeError:
                     continue
+                if e.get("kind") == "process_spawn" and 'cmd.exe /c "ver"' in str(e.get("detail", "")).lower():
+                    continue  # platform.win32_ver() asking Windows for its version, not candidate code
                 if e.get("kind") == "file_open":
                     raw = str(e.get("path") or "").lower()
                     if raw in (os.devnull.lower(), "nul", "\\\\.\\nul", "/dev/null") or raw.endswith("\\nul"):
