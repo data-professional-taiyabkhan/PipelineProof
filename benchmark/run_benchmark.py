@@ -57,7 +57,7 @@ def judge(name, r):
 
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument("--runner", default="docker")
+    ap.add_argument("--runner", default="docker", help="docker | local | modal")
     ap.add_argument("--only", default="")
     ap.add_argument("--task", default=str(ROOT / "tasks" / "churn_v1"))
     ap.add_argument("--out", default=str(ROOT / "benchmark" / "out"))

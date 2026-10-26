@@ -36,6 +36,7 @@ class RunSpec:
     timeout_s: int = 600
     cpus: float = 2
     memory_mb: int = 4096
+    out_subdirs: list[str] = field(default_factory=list)   # created inside /out before the run
 
 
 @dataclass

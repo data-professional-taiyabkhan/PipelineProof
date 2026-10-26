@@ -52,7 +52,7 @@ def _own_metric(task, out_dir: Path, events):
 
 def _train(task, sub, runner, env_id, data_dir: Path, seed: int, out_dir: Path, timeout=None):
     spec = RunSpec(env=None, submission=sub.root, inputs={"/data": data_dir},
-                   command=f"mkdir -p /out/model && {sub.train_cmd}",
+                   command=sub.train_cmd, out_subdirs=["model"],
                    env_vars={"PP_SEED": str(seed), "PP_DATA_DIR": "/data", "PP_OUTPUT_DIR": "/out/model"},
                    timeout_s=timeout or task.time_cap_s, cpus=task.cpus, memory_mb=task.memory_mb)
     return runner.run(spec, env_id, out_dir)
@@ -122,7 +122,9 @@ def _ablated_data(task, column, value, work: Path) -> Path:
     return d
 
 
-def evaluate(task, submission_dir, runner, workdir) -> dict:
+def evaluate(task, submission_dir, runner, workdir, progress=None) -> dict:
+    """progress(stage, message) is called as the evaluation moves through its steps."""
+    say = progress or (lambda stage, msg: None)
     t0 = time.time()
     workdir = Path(workdir)
     if workdir.exists():
@@ -133,12 +135,14 @@ def evaluate(task, submission_dir, runner, workdir) -> dict:
               "runner": runner.name, "contract": {"problems": sub.problems, "warnings": sub.warnings},
               "claimed_metric": sub.claimed_metric, "declared_seed": sub.seed, "findings": [], "runs": []}
     F = report["findings"]
+    say("contract", "Checking the submission format (pipeline.toml, requirements.txt, DECISIONS.md)")
     if not sub.ok:
         report["status"] = "contract_failed"
         F += [finding("CONTRACT", "reproducibility", "critical", "contract", p) for p in sub.problems]
         return scoring.finalise(task, report)
 
     # ---- static pass and declared environment
+    say("static", "Reading the code without running it (static rules, imports vs requirements)")
     st = static_rules.analyse(sub.root, task.target, tuple(task.post_outcome_columns))
     report["static"] = st
     undeclared = static_rules.undeclared_imports(st["imports"], sub.requirement_names())
@@ -147,6 +151,7 @@ def evaluate(task, submission_dir, runner, workdir) -> dict:
         F.append(finding("REPRO_UNDECLARED_IMPORT", "reproducibility", "medium", "static + requirements",
                          f"imports '{mod}' but requirements.txt does not declare it"))
 
+    say("env", "Building the pinned environment")
     try:
         env_id = runner.build_env(EnvSpec(sub.python, [l for l in (sub.root / "requirements.txt").read_text().splitlines()
                                                         if l.strip() and not l.strip().startswith("#")]))
@@ -160,9 +165,14 @@ def evaluate(task, submission_dir, runner, workdir) -> dict:
     train_df = task.train_df()
 
     # ---- Mechanism A
+    say("run1", f"Run 1: training with the declared seed ({sub.seed}) and predicting the holdout")
     r1, ev1 = run_once(task, sub, runner, env_id, task.data_dir, sub.seed, workdir / f"seed_{sub.seed}", labels)
+    say("run2", f"Run 2: same seed again, to check the result is deterministic")
     r1b, _ = run_once(task, sub, runner, env_id, task.data_dir, sub.seed, workdir / f"seed_{sub.seed}_repeat", labels)
-    others = [run_once(task, sub, runner, env_id, task.data_dir, s, workdir / f"seed_{s}", labels)[0] for s in EXTRA_SEEDS]
+    others = []
+    for s in EXTRA_SEEDS:
+        say("seeds", f"Run with seed {s}, to measure how much the result depends on the seed")
+        others.append(run_once(task, sub, runner, env_id, task.data_dir, s, workdir / f"seed_{s}", labels)[0])
     report["runs"] = [r1, r1b] + others
     ok = r1.get("own_metric") is not None and r1.get("holdout_metric") is not None
     report["completed"] = ok
@@ -206,11 +216,13 @@ def evaluate(task, submission_dir, runner, workdir) -> dict:
     # ---- Mechanism B: gap, trace, ablation
     basis = claim if claim is not None else r1["own_metric"]
     report["gap"] = round((basis - r1["holdout_metric"]) * (1 if task.higher_is_better else -1), 4)
+    say("trace", "Analysing the trace: splits, fits, metric calls")
     tf, info = analysis.trace_findings(task, ev1, train_df, claim)
     F += tf
     report["trace"] = info
     report["ablations"] = []
     for col, val in analysis.suspect_columns(task, train_df, set(info["used_columns"]), info["columns_unknown"]).items():
+        say("ablation", f"Ablation: re-running with '{col}' neutralised to see if the result depended on it")
         d = _ablated_data(task, col, val, workdir)
         ra, _ = run_once(task, sub, runner, env_id, d, sub.seed, workdir / f"ablate_{col}", labels)
         rec = {"column": col, "set_to": val, "own_before": r1["own_metric"], "own_after": ra.get("own_metric"),
@@ -243,6 +255,7 @@ def evaluate(task, submission_dir, runner, workdir) -> dict:
                       "states_ai_use": "ai" in sub.decisions_text.lower() and "tool" in sub.decisions_text.lower(),
                       "readme": (sub.root / "README.md").exists(), "functions": st["info"]["functions"]}
     report["status"] = "scored"
+    say("score", "Scoring and writing the report")
     return scoring.finalise(task, report, runtime_s=time.time() - t0)
 
 

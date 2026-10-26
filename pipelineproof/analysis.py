@@ -39,7 +39,7 @@ def classify_failure(stderr: str, code: int, timed_out: bool) -> tuple[str, str]
     m = re.search(r"ModuleNotFoundError: No module named '([^']+)'", stderr)
     if m:
         return "RUN_MISSING_PACKAGE", f"imports '{m.group(1)}', which requirements.txt does not provide"
-    if re.search(r"Temporary failure in name resolution|NameResolutionError|gaierror|Network is unreachable", stderr):
+    if re.search(r"Temporary failure in name resolution|NameResolutionError|gaierror|getaddrinfo failed|Network is unreachable|urlopen error", stderr):
         return "RUN_NETWORK", "tried to reach the network, which is blocked in the sandbox"
     last = [l for l in stderr.strip().splitlines() if l.strip()]
     return "RUN_ERROR", (last[-1][:240] if last else f"exit code {code}")

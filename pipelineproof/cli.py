@@ -22,7 +22,7 @@ def main(argv=None):
         p.add_argument("task")
         p.add_argument("submission")
         p.add_argument("--out", default="out")
-        p.add_argument("--runner", default="docker")
+        p.add_argument("--runner", default="docker", help="docker | local (no isolation, demos only) | modal")
     a = ap.parse_args(argv)
     t = task_mod.load(a.task)
     runner = get_runner(a.runner)
@@ -33,7 +33,7 @@ def main(argv=None):
         res = pipeline.preflight(t, a.submission, runner, out / f"{name}_preflight")
         print(json.dumps(res, indent=2))
         return 0 if res["ok"] else 1
-    r = pipeline.evaluate(t, a.submission, runner, out / f"{name}_runs")
+    r = pipeline.evaluate(t, a.submission, runner, out / f"{name}_runs", progress=lambda st, m: print(f"  - {m}", flush=True))
     (out / f"{name}.json").write_text(json.dumps(r, indent=2, default=str))
     (out / f"{name}.md").write_text(report.to_markdown(r))
     print(report.summary(r))

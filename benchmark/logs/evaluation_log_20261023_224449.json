@@ -1,0 +1,246 @@
+{
+  "date": "2026-10-23T22:44:49+00:00",
+  "runner": "local (no isolation)",
+  "task": "Broadband churn, 60-day horizon",
+  "passed": 16,
+  "total": 16,
+  "seconds": 579.3,
+  "rows": [
+    {
+      "submission": "p01_clean",
+      "pass": true,
+      "expected": [],
+      "missing": [],
+      "unexpected": [],
+      "recommendation": "No blocking findings",
+      "overall": 100,
+      "claimed": 0.831,
+      "reproduced": 0.8309,
+      "holdout": 0.812398538961039,
+      "seconds": 36.1
+    },
+    {
+      "submission": "p02_target_leak",
+      "pass": true,
+      "expected": [
+        "LEAK_ABLATION"
+      ],
+      "missing": [],
+      "unexpected": [],
+      "recommendation": "Review findings before advancing",
+      "overall": 68,
+      "claimed": 0.971,
+      "reproduced": 0.9713,
+      "holdout": 0.8072302126227431,
+      "seconds": 36.5
+    },
+    {
+      "submission": "p03_random_split",
+      "pass": true,
+      "expected": [
+        "LEAK_ENTITY"
+      ],
+      "missing": [],
+      "unexpected": [],
+      "recommendation": "Review findings before advancing",
+      "overall": 78,
+      "claimed": 0.839,
+      "reproduced": 0.8393,
+      "holdout": 0.7982335880582833,
+      "seconds": 57.1
+    },
+    {
+      "submission": "p04_scaler_before_split",
+      "pass": true,
+      "expected": [
+        "LEAK_PREPROCESS_BEFORE_SPLIT"
+      ],
+      "missing": [],
+      "unexpected": [],
+      "recommendation": "No blocking findings",
+      "overall": 95,
+      "claimed": 0.833,
+      "reproduced": 0.8329,
+      "holdout": 0.8147865853658537,
+      "seconds": 30.0
+    },
+    {
+      "submission": "p05_unseeded",
+      "pass": true,
+      "expected": [
+        "REPRO_NONDETERMINISTIC"
+      ],
+      "missing": [],
+      "unexpected": [],
+      "recommendation": "Review findings before advancing",
+      "overall": 86,
+      "claimed": 0.804,
+      "reproduced": 0.8212,
+      "holdout": 0.7934401726322458,
+      "seconds": 39.5
+    },
+    {
+      "submission": "p06_local_file",
+      "pass": true,
+      "expected": [
+        "RUN_MISSING_FILE",
+        "SANDBOX_OUTSIDE_FILE"
+      ],
+      "missing": [],
+      "unexpected": [],
+      "recommendation": "Could not be scored",
+      "overall": null,
+      "claimed": 0.831,
+      "reproduced": null,
+      "holdout": null,
+      "seconds": 11.5
+    },
+    {
+      "submission": "p07_undeclared_dep",
+      "pass": true,
+      "expected": [
+        "REPRO_UNDECLARED_IMPORT"
+      ],
+      "missing": [],
+      "unexpected": [],
+      "recommendation": "No blocking findings",
+      "overall": 97,
+      "claimed": 0.831,
+      "reproduced": 0.8309,
+      "holdout": 0.8114940509185936,
+      "seconds": 29.8
+    },
+    {
+      "submission": "p08_inflated_claim",
+      "pass": true,
+      "expected": [
+        "REPRO_CLAIM_MISMATCH"
+      ],
+      "missing": [],
+      "unexpected": [],
+      "recommendation": "Review findings before advancing",
+      "overall": 76,
+      "claimed": 0.93,
+      "reproduced": 0.8309,
+      "holdout": 0.812398538961039,
+      "seconds": 29.2
+    },
+    {
+      "submission": "p09_tune_on_test",
+      "pass": true,
+      "expected": [
+        "VAL_TEST_REUSED"
+      ],
+      "missing": [],
+      "unexpected": [],
+      "recommendation": "Review findings before advancing",
+      "overall": 94,
+      "claimed": 0.829,
+      "reproduced": 0.829,
+      "holdout": 0.8105846135571746,
+      "seconds": 49.2
+    },
+    {
+      "submission": "p10_network",
+      "pass": true,
+      "expected": [
+        "RUN_NETWORK",
+        "SANDBOX_NETWORK"
+      ],
+      "missing": [],
+      "unexpected": [],
+      "recommendation": "Could not be scored",
+      "overall": null,
+      "claimed": 0.831,
+      "reproduced": null,
+      "holdout": null,
+      "seconds": 11.7
+    },
+    {
+      "submission": "p11_test_in_fit",
+      "pass": true,
+      "expected": [
+        "LEAK_TEST_IN_FIT"
+      ],
+      "missing": [],
+      "unexpected": [],
+      "recommendation": "Review findings before advancing",
+      "overall": 90,
+      "claimed": 0.833,
+      "reproduced": 0.8329,
+      "holdout": 0.81478163604688,
+      "seconds": 30.3
+    },
+    {
+      "submission": "p12_notebook_clean",
+      "pass": true,
+      "expected": [],
+      "missing": [],
+      "unexpected": [],
+      "recommendation": "No blocking findings",
+      "overall": 100,
+      "claimed": 0.831,
+      "reproduced": 0.8309,
+      "holdout": 0.812398538961039,
+      "seconds": 57.6
+    },
+    {
+      "submission": "p13_xgboost_leak",
+      "pass": true,
+      "expected": [
+        "LEAK_ABLATION"
+      ],
+      "missing": [],
+      "unexpected": [],
+      "recommendation": "Review findings before advancing",
+      "overall": 68,
+      "claimed": 0.97,
+      "reproduced": 0.9697,
+      "holdout": 0.8035268847006652,
+      "seconds": 44.5
+    },
+    {
+      "submission": "p14_lightgbm_clean",
+      "pass": true,
+      "expected": [],
+      "missing": [],
+      "unexpected": [],
+      "recommendation": "No blocking findings",
+      "overall": 100,
+      "claimed": 0.822,
+      "reproduced": 0.8218,
+      "holdout": 0.8049993070953437,
+      "seconds": 33.4
+    },
+    {
+      "submission": "p15_deletes_trace",
+      "pass": true,
+      "expected": [
+        "TELEMETRY_MISSING"
+      ],
+      "missing": [],
+      "unexpected": [],
+      "recommendation": "Review findings before advancing",
+      "overall": 94,
+      "claimed": 0.831,
+      "reproduced": 0.8309,
+      "holdout": 0.812398538961039,
+      "seconds": 33.7
+    },
+    {
+      "submission": "p16_notebook_scaler_first",
+      "pass": true,
+      "expected": [
+        "LEAK_PREPROCESS_BEFORE_SPLIT"
+      ],
+      "missing": [],
+      "unexpected": [],
+      "recommendation": "No blocking findings",
+      "overall": 95,
+      "claimed": 0.833,
+      "reproduced": 0.8329,
+      "holdout": 0.8151676829268292,
+      "seconds": 49.1
+    }
+  ]
+}

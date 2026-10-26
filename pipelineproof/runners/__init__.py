@@ -5,6 +5,9 @@ def get_runner(name: str = "docker", **kw) -> "Runner":
     if name == "docker":
         from .docker_runner import DockerRunner
         return DockerRunner(**kw)
+    if name == "local":
+        from .local_runner import LocalRunner
+        return LocalRunner(**kw)
     if name == "modal":
         from .modal_runner import ModalRunner
         return ModalRunner(**kw)

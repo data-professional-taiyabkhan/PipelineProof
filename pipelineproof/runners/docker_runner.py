@@ -70,6 +70,9 @@ class DockerRunner(Runner):
             shutil.rmtree(out_dir)
         out_dir.mkdir(parents=True)
         out_dir.chmod(0o777)
+        for sub in spec.out_subdirs:
+            (out_dir / sub).mkdir(parents=True, exist_ok=True)
+            (out_dir / sub).chmod(0o777)
         args = ["docker", "run", "--rm", "--network", "none", "--read-only", "--cap-drop", "ALL",
                 "--security-opt", "no-new-privileges", "--pids-limit", "256",
                 "--memory", f"{spec.memory_mb}m", "--memory-swap", f"{spec.memory_mb}m", "--cpus", str(spec.cpus),
