@@ -25,7 +25,7 @@ def latest_benchmark() -> dict | None:
     logs = sorted((settings.benchmark_dir / "logs").glob("evaluation_log_*.json")) if \
         (settings.benchmark_dir / "logs").exists() else []
     if logs:
-        log = json.loads(logs[-1].read_text())
+        log = json.loads(logs[-1].read_text(encoding="utf-8"))
         return {"date": log["date"], "runner": log["runner"], "passed": log["passed"], "total": log["total"], "log": log}
     return None
 

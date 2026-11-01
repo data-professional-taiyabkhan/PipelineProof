@@ -21,7 +21,7 @@ def task_dir(task_id: str) -> Path:
 @lru_cache(maxsize=16)
 def meta(task_id: str) -> dict:
     d = task_dir(task_id)
-    cfg = tomllib.loads((d / "task.toml").read_text())
+    cfg = tomllib.loads((d / "task.toml").read_text(encoding="utf-8"))
     m = cfg.get("meta", {})
     return {
         "id": task_id, "name": cfg["name"], "metric": cfg["metric"], "target": cfg["target"],
@@ -38,7 +38,7 @@ def available() -> list[str]:
 
 def doc(task_id: str, name: str) -> str:
     p = task_dir(task_id) / name
-    return p.read_text() if p.exists() else ""
+    return p.read_text(encoding="utf-8") if p.exists() else ""
 
 
 @lru_cache(maxsize=16)

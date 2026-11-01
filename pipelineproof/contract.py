@@ -105,7 +105,7 @@ def load(root: str | Path, metric: str) -> Submission:
         problems.append("pipeline.toml is missing")
     else:
         try:
-            cfg = tomllib.loads((root / "pipeline.toml").read_text())
+            cfg = tomllib.loads((root / "pipeline.toml").read_text(encoding="utf-8", errors="replace"))
         except tomllib.TOMLDecodeError as e:
             problems.append(f"pipeline.toml is not valid TOML: {e}")
     python = str(cfg.get("python", "3.12"))
@@ -122,13 +122,13 @@ def load(root: str | Path, metric: str) -> Submission:
     if not (root / "requirements.txt").exists():
         problems.append("requirements.txt is missing")
     else:
-        reqs, bad = parse_requirements((root / "requirements.txt").read_text())
+        reqs, bad = parse_requirements((root / "requirements.txt").read_text(encoding="utf-8", errors="replace"))
         problems += bad
         unpinned = [r.name for r in reqs if not r.pinned]
         if unpinned:
             warnings.append(f"unpinned requirements (resolved to exact versions at build time): {', '.join(unpinned)}")
 
-    decisions = (root / "DECISIONS.md").read_text() if (root / "DECISIONS.md").exists() else ""
+    decisions = (root / "DECISIONS.md").read_text(encoding="utf-8", errors="replace") if (root / "DECISIONS.md").exists() else ""
     if not decisions:
         problems.append("DECISIONS.md is missing")
     claimed, claimed_name, seed = parse_decisions(decisions, metric)

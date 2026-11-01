@@ -34,8 +34,8 @@ def main(argv=None):
         print(json.dumps(res, indent=2))
         return 0 if res["ok"] else 1
     r = pipeline.evaluate(t, a.submission, runner, out / f"{name}_runs", progress=lambda st, m: print(f"  - {m}", flush=True))
-    (out / f"{name}.json").write_text(json.dumps(r, indent=2, default=str))
-    (out / f"{name}.md").write_text(report.to_markdown(r))
+    (out / f"{name}.json").write_text(json.dumps(r, indent=2, default=str), encoding="utf-8")
+    (out / f"{name}.md").write_text(report.to_markdown(r), encoding="utf-8")
     print(report.summary(r))
     print(f"{r['recommendation_label']} | overall {r['overall']} | report: {out / (name + '.md')}")
     return 0

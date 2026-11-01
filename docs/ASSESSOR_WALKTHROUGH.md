@@ -36,7 +36,7 @@ period can take a few seconds while a container starts.
   sandboxes: gVisor, no internet, UK region, holdout labels outside the sandbox.
 - Employer workspace with roles, assessments, private candidate links, reviewer sign-off with reasons,
   feedback release, candidate contests, CSV export, audit log and retention deletion.
-- One task (broadband churn) with planted traps and a holdout; 16 planted-defect benchmark submissions,
+- One task (broadband churn) with planted traps and a holdout; 18 planted-defect benchmark submissions,
   all judged correctly in the latest logged run.
 
 ## What it does not claim yet
@@ -44,6 +44,10 @@ period can take a few seconds while a container starts.
 - Accuracy on real candidates' code: the benchmark was written by the build team. Pilot rounds will
   measure this.
 - Resistance to AI-written submissions: not yet tested against Claude Code, Codex or Copilot.
+- Complete coverage of leakage. Known limits from internal testing: preprocessing written by hand (pandas
+  arithmetic on every row before the split) is not traced, only scikit-learn, XGBoost and LightGBM fits are;
+  data-handling checks look for the right operations in the code, not their effect. Two cases the first
+  version got wrong (a renamed leaked field; a hand-written GroupKFold loop) are fixed and now in the benchmark.
 - Learned scoring weights (Mechanism C): the rubric is hand-set and published; outcome data does not
   exist yet.
 - An independent security review of the sandboxing.

@@ -57,7 +57,7 @@ library → invites candidates (copy the private link) → watches progress → 
 decision with a reason → releases feedback → answers contests → exports CSV.
 
 **Assessor demo:** `/demo` → a session in the sample organisation (no account) → seeded reports for
-seven synthetic candidates → live runs of the 16 benchmark submissions (daily cap).
+seven synthetic candidates → live runs of the 18 benchmark submissions (daily cap).
 
 ## Security rules
 

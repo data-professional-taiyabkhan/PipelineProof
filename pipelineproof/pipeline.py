@@ -31,7 +31,7 @@ def _read_events(path: Path) -> list[dict]:
     if not path.exists():
         return []
     out = []
-    for line in path.read_text().splitlines():
+    for line in path.read_text(encoding="utf-8", errors="replace").splitlines():
         try:
             out.append(json.loads(line))
         except json.JSONDecodeError:
@@ -43,7 +43,7 @@ def _own_metric(task, out_dir: Path, events):
     m = out_dir / "model" / "metrics.json"
     if m.exists():
         try:
-            return float(json.loads(m.read_text())[task.metric])
+            return float(json.loads(m.read_text(encoding="utf-8", errors="replace"))[task.metric])
         except Exception:
             pass
     calls = [e for e in events if e["kind"] == "metric" and e["metric"] == task.metric_fn_name and e.get("depth", 0) == 0]
@@ -153,7 +153,7 @@ def evaluate(task, submission_dir, runner, workdir, progress=None) -> dict:
 
     say("env", "Building the pinned environment")
     try:
-        env_id = runner.build_env(EnvSpec(sub.python, [l for l in (sub.root / "requirements.txt").read_text().splitlines()
+        env_id = runner.build_env(EnvSpec(sub.python, [l for l in (sub.root / "requirements.txt").read_text(encoding="utf-8", errors="replace").splitlines()
                                                         if l.strip() and not l.strip().startswith("#")]))
     except EnvBuildError as e:
         report["status"] = "env_failed"
@@ -230,7 +230,7 @@ def evaluate(task, submission_dir, runner, workdir, progress=None) -> dict:
         names = ", ".join(f"'{c}'" for c in suspects)
         say("ablation", f"Ablation: re-running with {names} neutralised to see whether the result depends on it")
     else:
-        say("ablation", "No suspicious input columns were used, so no ablation re-run was needed")
+        say("ablation", "No suspicious input columns, so no ablation re-run was needed")
 
     def _ablate(col, val):
         d = _ablated_data(task, col, val, workdir)
@@ -296,7 +296,7 @@ def preflight(task, submission_dir, runner, workdir) -> dict:
     probe = sample.drop(columns=[task.target]).head(50)
     probe.to_csv(feats / "holdout_features.csv", index=False)
     try:
-        env_id = runner.build_env(EnvSpec(sub.python, [l for l in (sub.root / "requirements.txt").read_text().splitlines()
+        env_id = runner.build_env(EnvSpec(sub.python, [l for l in (sub.root / "requirements.txt").read_text(encoding="utf-8", errors="replace").splitlines()
                                                         if l.strip() and not l.strip().startswith("#")]))
     except EnvBuildError as e:
         res["problems"].append(f"requirements could not be installed: {str(e)[-300:]}")

@@ -51,7 +51,8 @@ def to_markdown(r: dict) -> str:
                      f"on unseen entities: {_f(d['unseen'])} (n={d['n_unseen']})"
                      + (f"; 95% interval for the difference {ci[0]:.3f} to {ci[1]:.3f}" if ci else ""))
         for a in r.get("ablations", []):
-            L.append(f"- Ablation, `{a['column']}` set to {a['set_to']}: own {_f(a['own_before'])} -> {_f(a.get('own_after'))}; "
+            how = "shuffled across rows" if a['set_to'] == "permute" else f"set to {a['set_to']}"
+            L.append(f"- Ablation, `{a['column']}` {how}: own {_f(a['own_before'])} -> {_f(a.get('own_after'))}; "
                      f"holdout {_f(a['holdout_before'])} -> {_f(a.get('holdout_after'))}")
     L += ["", "## Findings", ""]
     if not r["findings"]:

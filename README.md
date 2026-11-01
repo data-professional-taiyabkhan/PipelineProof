@@ -27,7 +27,7 @@ webapp/               the web application (FastAPI, server-rendered pages, HTMX)
 modal_app.py          deployment on Modal: web app, worker, daily maintenance, seed, benchmark
 supabase/migrations/  database schema (Postgres, private "pp" schema)
 tasks/churn_v1/       Task 1: data with planted traps, holdout, brief, employer notes, starter template
-benchmark/            16 planted-defect submissions, run_benchmark.py, logs/
+benchmark/            18 planted-defect submissions, run_benchmark.py, logs/
 tests/                unit tests and end-to-end web app tests
 docs/                 architecture, deployment, runbook, assessor walkthrough
 ```
@@ -66,7 +66,7 @@ Use it only with the benchmark submissions or code you trust. Production uses Mo
 ```
 python -m pytest tests/test_units.py                      # harness unit tests, seconds
 python -m pytest tests/test_webapp.py                     # full web flows against Postgres, about 1 minute
-python benchmark/run_benchmark.py --runner local          # the 16-submission acceptance test
+python benchmark/run_benchmark.py --runner local          # the 18-submission acceptance test
 ```
 
 ## Deploy

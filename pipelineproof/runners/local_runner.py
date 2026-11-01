@@ -95,7 +95,7 @@ class LocalRunner(Runner):
             if not f.exists():
                 continue
             lines = []
-            for line in f.read_text(errors="replace").splitlines():
+            for line in f.read_text(encoding="utf-8", errors="replace").splitlines():
                 try:
                     e = json.loads(line)
                 except json.JSONDecodeError:
@@ -114,4 +114,4 @@ class LocalRunner(Runner):
                             e["path"] = cont + p[len(local):].replace("\\", "/")
                             break
                 lines.append(json.dumps(e))
-            f.write_text("\n".join(lines) + ("\n" if lines else ""))
+            f.write_text("\n".join(lines) + ("\n" if lines else ""), encoding="utf-8")

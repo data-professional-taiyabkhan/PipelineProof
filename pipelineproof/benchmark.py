@@ -26,6 +26,8 @@ EXPECTED = {   # submission -> finding codes that must appear (empty = clean, no
     "p14_lightgbm_clean": set(),
     "p15_deletes_trace": {"TELEMETRY_MISSING"},
     "p16_notebook_scaler_first": {"LEAK_PREPROCESS_BEFORE_SPLIT"},
+    "p17_renamed_leak": {"LEAK_ABLATION"},
+    "p18_groupkfold_clean": set(),
 }
 PLANTED = {
     "p01_clean": "None: a careful pipeline",
@@ -44,6 +46,8 @@ PLANTED = {
     "p14_lightgbm_clean": "None: a careful pipeline using LightGBM",
     "p15_deletes_trace": "Deletes the harness's trace file to hide what it did",
     "p16_notebook_scaler_first": "Notebook that fits the scaler before the split",
+    "p17_renamed_leak": "Uses the post-cancellation field under another name (added 1 Nov 2026: the first version missed this)",
+    "p18_groupkfold_clean": "None: a careful pipeline validated with a hand-written GroupKFold loop (added 1 Nov 2026: the first version wrongly flagged this)",
 }
 BLOCKING = {"critical", "high", "medium"}
 # findings that legitimately accompany an expected one

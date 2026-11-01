@@ -147,12 +147,12 @@ def sources(sub_dir):
     root = pathlib.Path(sub_dir)
     out = []
     for path in sorted(root.rglob("*.py")):
-        out.append((str(path.relative_to(root)), path.read_text(errors="replace"), []))
+        out.append((str(path.relative_to(root)), path.read_text(encoding="utf-8", errors="replace"), []))
     for path in sorted(root.rglob("*.ipynb")):
         if ".ipynb_checkpoints" in path.parts:
             continue
         try:
-            nb = json.loads(path.read_text(errors="replace"))
+            nb = json.loads(path.read_text(encoding="utf-8", errors="replace"))
         except json.JSONDecodeError:
             continue
         lines, magics = [], []

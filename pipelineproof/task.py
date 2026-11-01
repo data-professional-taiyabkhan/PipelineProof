@@ -96,7 +96,7 @@ class Task:
 
 def load(root: str | Path) -> Task:
     root = Path(root).resolve()
-    cfg = tomllib.loads((root / "task.toml").read_text())
+    cfg = tomllib.loads((root / "task.toml").read_text(encoding="utf-8"))
     if cfg["metric"] not in METRICS:
         raise ValueError(f"unsupported metric {cfg['metric']}")
     t = Task(root=root, name=cfg["name"], target=cfg["target"], id_column=cfg.get("id_column", "row_id"),

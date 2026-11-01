@@ -5,7 +5,7 @@
   <div class="wrap">
     <div class="eyebrow">Evidence</div>
     <h1 style="font-size:2.3rem;max-width:24ch">How we test the harness: a planted-defect benchmark</h1>
-    <p class="sub" style="font-size:1.08rem">Sixteen submissions to the churn task, each written with one known property: a clean pipeline, or one
+    <p class="sub" style="font-size:1.08rem">{{ BENCHMARK_COUNT }} submissions to the churn task, each written with one known property: a clean pipeline, or one
       specific defect. A submission passes when every expected finding appears and nothing else serious is raised. The benchmark runs
       after every change to the harness.</p>
   </div>
@@ -18,7 +18,7 @@
       <div class="stat accent"><div class="label">Judged correctly</div><div class="value">{{ bench.passed }} / {{ bench.total }}</div><div class="note">submissions in the latest run</div></div>
       <div class="stat"><div class="label">Latest run</div><div class="value" style="font-size:1.25rem">{{ bench.date|dt }}</div><div class="note">UK time</div></div>
       <div class="stat"><div class="label">Where it ran</div><div class="value" style="font-size:1.05rem;line-height:1.35">{{ bench.runner }}</div></div>
-      <div class="stat"><div class="label">Total time</div><div class="value" style="font-size:1.25rem">{{ (bench.log.seconds / 60)|round(1) }} min</div><div class="note">all 16 submissions, sequentially</div></div>
+      <div class="stat"><div class="label">Total time</div><div class="value" style="font-size:1.25rem">{{ (bench.log.seconds / 60)|round(1) }} min</div><div class="note">all {{ bench.total }} submissions, sequentially</div></div>
     </div>
 
     <div class="card">

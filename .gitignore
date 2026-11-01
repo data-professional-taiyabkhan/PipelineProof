@@ -5,3 +5,5 @@ benchmark/out/
 tasks/*/holdout_features/
 .venv/
 .env
+exercises/*/out/
+exercises/*/task/holdout_features/

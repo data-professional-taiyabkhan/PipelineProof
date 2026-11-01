@@ -43,10 +43,10 @@
 </div>
 
 {% if v.ablations %}
-<div class="card"><div class="card-head"><h3>Ablation re-runs</h3><span class="small muted">same code and seed, one column set to its value at prediction time</span></div>
+<div class="card"><div class="card-head"><h3>Ablation re-runs</h3><span class="small muted">same code and seed, one column neutralised: set to its value at prediction time, or shuffled across rows</span></div>
   <div class="table-wrap"><table class="table table-compact">
-    <thead><tr><th>Column</th><th>Set to</th><th class="num">Own score</th><th class="num">Unseen</th></tr></thead>
-    <tbody>{% for a in v.ablations %}<tr><td class="mono">{{ a.column }}</td><td class="mono">{{ a.set_to }}</td>
+    <thead><tr><th>Column</th><th>Neutralised by</th><th class="num">Own score</th><th class="num">Unseen</th></tr></thead>
+    <tbody>{% for a in v.ablations %}<tr><td class="mono">{{ a.column }}</td><td>{% if a.set_to == "permute" %}shuffling it across rows{% else %}setting it to <span class="mono">{{ a.set_to }}</span>{% endif %}</td>
       <td class="num mono">{{ a.own_before|num }} → <strong>{{ a.own_after|num }}</strong></td>
       <td class="num mono">{{ a.holdout_before|num }} → {{ a.holdout_after|num }}</td></tr>{% endfor %}</tbody>
   </table></div></div>

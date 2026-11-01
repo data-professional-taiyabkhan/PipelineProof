@@ -53,7 +53,7 @@ $env:PP_SIGNUP = "closed"; modal deploy modal_app.py    # only people added to a
 ```
 modal run modal_app.py::seed          # sample workspace, 7 synthetic candidates, real evaluations in sandboxes
 modal run modal_app.py::seed --reset  # rebuild it from scratch
-modal run modal_app.py::benchmark     # all 16 benchmark submissions through production sandboxes; shown on /evidence
+modal run modal_app.py::benchmark     # all 18 benchmark submissions through production sandboxes; shown on /evidence
 ```
 
 ## Custom domain

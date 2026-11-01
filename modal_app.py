@@ -94,7 +94,7 @@ def seed(reset: bool = False):
 
 @app.function(image=image, secrets=secrets, timeout=3600, **_region)
 def benchmark():
-    """Run all 16 planted-defect submissions through the production sandboxes and store the log."""
+    """Run all 18 planted-defect submissions through the production sandboxes and store the log."""
     from webapp import seed as demo
     log = demo.run_benchmark_local()
     print(f"benchmark {log['passed']}/{log['total']} in {log['seconds']}s")

@@ -149,7 +149,9 @@ def score_cls(v) -> str:
 env = TEMPLATES.env
 env.filters.update(dt=f_dt, date=f_date, ago=f_ago, md=f_md, nl2br=f_nl2br, num=f_num, signed=f_signed,
                    score_cls=score_cls)
-env.globals.update(NAMES=NAMES, QUESTIONS=QUESTIONS, CODE_TITLES=CODE_TITLES, SEVERITY=SEVERITY, STATUS=STATUS,
+from pipelineproof.benchmark import EXPECTED as _BENCH
+
+env.globals.update(BENCHMARK_COUNT=len(_BENCH), NAMES=NAMES, QUESTIONS=QUESTIONS, CODE_TITLES=CODE_TITLES, SEVERITY=SEVERITY, STATUS=STATUS,
                    REC=REC, OUTCOMES=OUTCOMES, ROLE_LABELS=ROLE_LABELS, settings=settings, EVIDENCE=EVIDENCE,
                    PROBE_LABELS=PROBE_LABELS, now=lambda: datetime.now(timezone.utc))
 

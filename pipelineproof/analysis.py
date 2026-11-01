@@ -106,15 +106,28 @@ def trace_findings(task, events, train_df, claim):
                                  f"{where(f['site'])}, so test rows shaped the preprocessing"))
                 break
 
-    # rows of a test partition reaching a top-level fit before the evaluation
+    # rows of a test partition reaching a top-level fit before that partition is scored. A fit that sees a
+    # partition only after it was scored is a cross-validation fold or the final refit, not leakage.
+    by_seq = {sp["seq"]: sp for sp in splits}
+
+    def scores_partition(m, sp):
+        if m["seq"] < sp["seq"]:
+            return False
+        if m.get("y_index") is not None and sp.get("test_index") is not None:
+            return len(m["y_index"]) == len(sp["test_index"]) and set(m["y_index"]) == set(sp["test_index"])
+        return m.get("n") is not None and m.get("n") == sp.get("n_test")
+
     for f in fits:
-        if f["depth"] == 0 and f["seq"] < eval_seq:
-            hits = [o for o in f["test_overlap"] if o[1] >= 0.5 * o[2]]
-            if hits:
-                F.append(finding("LEAK_TEST_IN_FIT", "leakage", "high", "runtime trace",
-                                 f"{f['cls']}.{f['method']} received {hits[0][1]} of the {hits[0][2]} test rows before "
-                                 f"evaluation{where(f['site'])}"))
-                break
+        if f["depth"] != 0 or f["seq"] >= eval_seq:
+            continue
+        hits = [o for o in f["test_overlap"] if o[1] >= 0.5 * o[2] and (
+            o[0] not in by_seq or any(scores_partition(m, by_seq[o[0]]) and f["seq"] < m["seq"] <= eval_seq
+                                      for m in metrics))]
+        if hits:
+            F.append(finding("LEAK_TEST_IN_FIT", "leakage", "high", "runtime trace",
+                             f"{f['cls']}.{f['method']} received {hits[0][1]} of the {hits[0][2]} test rows before "
+                             f"they were scored{where(f['site'])}"))
+            break
 
     # the same test partition scored repeatedly: model selection on test
     for sp in splits:
@@ -200,8 +213,12 @@ def _bootstrap_diff(task, y, s, seen, n=300, seed=0):
     return [round(float(np.percentile(diffs, 2.5)), 4), round(float(np.percentile(diffs, 97.5)), 4)]
 
 
-def suspect_columns(task, train_df, used_cols, unknown_cols):
-    """Columns worth an ablation: declared post-outcome fields plus anything suspiciously predictive."""
+def suspect_columns(task, train_df, used_cols=None, unknown_cols=None):
+    """Columns worth an ablation: declared post-outcome fields plus anything suspiciously predictive.
+
+    Every suspect is ablated, whether or not a column of that name reached a fit: code can rename a
+    field or fold it into another one, and neutralising the raw input column catches both.
+    """
     out = {}
     for c in task.post_outcome_columns:
         out[c] = task.prediction_time_values.get(c, "permute")
@@ -217,9 +234,4 @@ def suspect_columns(task, train_df, used_cols, unknown_cols):
                 continue
             if max(a, 1 - a) > 0.85:
                 out[c] = "permute"
-    result = {}
-    for c, v in out.items():
-        used = any(u == c or u.startswith(c + "_") or u.endswith("__" + c) for u in used_cols)
-        if used or unknown_cols:
-            result[c] = v
-    return result
+    return out
