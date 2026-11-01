@@ -1,0 +1,12 @@
+# Local development: the app, plus a server, tests, and the libraries the benchmark submissions use.
+-r requirements-app.txt
+uvicorn[standard]
+pytest
+httpx
+joblib
+xgboost
+lightgbm
+papermill
+ipykernel
+nbformat
+modal

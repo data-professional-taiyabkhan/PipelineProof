@@ -1,0 +1,41 @@
+{% extends "public/_layout.html" %}
+{% block title %}For candidates · PipelineProof{% endblock %}
+{% block content %}
+<section class="section" style="padding-bottom:24px">
+  <div class="wrap-narrow">
+    <div class="eyebrow">For candidates</div>
+    <h1 style="font-size:2.2rem">If an employer has sent you a PipelineProof task</h1>
+    <p class="sub" style="font-size:1.08rem">Your work is judged on whether the result you report holds up, not on how your code looks. Here is
+      exactly what happens to it.</p>
+  </div>
+</section>
+<section style="padding-bottom:56px">
+  <div class="wrap-narrow prose">
+    <h2>What we do with your submission</h2>
+    <ol>
+      <li>We check it follows the submission format and run it on a small sample, so you can fix problems before you submit.</li>
+      <li>After you submit, we run your training four times in a sealed environment with no internet: twice with your seed and twice with others.</li>
+      <li>Your model predicts customers that are not in the training data. We compare that score with the one you reported.</li>
+      <li>We record how your code splits and fits the data, to see whether any test or future information reached training.</li>
+      <li>A person at the employer reads the report and makes the decision. The software never rejects anyone on its own.</li>
+    </ol>
+    <h2>Your rights</h2>
+    <ul>
+      <li>After the employer has reviewed your work, they can release feedback to you, including the evidence about your submission.</li>
+      <li>You can contest the result from your candidate page. A person at the employer will read it and reply.</li>
+      <li>Your data is kept only for the employer's retention period and then deleted. The employer is responsible for your data and their privacy notice applies.</li>
+    </ul>
+    <h2>How to prepare</h2>
+    <ul>
+      <li>Start from the starter template on your candidate page; it already reads and writes the right files.</li>
+      <li>Pin every package in <code>requirements.txt</code> to an exact version, and include everything you import.</li>
+      <li>Read your random seed from the <code>PP_SEED</code> environment variable so your result can be reproduced.</li>
+      <li>Your code runs without internet access and only with the files you submit. Do not include the data; it is provided when your code runs.</li>
+      <li>Report the score you actually measured. A careful 0.80 that holds up on new customers is a better result than a 0.97 that does not.</li>
+    </ul>
+    <h2>AI assistants</h2>
+    <p>Unless the employer says otherwise, you may use any tools, including AI assistants. Say which you used in <code>DECISIONS.md</code>.
+      You are judged on the result and the decisions you made, whoever typed the code.</p>
+  </div>
+</section>
+{% endblock %}

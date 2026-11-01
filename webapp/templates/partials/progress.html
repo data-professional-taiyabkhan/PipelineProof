@@ -1,0 +1,20 @@
+<div id="progress" class="card" hx-get="/app/submissions/{{ s.id }}/progress" hx-trigger="every 2s" hx-swap="outerHTML">
+  <div class="card-head">
+    <h2>{% if s.status == "queued" %}Waiting for a sandbox{% else %}Evaluating{% endif %}</h2>
+    <span class="small muted"><span class="spinner"></span>&nbsp; started {{ (s.started_at or s.submitted_at)|ago }}</span>
+  </div>
+  <div class="card-body">
+    {% set items = s.progress or [] %}
+    {% if items %}
+    <ol class="timeline">
+      {% for p in items %}
+      <li class="{{ 'current' if loop.last }}">{{ p.message }}<span class="t">{{ p.at|dt }}</span></li>
+      {% endfor %}
+    </ol>
+    {% else %}
+    <p class="muted" style="margin:0">Preparing the environment. The first run of a new set of packages can take a few minutes while they install;
+      after that it is cached.</p>
+    {% endif %}
+    <p class="small muted" style="margin:14px 0 0">Candidate code runs in fresh sandboxes with the internet blocked. This page updates by itself.</p>
+  </div>
+</div>

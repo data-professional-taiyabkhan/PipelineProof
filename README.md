@@ -1,91 +1,84 @@
-# PipelineProof evaluation harness
+# PipelineProof
 
-Phase 1, work packages 1 to 4: the engine that re-runs a candidate's ML take-home in a
-sandbox, checks the claimed score against a holdout the candidate never saw, and locates
-leakage. The web app (upload, reports, reviewer sign-off) sits on top of this and is next.
+PipelineProof re-runs a candidate's machine-learning take-home in a sealed sandbox, checks the
+score they claim against data they never saw, and shows where the work leaks. A named reviewer
+confirms or overrides every recommendation.
 
-## What it does with a submission
+**Live:** https://data-professional-taiyabkhan--pipelineproof.eu-west.modal.run (assessor demo at `/demo`, no sign-up). Deployment notes: `docs/DEPLOY.md`.
 
-1. **Contract check** (`contract.py`): `pipeline.toml`, pinned `requirements.txt`, `DECISIONS.md`
-   with `claimed_metric: <metric> = <value>` and `seed:`. Problems block scoring; warnings don't.
-2. **Static pass** (`static_rules.py`): AST rules over `.py` files and notebooks, plus imports
-   checked against `requirements.txt`.
-3. **Environment build** (runner): pinned packages installed with network on and no data.
-4. **Mechanism A**: train with the declared seed, again with the same seed, then two other seeds.
-   Claim vs clean re-run (task tolerance), determinism, seed spread.
-5. **Holdout**: each trained model predicts on holdout features; labels stay in the worker.
-6. **Mechanism B** (`analysis.py`): runtime trace (`instrument/sitecustomize.py`) for
-   preprocessing before the split, test rows reaching a fit, the test set scored repeatedly,
-   entity overlap with a seen-vs-unseen decomposition and bootstrap interval, then ablation
-   re-runs that neutralise suspect columns in the input (no edits to candidate code).
-7. **Scoring** (`scoring.py`): six dimensions, published weights and deductions per finding
-   code (rubric v1). The recommendation is advice; a named reviewer must confirm or override.
-
-## Layout
+## What is in this repository
 
 ```
-pipelineproof/
-  contract.py        submission format and validation
-  task.py            task definition, metrics, holdout handling
-  static_rules.py    AST rules, notebook reader, import check, task probes
-  instrument/        sitecustomize.py injected into every run (tracing, not security)
-  runners/           base interface, docker_runner.py (local), modal_runner.py (production)
-  analysis.py        findings from runs and traces
-  pipeline.py        evaluate() and preflight()
-  scoring.py         rubric v1
-  report.py          Markdown report and plain-English summary
-  cli.py
-tasks/churn_v1/      Task 1: data with planted traps, holdout, brief, data dictionary
-benchmark/           16 planted-defect submissions, run_benchmark.py, logs/
-tests/               unit tests (no Docker)
+pipelineproof/        the evaluation harness (Python package)
+  contract.py           submission format and validation
+  task.py               task definition, metrics, holdout handling
+  static_rules.py       code reading: AST rules, notebooks, imports vs requirements
+  instrument/           sitecustomize.py injected into every run (runtime trace)
+  runners/              local (no isolation), docker, modal (production sandboxes)
+  pipeline.py           evaluate() and preflight()
+  analysis.py           findings from runs and traces
+  scoring.py            rubric v1: six dimensions, published weights
+  benchmark.py          planted-defect benchmark and its pass rule
+webapp/               the web application (FastAPI, server-rendered pages, HTMX)
+  routes/               public site, sign-in, employer workspace, candidate portal
+  jobs.py               dispatch and the evaluation worker
+  seed.py               assessor demo workspace and benchmark recording
+  templates/, static/   pages and the design system
+modal_app.py          deployment on Modal: web app, worker, daily maintenance, seed, benchmark
+supabase/migrations/  database schema (Postgres, private "pp" schema)
+tasks/churn_v1/       Task 1: data with planted traps, holdout, brief, employer notes, starter template
+benchmark/            16 planted-defect submissions, run_benchmark.py, logs/
+tests/                unit tests and end-to-end web app tests
+docs/                 architecture, deployment, runbook, assessor walkthrough
 ```
 
-## Running
+## How a submission is evaluated
+
+1. **Contract check**: `pipeline.toml`, pinned `requirements.txt`, `DECISIONS.md` with
+   `claimed_metric: <metric> = <value>` and `seed:`.
+2. **Pre-flight** (on upload): train and predict on a 400-row sample; never touches the holdout.
+3. **Environment build**: the candidate's pinned packages, network on, no data.
+4. **Four runs** in fresh sandboxes with the internet blocked: declared seed twice, seeds 101 and 202.
+5. **Holdout**: each model predicts unseen rows; labels stay outside the sandbox and score the predictions.
+6. **Trace and ablation**: splits, fits and metric calls are recorded; suspect columns are set to their
+   prediction-time value and the pipeline re-run.
+7. **Report**: six scores with evidence and a recommendation; a reviewer decides, feedback can be
+   released, the candidate can contest.
+
+## Run it locally
+
+Needs Python 3.11+ and a Postgres database (local, or the Supabase one).
 
 ```
-pip install -e ".[dev]"
-python -m pytest tests                                    # unit tests
-python benchmark/run_benchmark.py                         # end-to-end acceptance test (Docker)
-python -m pipelineproof preflight tasks/churn_v1 path/to/submission
-python -m pipelineproof evaluate  tasks/churn_v1 path/to/submission --out out/
+python -m venv .venv && .venv/Scripts/activate          # Windows; use source .venv/bin/activate elsewhere
+pip install -r requirements-dev.txt
+psql "$DATABASE_URL" -f supabase/migrations/0001_pipelineproof_init.sql   # once, on an empty database
+set DATABASE_URL=postgresql://...                        # or put it in your shell profile
+uvicorn webapp.main:app --reload                         # http://127.0.0.1:8000
+python -m webapp.seed                                    # build the assessor demo workspace
 ```
 
-Runner selection: `--runner docker` (default) or `--runner modal`.
+Locally the **local runner** executes candidate code as ordinary processes with **no isolation**.
+Use it only with the benchmark submissions or code you trust. Production uses Modal sandboxes.
 
-- Docker builds `python:<ver>-slim` + the candidate's requirements per submission, cached by
-  a hash. Set `PP_DOCKER_RUNTIME=runsc` on a host with gVisor installed.
-  `PP_DOCKER_HOST_PYTHON=1` mounts the host's Python instead; it exists only for build
-  workspaces that cannot pull base images.
-- Modal needs `MODAL_TOKEN_ID` / `MODAL_TOKEN_SECRET`; runs use gVisor, `block_network=True`
-  and `region="uk"` (override with `PP_MODAL_REGION`). Written against modal 1.6.2's API but
-  **not yet run against a live account**.
-
-## The submission contract (what candidates get in their template)
+## Tests
 
 ```
-pipeline.toml     python = "3.12"
-                  train = "python train.py"            # or: papermill train.ipynb /tmp/out.ipynb
-                  predict = "python predict.py"
-requirements.txt  name==version, one per line; no URLs or index options
-DECISIONS.md      claimed_metric: roc_auc = 0.83
-                  seed: 42
-                  how you validated; which AI tools you used
+python -m pytest tests/test_units.py                      # harness unit tests, seconds
+python -m pytest tests/test_webapp.py                     # full web flows against Postgres, about 1 minute
+python benchmark/run_benchmark.py --runner local          # the 16-submission acceptance test
 ```
 
-Train reads `PP_DATA_DIR/train.csv` and `PP_SEED`, writes the model and
-`metrics.json` (`{"roc_auc": 0.83}`) to `PP_OUTPUT_DIR`. Predict reads the model from
-`PP_MODEL_DIR` and features from `PP_INPUT`, and writes a CSV with two columns, the task's
-id column and a prediction, to `PP_PRED_OUT`. No network at run time.
+## Deploy
 
-## Known limits (honest list)
+`docs/DEPLOY.md`: Supabase (London) for the database, Modal for the web app, the worker and the
+sandboxes. One secret (`DATABASE_URL`) is stored in Modal; nothing secret is in this repository.
 
-- Tracing covers scikit-learn and the scikit-learn APIs of XGBoost and LightGBM. Native
-  `xgb.train` / `lgb.train` calls, PyTorch and custom loops are not traced; the holdout gap
-  and ablations still apply to them.
-- Row matching needs pandas indexes or matching representations; arrays and `reset_index`
-  blind parts of the trace.
-- Tracing is telemetry. Candidate code can delete it (detected as `TELEMETRY_MISSING`) but
-  could also forge it; the sandbox and outside-the-sandbox holdout scoring are the trust anchors.
-- Data-handling probes are regexes over code: evidence for the reviewer, not proof.
-- Rubric weights and deductions are hand-set (v1) and published in every report.
-- The benchmark is written by us; it proves the checks work, not their accuracy on real candidates.
+## Scope today
+
+- Tabular tasks on CPU, Python 3.11 to 3.13; scripts and notebooks.
+- Runtime tracing for scikit-learn, and XGBoost and LightGBM through their scikit-learn interfaces.
+- One task (broadband churn). Scoring rubric v1 with hand-set weights.
+- The benchmark submissions were written by the build team: they show each check works, not how
+  accurate it is on real candidates' code.
+- Not yet tested: whether the task's traps still separate careful work from AI-written pipelines.

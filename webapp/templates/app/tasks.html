@@ -1,0 +1,18 @@
+{% extends "app/_layout.html" %}
+{% block title %}Task library · PipelineProof{% endblock %}
+{% block content %}
+<div class="page-head"><div><h1>Task library</h1><p class="muted" style="margin:0">Each task is a dataset with planted traps, a brief for candidates, and a holdout they never see.</p></div></div>
+<div class="grid grid-2">
+  {% for t in tasks %}
+  <a class="card card-pad" href="/app/tasks/{{ t.id }}" style="color:inherit;text-decoration:none">
+    <div class="row-between"><h3 style="margin:0">{{ t.title }}</h3><span class="badge b-brand">{{ t.metric|upper|replace("_", " ") }}</span></div>
+    <p style="margin:10px 0">{{ t.summary }}</p>
+    <div class="small muted">{{ t.role_family }} · {{ t.time_box }}</div>
+  </a>
+  {% endfor %}
+  <div class="card card-pad" style="border-style:dashed;box-shadow:none">
+    <h3>More tasks</h3>
+    <p class="muted small" style="margin:0">Further tasks, and tasks built from an employer's own data, are planned once the first task has been through pilot hiring rounds.</p>
+  </div>
+</div>
+{% endblock %}

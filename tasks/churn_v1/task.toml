@@ -7,8 +7,8 @@ time_column = "snapshot_month"
 post_outcome_columns = ["retention_offer_sent"]
 tolerance = 0.01
 time_cap_s = 600
-cpus = 2
-memory_mb = 4096
+cpus = 1
+memory_mb = 3072
 
 [prediction_time_values]
 retention_offer_sent = 0
@@ -19,3 +19,10 @@ dedupes_rows = "drop_duplicates"
 normalises_region_case = 'region.*\.str\.(lower|upper|title|casefold)'
 handles_negative_spend = 'monthly_spend.*(clip|abs\(|<\s*0|lower=0)'
 handles_missing = '(SimpleImputer|fillna|HistGradientBoosting|IterativeImputer|XGB|LGBM)'
+
+# Shown in the task library
+[meta]
+title = "Broadband churn prediction"
+summary = "Rank active broadband customers by their risk of cancelling in the next 60 days, from monthly account snapshots."
+role_family = "Machine learning engineer, data scientist"
+time_box = "3 hours"

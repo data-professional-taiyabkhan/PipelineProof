@@ -1,0 +1,47 @@
+{% extends "app/_layout.html" %}
+{% block title %}Assessments · PipelineProof{% endblock %}
+{% block content %}
+<div class="page-head">
+  <div>
+    <h1>Assessments</h1>
+    <p class="muted" style="margin:0">Each assessment is one take-home task sent to a group of candidates for a role.</p>
+  </div>
+  {% if ctx.can("assess") %}<a class="btn btn-primary" href="/app/assessments/new">New assessment</a>{% endif %}
+</div>
+
+<div class="grid grid-4" style="margin-bottom:22px">
+  <div class="stat"><div class="label">Open assessments</div><div class="value">{{ assessments|selectattr("status", "equalto", "open")|list|length }}</div></div>
+  <div class="stat"><div class="label">Awaiting review</div><div class="value">{{ assessments|sum(attribute="awaiting_review") }}</div><div class="note">reports with no decision yet</div></div>
+  <div class="stat"><div class="label">Open contests</div><div class="value">{{ open_contests }}</div><div class="note">candidates asking for a second look</div></div>
+  <div class="stat"><div class="label">Evaluations used</div><div class="value">{{ used }}<span class="muted" style="font-size:1rem"> / {{ cap }}</span></div><div class="note">{{ "today (demo limit)" if ctx.org.is_demo else "this month" }}</div></div>
+</div>
+
+{% if assessments %}
+<div class="card">
+  <div class="table-wrap">
+    <table class="table">
+      <thead><tr><th>Assessment</th><th>Task</th><th class="num">Invited</th><th class="num">Submitted</th><th class="num">Awaiting review</th><th>Status</th><th>Created</th></tr></thead>
+      <tbody>
+      {% for a in assessments %}
+        <tr>
+          <td><a href="/app/assessments/{{ a.id }}"><strong>{{ a.title }}</strong></a><div class="small muted">{{ a.role_title }}</div></td>
+          <td class="small">{{ a.task_title }}</td>
+          <td class="num">{{ a.invited }}</td>
+          <td class="num">{{ a.submitted }}</td>
+          <td class="num">{% if a.awaiting_review %}<span class="badge b-warn">{{ a.awaiting_review }}</span>{% else %}0{% endif %}{% if a.running %} <span class="badge b-info"><span class="spinner" style="width:10px;height:10px;border-width:2px"></span>{{ a.running }} running</span>{% endif %}</td>
+          <td>{% if a.status == "open" %}<span class="badge b-good"><span class="dot"></span>Open</span>{% else %}<span class="badge b-neutral">Closed</span>{% endif %}</td>
+          <td class="small muted nowrap">{{ a.created_at|date }}</td>
+        </tr>
+      {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</div>
+{% else %}
+<div class="card empty">
+  <h3>No assessments yet</h3>
+  <p>Create an assessment from the task library, then invite candidates with a private link.</p>
+  {% if ctx.can("assess") %}<a class="btn btn-primary" href="/app/assessments/new">Create your first assessment</a>{% endif %}
+</div>
+{% endif %}
+{% endblock %}

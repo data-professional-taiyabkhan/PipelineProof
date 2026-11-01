@@ -1,0 +1,134 @@
+{% extends "public/_layout.html" %}
+{% block title %}How PipelineProof works{% endblock %}
+{% block content %}
+<section class="section" style="padding-bottom:28px">
+  <div class="wrap">
+    <div class="eyebrow">How it works</div>
+    <h1 style="font-size:2.4rem;max-width:22ch">From a zip file to evidence a reviewer can act on</h1>
+    <p class="sub" style="font-size:1.1rem">PipelineProof treats a take-home like a scientific claim: it re-runs the experiment under controlled
+      conditions, tests the result on data the candidate never had, and looks for the reasons a result might not hold up.</p>
+  </div>
+</section>
+
+<section style="padding-bottom:40px">
+  <div class="wrap">
+    <div class="card card-pad diagram" aria-label="What happens to a submission">
+      <svg viewBox="0 0 1100 330" role="img" aria-labelledby="dg-title">
+        <title id="dg-title">Submission flow: upload, pre-flight, environment build, four sandbox runs, scoring outside the sandbox, trace and ablation, report, reviewer.</title>
+        <defs><marker id="arrowhead" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#94a3b8"/></marker></defs>
+        <rect class="box" x="10" y="40" width="150" height="70" rx="10"/>
+        <text class="t-head" x="85" y="68" text-anchor="middle">Candidate uploads</text>
+        <text class="t-small" x="85" y="88" text-anchor="middle">code, pinned packages,</text>
+        <text class="t-small" x="85" y="102" text-anchor="middle">decision log with claim</text>
+        <path class="arrow" d="M160 75H200"/>
+        <rect class="box" x="200" y="40" width="150" height="70" rx="10"/>
+        <text class="t-head" x="275" y="68" text-anchor="middle">Pre-flight check</text>
+        <text class="t-small" x="275" y="88" text-anchor="middle">format and a 400-row</text>
+        <text class="t-small" x="275" y="102" text-anchor="middle">sample run, no holdout</text>
+        <path class="arrow" d="M350 75H390"/>
+        <rect class="box" x="390" y="40" width="160" height="70" rx="10"/>
+        <text class="t-head" x="470" y="68" text-anchor="middle">Environment build</text>
+        <text class="t-small" x="470" y="88" text-anchor="middle">pinned packages installed,</text>
+        <text class="t-small" x="470" y="102" text-anchor="middle">network on, no data</text>
+        <path class="arrow" d="M550 75H590"/>
+        <rect class="box-sand" x="590" y="14" width="250" height="150" rx="12"/>
+        <text class="t-head" x="715" y="38" text-anchor="middle">Sandbox (gVisor, no internet)</text>
+        <rect class="box" x="606" y="52" width="104" height="44" rx="8"/><text x="658" y="72" text-anchor="middle">seed 42</text><text class="t-small" x="658" y="87" text-anchor="middle">train + predict</text>
+        <rect class="box" x="720" y="52" width="104" height="44" rx="8"/><text x="772" y="72" text-anchor="middle">seed 42 again</text><text class="t-small" x="772" y="87" text-anchor="middle">determinism</text>
+        <rect class="box" x="606" y="104" width="104" height="44" rx="8"/><text x="658" y="124" text-anchor="middle">seed 101</text><text class="t-small" x="658" y="139" text-anchor="middle">sensitivity</text>
+        <rect class="box" x="720" y="104" width="104" height="44" rx="8"/><text x="772" y="124" text-anchor="middle">seed 202</text><text class="t-small" x="772" y="139" text-anchor="middle">sensitivity</text>
+        <path class="arrow" d="M840 90H880"/>
+        <rect class="box-brand" x="880" y="40" width="210" height="100" rx="12"/>
+        <text class="t-head" x="985" y="66" text-anchor="middle">Outside the sandbox</text>
+        <text class="t-small" x="985" y="86" text-anchor="middle">holdout answers score the</text>
+        <text class="t-small" x="985" y="100" text-anchor="middle">predictions; trace analysed;</text>
+        <text class="t-small" x="985" y="114" text-anchor="middle">suspect columns chosen</text>
+        <path class="arrow dash" d="M985 140V200H840"/>
+        <rect class="box-sand" x="590" y="182" width="250" height="56" rx="12"/>
+        <text class="t-head" x="715" y="206" text-anchor="middle">Ablation re-run in a sandbox</text>
+        <text class="t-small" x="715" y="224" text-anchor="middle">suspect field set to its prediction-time value</text>
+        <path class="arrow" d="M590 210H550"/>
+        <rect class="box-dark" x="350" y="182" width="200" height="56" rx="12"/>
+        <text class="t-white" x="450" y="206" text-anchor="middle" style="font-weight:700">Report</text>
+        <text class="t-white" x="450" y="224" text-anchor="middle" style="font-size:11px">six scores and the evidence</text>
+        <path class="arrow" d="M350 210H310"/>
+        <rect class="box" x="110" y="182" width="200" height="56" rx="12"/>
+        <text class="t-head" x="210" y="206" text-anchor="middle">Named reviewer decides</text>
+        <text class="t-small" x="210" y="224" text-anchor="middle">confirm or override, with a reason</text>
+        <path class="arrow" d="M210 238V282"/>
+        <rect class="box" x="110" y="282" width="320" height="40" rx="10"/>
+        <text x="270" y="307" text-anchor="middle">Feedback to the candidate, who can contest it</text>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<section class="section section-tint">
+  <div class="wrap grid grid-2" style="gap:40px;align-items:start">
+    <div class="prose">
+      <h2 style="margin-top:0">1. A fixed submission format</h2>
+      <p>To re-run anyone's work without a person working out how, every submission follows the same small contract:</p>
+      <ul>
+        <li><code>pipeline.toml</code> names the Python version and the commands that train and predict.</li>
+        <li><code>requirements.txt</code> pins every package to an exact version.</li>
+        <li>Training reads the data folder and the seed from environment variables and writes the model and its own validation score.</li>
+        <li>Prediction reads unseen rows and writes one probability per row.</li>
+        <li><code>DECISIONS.md</code> states the claimed score, the seed, the validation approach and any AI tools used.</li>
+      </ul>
+      <p>Candidates get a starter template that already follows it, and a pre-flight check on a 400-row sample tells them about
+        problems before they submit. The pre-flight never touches the holdout and never reveals a score.</p>
+    </div>
+    <div class="prose">
+      <h2 style="margin-top:0">2. Re-run, four times</h2>
+      <p>Each run happens in a fresh sandbox built from the candidate's own pinned requirements. The sandbox has no internet access,
+        capped CPU, memory and time, and is destroyed afterwards.</p>
+      <ul>
+        <li><strong>Declared seed:</strong> does the claimed number come back?</li>
+        <li><strong>Declared seed again:</strong> is the pipeline deterministic, or does unseeded randomness change the answer?</li>
+        <li><strong>Seeds 101 and 202:</strong> how much of the result is luck?</li>
+      </ul>
+      <p>Imports are checked against the declared requirements, and any attempt to reach the network or read a file that was not
+        submitted is recorded.</p>
+    </div>
+    <div class="prose">
+      <h2>3. Customers the model has never seen</h2>
+      <p>Each task has a holdout: rows from entities that are not in the training data, in the state they would be in at prediction
+        time. The model predicts them inside the sandbox; the answers stay outside and the predictions are scored there.</p>
+      <p>The gap between the claimed score and the holdout score is the single most useful number in the report. It needs no
+        knowledge of how the code works, so it catches problems the other checks miss.</p>
+    </div>
+    <div class="prose">
+      <h2>4. Where it leaked</h2>
+      <p>While the code runs, a tracer records every data split, every model or preprocessing fit, and every metric call, with the
+        rows involved. That shows when test rows reached a fit, when preprocessing was fitted before the split, and when one test set
+        was scored again and again to pick a model.</p>
+      <p>For suspicious columns, PipelineProof re-runs the pipeline with the column set to its real value at prediction time. If the
+        candidate's own score falls, the column was carrying information it should not have. That is an experiment, not a guess.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap grid grid-2" style="gap:40px;align-items:start">
+    <div class="prose">
+      <h2 style="margin-top:0">What PipelineProof does not do</h2>
+      <ul>
+        <li>It does not reject anyone. Every recommendation goes to a named reviewer who confirms or overrides it.</li>
+        <li>It does not use an AI model to grade code or write scores.</li>
+        <li>It does not judge style. It measures whether the claimed result holds up and why.</li>
+        <li>It does not keep data forever: personal data is deleted after the retention period set by the employer.</li>
+      </ul>
+    </div>
+    <div class="prose">
+      <h2 style="margin-top:0">Current scope</h2>
+      <ul>
+        <li>Tabular tasks on CPU, in Python 3.11 to 3.13.</li>
+        <li>Runtime tracing for scikit-learn, and for XGBoost and LightGBM through their scikit-learn interfaces; scripts and notebooks.</li>
+        <li>One task in the library today (broadband churn), with planted traps, a holdout and a brief.</li>
+        <li>Scoring rubric v1 with hand-set, published weights.</li>
+      </ul>
+      <p><a href="/evidence">How we test the harness itself →</a></p>
+    </div>
+  </div>
+</section>
+{% endblock %}

@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+{% from "_macros.html" import logo %}
+{% block body %}
+<header class="site-header">
+  <div class="wrap">
+    {{ logo() }}
+    <nav class="nav" aria-label="Main">
+      <a href="/how-it-works" class="{{ 'active' if active == 'how' }}">How it works</a>
+      <a href="/evidence" class="{{ 'active' if active == 'evidence' }}">Evidence</a>
+      <a href="/security" class="{{ 'active' if active == 'security' }}">Security &amp; data</a>
+      <a href="/candidates" class="{{ 'active' if active == 'candidates' }}">For candidates</a>
+    </nav>
+    <div class="header-actions">
+      {% if ctx and ctx.signed_in %}
+        <a class="btn btn-secondary btn-sm" href="/app">{{ "Demo workspace" if ctx.is_demo else "Your workspace" }}</a>
+      {% else %}
+        <a class="btn btn-ghost btn-sm" href="/login">Sign in</a>
+        <a class="btn btn-primary btn-sm" href="/demo">Try the demo</a>
+      {% endif %}
+    </div>
+  </div>
+</header>
+{% if flash %}<div class="wrap"><div class="alert alert-{{ flash.kind }} flash" role="status">{{ flash.text }}</div></div>{% endif %}
+<main>
+{% block content %}{% endblock %}
+</main>
+<footer class="site-footer">
+  <div class="wrap row-between">
+    <div class="stack" style="max-width:520px">
+      {{ logo() }}
+      <p class="small" style="margin:0">Re-runs machine-learning take-homes in a sealed sandbox, checks the claimed score against
+        data the candidate never saw, and shows the evidence to a person who decides.</p>
+    </div>
+    <div class="row small" style="gap:22px">
+      <a href="/how-it-works">How it works</a>
+      <a href="/evidence">Evidence</a>
+      <a href="/security">Security &amp; data</a>
+      <a href="/candidates">For candidates</a>
+      <a href="/demo">Assessor demo</a>
+      {% if settings.contact_email %}<a href="mailto:{{ settings.contact_email }}">Contact</a>{% endif %}
+    </div>
+  </div>
+  <div class="wrap small faint" style="margin-top:18px">© {{ now().year }} PipelineProof. Prototype for pilot use.</div>
+</footer>
+{% endblock %}

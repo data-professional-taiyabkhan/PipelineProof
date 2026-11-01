@@ -1,0 +1,23 @@
+{% extends "app/_layout.html" %}
+{% block title %}{{ t.title }} · PipelineProof{% endblock %}
+{% block content %}
+<div class="crumbs" style="margin-bottom:8px"><a href="/app/tasks">Task library</a> / {{ t.title }}</div>
+<div class="page-head"><div><h1>{{ t.title }}</h1><p class="muted" style="margin:0">{{ t.summary }}</p></div>
+  {% if ctx.can("assess") %}<a class="btn btn-primary" href="/app/assessments/new">Use this task</a>{% endif %}</div>
+<div class="two-col">
+  <div class="stack">
+    <div class="card card-pad prose">{{ notes|md }}</div>
+    <div class="card"><div class="card-head"><h3>What candidates see: the brief</h3></div><div class="card-body prose">{{ brief|md }}</div></div>
+    <div class="card"><div class="card-head"><h3>Data dictionary</h3></div><div class="card-body prose">{{ dictionary|md }}</div></div>
+  </div>
+  <aside class="stack sticky-col">
+    <div class="card card-pad">
+      <h3>At a glance</h3>
+      <dl class="kv"><dt>Metric</dt><dd>{{ t.metric|upper|replace("_", " ") }}</dd><dt>Time box</dt><dd>{{ t.time_box }}</dd><dt>Suits</dt><dd>{{ t.role_family }}</dd>
+        <dt>Training data</dt><dd>{{ "{:,}".format(stats.rows) }} rows{% if stats.entities %} from {{ "{:,}".format(stats.entities) }} distinct {{ stats.entity_column|replace("_id", "s")|replace("_", " ") }}{% endif %}</dd>
+        {% if stats.holdout_rows %}<dt>Holdout</dt><dd>{{ "{:,}".format(stats.holdout_rows) }} rows the candidate never sees</dd>{% endif %}</dl>
+    </div>
+    <div class="panel small">Candidates see the brief, the data dictionary and the training data. They never see this page, the planted traps or the holdout.</div>
+  </aside>
+</div>
+{% endblock %}

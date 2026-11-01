@@ -1,0 +1,45 @@
+{% extends "app/_layout.html" %}
+{% block title %}Scoring rubric · PipelineProof{% endblock %}
+{% block content %}
+<div class="page-head"><div><h1>Scoring rubric {{ version }}</h1>
+  <p class="muted" style="margin:0;max-width:72ch">How the six scores and the recommendation are calculated. The weights are set by hand and published in every report;
+    they have not been fitted to hiring outcomes, because no outcome data exists yet.</p></div></div>
+<div class="grid grid-2" style="align-items:start">
+  <div class="card">
+    <div class="card-head"><h3>Dimensions and weights</h3></div>
+    <div class="table-wrap"><table class="table">
+      <thead><tr><th>Dimension</th><th>Question</th><th class="num">Weight</th></tr></thead>
+      <tbody>{% for k, w in weights.items() %}<tr><td><strong>{{ NAMES[k] }}</strong></td><td class="small">{{ QUESTIONS[k] }}</td><td class="num">{{ w }}</td></tr>{% endfor %}</tbody>
+    </table></div>
+    <div class="card-foot small">The overall score is the weighted average of the dimensions that could be measured.</div>
+  </div>
+  <div class="card">
+    <div class="card-head"><h3>How each dimension is scored</h3></div>
+    <div class="card-body prose small">
+      <p><strong>Reproducibility, leakage hygiene and validation method</strong> start at 100 and lose points for each finding (table below).
+        Reproducibility also loses 20 if no claimed score is stated.</p>
+      <p><strong>Generalisation</strong> comes from the gap between the claimed score and the score on unseen customers:</p>
+      <table><thead><tr><th>Gap up to</th><th>Score</th></tr></thead><tbody>{% for g, sc in bands %}<tr><td>{{ "%.2f"|format(g) }}</td><td>{{ sc }}</td></tr>{% endfor %}<tr><td>larger</td><td>10</td></tr></tbody></table>
+      <p><strong>Data handling</strong> is the share of the task's data checks found in the code (for the churn task: duplicates, region names,
+        negative spend, missing values). It is evidence for the reviewer, not proof.</p>
+      <p><strong>Code and documentation</strong>: states the claimed score (30), says which AI tools were used (20), includes a README (20),
+        code organised into functions (30).</p>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-head"><h3>Deductions</h3></div>
+    <div class="table-wrap"><table class="table table-compact">
+      <thead><tr><th>Finding</th><th class="num">Points</th></tr></thead>
+      <tbody>{% for code, pts in deductions.items() %}<tr><td>{{ CODE_TITLES.get(code, code) }}<div class="small muted mono">{{ code }}</div></td><td class="num">−{{ pts }}</td></tr>{% endfor %}</tbody>
+    </table></div>
+  </div>
+  <div class="card card-pad prose">
+    <h3>The recommendation</h3>
+    <p>A report says <strong>Review findings before advancing</strong> if any finding is critical or high, the gap is above 0.10, or the overall
+      score is below 75. Otherwise it says <strong>No blocking findings</strong>. If the pipeline could not run, it says <strong>Could not be scored</strong>
+      and explains why.</p>
+    <p>Either way, the recommendation is advice. A named reviewer confirms or overrides it with a reason, and that decision is what counts.</p>
+    <p><strong>Signals from reading the code</strong> (patterns found without running it) are shown to the reviewer but never change a score.</p>
+  </div>
+</div>
+{% endblock %}

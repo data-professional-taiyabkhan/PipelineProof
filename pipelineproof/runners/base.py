@@ -49,8 +49,13 @@ class RunResult:
     timed_out: bool = False
 
 
+class EnvBuildError(RuntimeError):
+    """The candidate's declared environment could not be built (bad pins, missing wheels...)."""
+
+
 class Runner:
     name = "base"
+    max_parallel = 4                 # runs of one evaluation that may execute at the same time
 
     def build_env(self, env: EnvSpec) -> str:
         """Prepare (and cache) an environment for this spec; return an id usable by run()."""

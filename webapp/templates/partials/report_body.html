@@ -1,0 +1,84 @@
+{# Shared report body. Needs: report, v (report_view), and optional `candidate_view` (hides internal advice). #}
+{% from "_macros.html" import claim_chart, finding_card %}
+{% if v.scored %}
+<div class="grid grid-4">
+  <div class="stat"><div class="label">Claimed</div><div class="value mono">{{ report.claimed_metric|num }}</div><div class="note">in DECISIONS.md</div></div>
+  <div class="stat"><div class="label">Clean re-run</div><div class="value mono">{{ report.reproduced_metric|num }}</div>
+    <div class="note">{% if report.claimed_metric is not none %}{% set d = report.reproduced_metric - report.claimed_metric %}<span class="{{ 'delta-bad' if d|abs > 0.01 else 'delta-ok' }}">{{ d|signed }}</span> vs claim{% else %}declared seed{% endif %}</div></div>
+  <div class="stat accent"><div class="label">Unseen customers</div><div class="value mono">{{ report.holdout_metric|num }}</div>
+    <div class="note">{% if report.gap is not none %}<span class="{{ 'delta-bad' if report.gap > 0.06 else 'delta-ok' }}">gap {{ report.gap|num }}</span> from the claim{% endif %}</div></div>
+  <div class="stat"><div class="label">Same seed twice</div><div class="value">{{ "Identical" if report.deterministic else ("Differs" if report.deterministic is not none else "–") }}</div>
+    <div class="note">{% if report.own_metric_sd is not none %}spread across seeds {{ report.own_metric_sd|num }}{% endif %}</div></div>
+</div>
+
+<div class="card"><div class="card-head"><h3>Claim against reality</h3><span class="small muted">{{ report.metric|upper|replace("_", " ") }}, higher is better</span></div>
+  <div class="card-body">{{ claim_chart(v.chart, report.metric) }}</div></div>
+{% endif %}
+
+<div class="card">
+  <div class="card-head"><h3>Scores</h3><span class="small muted">Rubric {{ report.rubric.version }} · hand-set weights{% if not candidate_view %} · <a href="/app/rubric">how scores work</a>{% endif %}</span></div>
+  <div class="card-body scores">
+    {% for d in v.dims %}
+    <div class="score-row">
+      <div class="name">{{ d.name }}<small>{{ d.question }} · weight {{ d.weight }}</small></div>
+      <div class="bar"><span class="fill-{{ d.score|score_cls }}" style="width:{{ d.score if d.score is not none else 0 }}%"></span></div>
+      <div class="val">{{ d.score if d.score is not none else "–" }}</div>
+      {% if d.why %}<div class="score-why"><details class="disclose"><summary>Why</summary><ul>{% for w in d.why %}<li>{{ w }}</li>{% endfor %}</ul></details></div>{% endif %}
+    </div>
+    {% endfor %}
+  </div>
+</div>
+
+<div class="card" id="findings">
+  <div class="card-head"><h3>Findings</h3><span class="small muted">{{ v.findings|length }} scored{% if v.signals %} · {{ v.signals|length }} signals from reading the code{% endif %}</span></div>
+  <div class="card-body">
+    {% for f in v.findings %}{{ finding_card(f) }}{% else %}<p class="muted" style="margin:0">No findings. The claim reproduced, the score held up on unseen customers, and the trace showed no leakage.</p>{% endfor %}
+    {% if v.signals %}
+    <details class="disclose" style="margin-top:14px"><summary>Signals from reading the code (not scored)</summary>
+      <p class="small muted" style="margin:8px 0">Patterns spotted without running the code. They are shown for the reviewer's judgement and never change a score on their own.</p>
+      {% for f in v.signals %}{{ finding_card(f) }}{% endfor %}
+    </details>
+    {% endif %}
+  </div>
+</div>
+
+{% if v.ablations %}
+<div class="card"><div class="card-head"><h3>Ablation re-runs</h3><span class="small muted">same code and seed, one column set to its value at prediction time</span></div>
+  <div class="table-wrap"><table class="table table-compact">
+    <thead><tr><th>Column</th><th>Set to</th><th class="num">Own score</th><th class="num">Unseen</th></tr></thead>
+    <tbody>{% for a in v.ablations %}<tr><td class="mono">{{ a.column }}</td><td class="mono">{{ a.set_to }}</td>
+      <td class="num mono">{{ a.own_before|num }} → <strong>{{ a.own_after|num }}</strong></td>
+      <td class="num mono">{{ a.holdout_before|num }} → {{ a.holdout_after|num }}</td></tr>{% endfor %}</tbody>
+  </table></div></div>
+{% endif %}
+
+{% if v.decomposition %}
+{% set d = v.decomposition %}
+<div class="card"><div class="card-head"><h3>Seen and unseen customers in the candidate's own test split</h3></div>
+  <div class="card-body">
+    <div class="grid grid-2">
+      <div class="stat"><div class="label">Customers also in training</div><div class="value mono">{{ d.seen|num }}</div><div class="note">{{ d.n_seen }} test rows</div></div>
+      <div class="stat"><div class="label">Customers not in training</div><div class="value mono">{{ d.unseen|num }}</div><div class="note">{{ d.n_unseen }} test rows</div></div>
+    </div>
+    {% if d.diff_ci95 %}<p class="small muted" style="margin:12px 0 0">95% bootstrap interval for the difference: {{ d.diff_ci95[0]|num }} to {{ d.diff_ci95[1]|num }}.
+      An interval above zero means the candidate's validation score was inflated by testing on customers the model had already seen.</p>{% endif %}
+  </div></div>
+{% endif %}
+
+{% if v.runs %}
+<div class="card"><div class="card-head"><h3>Runs</h3><span class="small muted">each in a fresh sandbox</span></div>
+  <div class="table-wrap"><table class="table table-compact">
+    <thead><tr><th>Run</th><th class="num">Seed</th><th>Outcome</th><th class="num">Own score</th><th class="num">Unseen</th><th class="num">Train time</th></tr></thead>
+    <tbody>{% for r in v.runs %}<tr><td>{{ r.label }}</td><td class="num mono">{{ r.seed }}</td>
+      <td>{% if r.failure or r.predict_failure %}<span class="badge b-bad">{{ r.failure_code or r.predict_failure_code }}</span>{% else %}<span class="badge b-good">Completed</span>{% endif %}</td>
+      <td class="num mono">{{ r.own_metric|num(4) }}</td><td class="num mono">{{ r.holdout_metric|num(4) }}</td><td class="num mono">{{ r.wall_s|num(1) }} s</td></tr>{% endfor %}</tbody>
+  </table></div></div>
+{% endif %}
+
+{% if v.probes or v.warnings %}
+<div class="grid grid-2">
+  {% if v.probes %}<div class="card card-pad"><h3>Data handling evidence</h3><p class="small muted">Searched for in the code; the reviewer should confirm.</p>
+    <ul style="list-style:none;padding:0;margin:0">{% for k, ok in v.probes.items() %}<li style="padding:4px 0">{% if ok %}<span class="badge b-good">Found</span>{% else %}<span class="badge b-neutral">Not found</span>{% endif %} {{ PROBE_LABELS.get(k, k) }}</li>{% endfor %}</ul></div>{% endif %}
+  {% if v.warnings %}<div class="card card-pad"><h3>Submission warnings</h3><ul class="small">{% for w in v.warnings %}<li>{{ w }}</li>{% endfor %}</ul></div>{% endif %}
+</div>
+{% endif %}

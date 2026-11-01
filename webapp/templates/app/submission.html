@@ -1,0 +1,124 @@
+{% extends "app/_layout.html" %}
+{% from "_macros.html" import csrf, status_badge, dial %}
+{% block title %}{{ s.candidate_name }} · PipelineProof{% endblock %}
+{% block content %}
+<div class="crumbs" style="margin-bottom:8px"><a href="/app">Assessments</a> / <a href="/app/assessments/{{ s.assessment_id }}">{{ s.assessment_title }}</a> / {{ s.candidate_name }}</div>
+<div class="page-head">
+  <div>
+    <h1>{{ s.candidate_name }} {% if s.is_synthetic %}<span class="badge b-synthetic" style="vertical-align:middle">Synthetic</span>{% endif %}</h1>
+    <div class="row small muted" style="gap:12px">
+      {{ status_badge(s.status) }}
+      <span>{{ s.role_title }}</span><span>·</span>
+      <span>{% if s.submitted_at %}Submitted {{ s.submitted_at|dt }}{% else %}Uploaded {{ s.created_at|dt }}{% endif %}</span><span>·</span>
+      <span class="mono">{{ s.filename }}</span>
+      {% if report and report.runtime_s %}<span>·</span><span>evaluated in {{ report.runtime_s|round|int }} s</span>{% endif %}
+    </div>
+  </div>
+  <div class="row no-print">
+    {% if report %}
+    <a class="btn btn-secondary btn-sm" href="/app/submissions/{{ s.id }}/report.md">Report (Markdown)</a>
+    <a class="btn btn-ghost btn-sm" href="/app/submissions/{{ s.id }}/report.json">JSON</a>
+    {% endif %}
+    <a class="btn btn-ghost btn-sm" href="/app/submissions/{{ s.id }}/files.zip">Submission files</a>
+    {% if ctx.can("rerun") and s.status not in ("queued", "running") and s.submitted_at %}
+    <form method="post" action="/app/submissions/{{ s.id }}/rerun" class="inline">{{ csrf(ctx) }}<button class="btn btn-ghost btn-sm" type="submit">Re-run</button></form>
+    {% endif %}
+  </div>
+</div>
+
+{% if s.status in ("queued", "running") %}
+  {% include "partials/progress.html" %}
+{% elif s.status == "error" %}
+  <div class="alert alert-error"><strong>The evaluation stopped with an error.</strong> {{ s.error }}
+    {% if ctx.can("rerun") %}Use Re-run to try again.{% else %}An admin can re-run it.{% endif %}</div>
+{% elif not report %}
+  <div class="alert alert-info">There is no report for this upload yet. The candidate has {{ "submitted it" if s.submitted_at else "not submitted it" }}.</div>
+{% else %}
+<div class="two-col">
+  <div class="stack">
+    {% set r = REC.get(report.recommendation, (report.recommendation, "neutral")) %}
+    <div class="rec rec-{{ r[1] }}">
+      {{ dial(report.overall) }}
+      <div>
+        <h2>{{ r[0] }}</h2>
+        <p>{{ summary }}</p>
+        <p class="small" style="opacity:.8">This is advice for the reviewer. A named person must confirm or override it before it is used.</p>
+      </div>
+    </div>
+    {% include "partials/report_body.html" %}
+  </div>
+
+  <aside class="stack sticky-col no-print">
+    <div class="card" id="review">
+      <div class="card-head"><h3>Reviewer decision</h3>{% if reviews %}<span class="badge b-good">Recorded</span>{% else %}<span class="badge b-warn">Needed</span>{% endif %}</div>
+      <div class="card-body stack">
+        {% for rv in reviews %}
+        <div class="msg">
+          <div class="who">{{ rv.reviewer_label }} · {{ rv.created_at|dt }}</div>
+          <strong>{{ "Confirmed" if rv.decision == "confirm" else "Overrode" }} the recommendation · {{ OUTCOMES[rv.outcome] }}</strong>
+          <div class="small" style="margin-top:4px">{{ rv.reason|nl2br }}</div>
+        </div>
+        {% endfor %}
+        {% if ctx.can("review") %}
+        <form method="post" action="/app/submissions/{{ s.id }}/review" class="stack">
+          {{ csrf(ctx) }}
+          {% if reviews %}<p class="small muted" style="margin:0">Record a new decision; earlier ones stay in the history.</p>{% endif %}
+          <div class="radio-cards">
+            <label class="radio-card"><input type="radio" name="decision" value="confirm" required><span>Confirm the recommendation<small>{{ r[0] }}</small></span></label>
+            <label class="radio-card"><input type="radio" name="decision" value="override"><span>Override it<small>I disagree with the recommendation</small></span></label>
+          </div>
+          <div class="field"><label for="outcome">Outcome for the candidate</label>
+            <select id="outcome" name="outcome" required><option value="">Choose…</option><option value="advance">Advance to the next stage</option><option value="hold">Hold</option><option value="reject">Do not advance</option></select></div>
+          <div class="field"><label for="reason">Reason</label><textarea id="reason" name="reason" minlength="20" required placeholder="What in the evidence led to this decision?"></textarea>
+            <div class="hint">Kept in the audit log. At least 20 characters.</div></div>
+          <button class="btn btn-primary" type="submit">Record decision</button>
+        </form>
+        {% elif not reviews %}<p class="small muted" style="margin:0">A reviewer or admin records the decision.</p>{% endif %}
+      </div>
+    </div>
+
+    <div class="card" id="feedback">
+      <div class="card-head"><h3>Feedback to the candidate</h3>{% if feedback %}<span class="badge b-brand">Released</span>{% endif %}</div>
+      <div class="card-body stack">
+        {% if feedback %}
+          <div class="msg from-employer"><div class="who">Released {{ feedback.released_at|dt }}{{ " · with evidence" if feedback.include_findings }}</div>{{ feedback.message|nl2br }}</div>
+        {% endif %}
+        {% if ctx.can("release") and reviews %}
+        <form method="post" action="/app/submissions/{{ s.id }}/feedback" class="stack">
+          {{ csrf(ctx) }}
+          <div class="field"><label for="message">{{ "Update the message" if feedback else "Message" }}</label>
+            <textarea id="message" name="message" required minlength="10">{{ feedback.message if feedback else "" }}</textarea></div>
+          <label class="check"><input type="checkbox" name="include_findings" value="1" {{ 'checked' if not feedback or feedback.include_findings }}><span>Show the candidate the measurements and findings about their work</span></label>
+          <button class="btn btn-secondary" type="submit">{{ "Update feedback" if feedback else "Release feedback" }}</button>
+        </form>
+        {% elif not reviews %}<p class="small muted" style="margin:0">Feedback can be released after a decision is recorded.</p>{% endif %}
+      </div>
+    </div>
+
+    {% if contests %}
+    <div class="card" id="contests">
+      <div class="card-head"><h3>Candidate contests</h3></div>
+      <div class="card-body thread">
+        {% for c in contests %}
+          <div class="msg"><div class="who">Candidate · {{ c.created_at|dt }}</div>{{ c.message|nl2br }}</div>
+          {% if c.response %}<div class="msg from-employer"><div class="who">Response · {{ c.responded_at|dt }}</div>{{ c.response|nl2br }}</div>
+          {% elif ctx.can("review") %}
+          <form method="post" action="/app/contests/{{ c.id }}/answer" class="stack">{{ csrf(ctx) }}
+            <textarea name="response" required minlength="10" aria-label="Response to the candidate" placeholder="Reply to the candidate"></textarea>
+            <button class="btn btn-secondary btn-sm" type="submit">Send response</button></form>
+          {% endif %}
+        {% endfor %}
+      </div>
+    </div>
+    {% endif %}
+
+    <div class="card card-pad">
+      <h3>Candidate</h3>
+      <dl class="kv"><dt>Name</dt><dd>{{ s.candidate_name }}</dd>{% if s.candidate_email %}<dt>Email</dt><dd>{{ s.candidate_email }}</dd>{% endif %}
+        <dt>Uploads</dt><dd>{{ history|length }}</dd></dl>
+      <p style="margin:12px 0 0"><a class="small" href="/c/{{ s.token }}" target="_blank" rel="noopener">Open the candidate's page ↗</a></p>
+    </div>
+  </aside>
+</div>
+{% endif %}
+{% endblock %}

@@ -1,0 +1,142 @@
+{% extends "public/_layout.html" %}
+{% from "_macros.html" import sev_badge %}
+{% block title %}PipelineProof · Check the number, not just the notebook{% endblock %}
+{% block content %}
+<section class="hero">
+  <div class="wrap grid grid-2" style="align-items:center;gap:48px">
+    <div>
+      <div class="eyebrow">Machine-learning hiring assessments</div>
+      <h1>Check the number, not just the notebook.</h1>
+      <p class="lede">PipelineProof re-runs a candidate's take-home in a sealed sandbox, tests their model on customers it has
+        never seen, and shows exactly where the work leaks. A named reviewer makes every decision.</p>
+      <div class="row">
+        <a class="btn btn-primary btn-lg" href="/demo">Open the assessor demo</a>
+        <a class="btn btn-secondary btn-lg" href="/how-it-works">See how it works</a>
+      </div>
+      <div class="proof-strip" style="margin-top:28px">
+        {% if bench %}<span><strong>{{ bench.passed }} of {{ bench.total }}</strong> planted-defect benchmark submissions judged correctly · <a href="/evidence">evidence</a></span>{% endif %}
+        <span><strong>No internet</strong> inside the sandbox</span>
+        <span><strong>Holdout answers</strong> never enter it</span>
+      </div>
+    </div>
+    <div class="mock" aria-label="Example report for a synthetic candidate">
+      <div class="mock-bar"><i></i><i></i><i></i><span class="small muted" style="margin-left:8px">Example report · synthetic candidate</span></div>
+      <div class="mock-body stack">
+        <div class="rec rec-bad" style="padding:12px 16px"><div><h2 style="font-size:1rem">Review findings before advancing</h2>
+          <p class="small">Overall 68/100 · a person must confirm or override</p></div></div>
+        <div class="grid grid-3" style="gap:10px">
+          <div class="stat" style="padding:10px 12px"><div class="label">Claimed</div><div class="value" style="font-size:1.3rem">0.971</div></div>
+          <div class="stat" style="padding:10px 12px"><div class="label">Clean re-run</div><div class="value" style="font-size:1.3rem">0.971</div></div>
+          <div class="stat accent" style="padding:10px 12px"><div class="label">Unseen customers</div><div class="value" style="font-size:1.3rem">0.807</div></div>
+        </div>
+        <div class="finding sev-critical">
+          <div class="f-meta">{{ sev_badge("critical") }}<span>Leakage hygiene · Ablation re-run</span></div>
+          <div class="f-title">Result depends on a field that is not available at prediction time</div>
+          <div class="f-detail small">Setting <code>retention_offer_sent</code> to its value on the 1st of the month moves the candidate's own ROC AUC from 0.971 to 0.831.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section-tint">
+  <div class="wrap">
+    <h2>Take-home results are usually read, not run</h2>
+    <p class="sub">A candidate sends a notebook and a score. A senior engineer reads the code, rarely runs it, and has no data
+      the candidate did not have. The mistakes that inflate a score do not crash anything, so they are easy to miss.</p>
+    <div class="grid grid-3">
+      <div class="feature"><div class="quote-stat">4%</div><p style="margin-top:10px">of about 864,000 public Jupyter notebooks reproduced their results when researchers re-ran them; 24% ran without errors.
+        <br><a class="small" href="https://discourse.jupyter.org/t/a-large-scale-study-about-quality-and-reproducibility-of-jupyter-notebooks/1360" rel="noopener">Pimentel et al., MSR 2019</a></p></div>
+      <div class="feature"><div class="quote-stat">~30%</div><p style="margin-top:10px">of more than 100,000 public notebooks showed signs of data leakage in a static analysis.
+        <br><a class="small" href="https://ar5iv.labs.arxiv.org/html/2209.03345" rel="noopener">Yang et al., ASE 2022</a></p></div>
+      <div class="feature"><div class="quote-stat">0 of 4</div><p style="margin-top:10px">leading hiring-assessment platforms we reviewed showed any sign of re-running a candidate's training pipeline.
+        <br><span class="small muted">Desk research of public product pages, October 2026</span></p></div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap grid grid-2" style="gap:56px;align-items:start">
+    <div>
+      <div class="eyebrow">How it works</div>
+      <h2>Four steps, every submission</h2>
+      <p class="sub">No AI model grades the candidate. Every score comes from running their code and measuring what it does.</p>
+      <a class="btn btn-secondary" href="/how-it-works">Read the full method</a>
+    </div>
+    <div class="steps">
+      <div class="step"><div><h3>The candidate submits in a fixed format</h3><p>Code, pinned requirements, and a short decision log with the score they claim. A pre-flight check on a small sample catches format problems before they submit.</p></div></div>
+      <div class="step"><div><h3>We re-run it from scratch, four times</h3><p>In a fresh gVisor sandbox with the internet blocked: their seed twice to test determinism, then two other seeds to test luck.</p></div></div>
+      <div class="step"><div><h3>The model meets customers it has never seen</h3><p>It predicts a holdout set. The answers stay outside the sandbox and the predictions are scored there, then compared with the claim.</p></div></div>
+      <div class="step"><div><h3>We show where it leaked, and a person decides</h3><p>A runtime trace and controlled re-runs point to the cause, with file and line. A named reviewer confirms or overrides, with a reason kept in the audit log.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="section section-tint">
+  <div class="wrap">
+    <div class="eyebrow">The report</div>
+    <h2>Six scores, each backed by evidence</h2>
+    <p class="sub">Every deduction points to a finding. The weights are published in every report, and the recommendation is advice to a person, never a decision.</p>
+    <div class="grid grid-3">
+      {% for key, q in QUESTIONS.items() %}
+      <div class="feature"><div class="icon">{{ loop.index }}</div><h3>{{ NAMES[key] }}</h3><p>{{ q }}</p></div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="eyebrow">What it catches</div>
+    <h2>The mistakes that make a model look better than it is</h2>
+    <div class="grid grid-3" style="margin-top:24px">
+      <div class="feature"><h3>A field from the future</h3><p>A column filled in after the outcome. The ablation re-run sets it to its real value at prediction time and measures how far the score falls.</p></div>
+      <div class="feature"><h3>The same customer in training and test</h3><p>A random row split over repeated customers. The report compares the candidate's own score on seen and unseen customers, with a confidence interval.</p></div>
+      <div class="feature"><h3>Choosing the model on the test set</h3><p>The trace counts how many times one test split was scored and whether the reported number was picked from those scores.</p></div>
+      <div class="feature"><h3>Preprocessing before the split</h3><p>A scaler or imputer fitted on every row, test rows included, caught from the order of fits and splits at runtime.</p></div>
+      <div class="feature"><h3>A score that does not come back</h3><p>A claim the code does not reproduce, or randomness that changes the result between two runs with the same seed.</p></div>
+      <div class="feature"><h3>Code that only works on the author's laptop</h3><p>Hidden local files, packages missing from the requirements, and calls to the internet, all blocked and reported.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="section section-tint">
+  <div class="wrap grid grid-2" style="gap:48px;align-items:start">
+    <div>
+      <div class="eyebrow">Fair to candidates</div>
+      <h2>Evidence for a person, never an automatic rejection</h2>
+      <p>Hiring decisions about people need a human in the loop. PipelineProof is built around that:</p>
+      <ul class="prose">
+        <li>Every recommendation needs a named reviewer to confirm or override it, with a written reason.</li>
+        <li>Candidates are told how their work is assessed before they start.</li>
+        <li>After review, candidates can see the evidence about their own work and contest it.</li>
+        <li>Every action is kept in an audit log; personal data is deleted after a set retention period.</li>
+      </ul>
+      <a href="/candidates">What candidates see →</a>
+    </div>
+    <div class="panel">
+      <h3>Hosting and isolation</h3>
+      <dl class="kv" style="margin-top:12px">
+        <dt>Candidate code</dt><dd>Runs in a fresh gVisor sandbox per run, internet blocked, CPU, memory and time capped, destroyed afterwards</dd>
+        <dt>Holdout answers</dt><dd>Never enter the sandbox; predictions are scored outside it</dd>
+        <dt>Database</dt><dd>Postgres in London (eu-west-2), encrypted at rest</dd>
+        <dt>Third parties in the page</dt><dd>None: no trackers, fonts served from this site</dd>
+      </dl>
+      <p style="margin:14px 0 0"><a href="/security">Security and data handling →</a></p>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="cta-band row-between">
+      <div style="max-width:620px">
+        <h2>See it on real reports</h2>
+        <p style="margin:0">The assessor demo is a sample workspace with synthetic candidates and pre-scored reports. You can also start a live
+          evaluation of any of the 16 benchmark submissions and watch it run. No sign-up.</p>
+      </div>
+      <a class="btn btn-primary btn-lg" href="/demo">Open the assessor demo</a>
+    </div>
+  </div>
+</section>
+{% endblock %}

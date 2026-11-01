@@ -1,0 +1,41 @@
+{% extends "app/_layout.html" %}
+{% from "_macros.html" import csrf, status_badge, rec_badge %}
+{% block title %}Live benchmark runs · PipelineProof{% endblock %}
+{% block content %}
+<div class="page-head">
+  <div><h1>Live benchmark runs</h1>
+    <p class="muted" style="margin:0;max-width:74ch">Start a real evaluation of any benchmark submission and watch it run in the sandbox. Each was written with one known
+      property; the expected finding is listed so you can check the report against it.</p></div>
+  <div class="stat" style="min-width:200px"><div class="label">Live runs today</div><div class="value">{{ used }}<span class="muted" style="font-size:1rem"> / {{ cap }}</span></div></div>
+</div>
+
+{% if recent %}
+<div class="card" style="margin-bottom:22px">
+  <div class="card-head"><h3>Your recent runs</h3></div>
+  <div class="table-wrap"><table class="table table-compact"><thead><tr><th>Submission</th><th>Started</th><th>Status</th><th>Recommendation</th><th></th></tr></thead><tbody>
+  {% for r in recent %}<tr><td class="mono">{{ r.label }}</td><td class="small">{{ r.created_at|ago }}</td><td>{{ status_badge(r.status) }}</td><td>{{ rec_badge(r.recommendation) if r.status in ("scored", "unscored") }}</td>
+    <td class="right"><a class="btn btn-secondary btn-sm" href="/app/submissions/{{ r.id }}">Open</a></td></tr>{% endfor %}
+  </tbody></table></div>
+</div>
+{% endif %}
+
+<div class="card">
+  <div class="table-wrap"><table class="table">
+    <thead><tr><th>Submission</th><th>Planted property</th><th>Expected finding</th><th></th></tr></thead>
+    <tbody>
+    {% for r in rows %}
+      <tr>
+        <td class="mono nowrap">{{ r.name }}</td>
+        <td>{{ r.planted }}</td>
+        <td>{% if r.expected %}{% for c in r.expected %}<div class="small">{{ CODE_TITLES.get(c, c) }}</div>{% endfor %}{% else %}<span class="small muted">No blocking findings</span>{% endif %}</td>
+        <td class="right nowrap">
+          <a class="btn btn-ghost btn-sm" href="/app/demo-runs/{{ r.name }}.zip" title="Download to try uploading it through a candidate page">Zip</a>
+          {% if ctx.can("demo_run") %}<form method="post" action="/app/demo-runs/{{ r.name }}" class="inline" data-busy="Starting…">{{ csrf(ctx) }}<button class="btn btn-primary btn-sm" type="submit">Run live</button></form>{% endif %}
+        </td>
+      </tr>
+    {% endfor %}
+    </tbody>
+  </table></div>
+</div>
+<p class="small muted" style="margin-top:14px">Runs take about a minute. The first run of a new set of packages takes longer while the environment is built; it is cached after that.</p>
+{% endblock %}

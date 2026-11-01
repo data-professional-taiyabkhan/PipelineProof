@@ -1,0 +1,24 @@
+{% extends "app/_layout.html" %}
+{% block title %}Audit log · PipelineProof{% endblock %}
+{% block content %}
+<div class="page-head"><div><h1>Audit log</h1><p class="muted" style="margin:0">Every decision, release, export and change in {{ ctx.org.name }}, newest first. Entries cannot be edited.</p></div></div>
+<div class="card">
+  {% if rows %}
+  <div class="table-wrap"><table class="table table-compact">
+    <thead><tr><th>When</th><th>Who</th><th>What</th><th>Details</th></tr></thead>
+    <tbody>
+    {% for r in rows %}
+      <tr>
+        <td class="nowrap small">{{ r.at|dt }}</td>
+        <td class="small"><strong>{{ r.actor_label }}</strong><div class="muted">{{ {"user": "Team member", "candidate": "Candidate", "system": "System", "demo": "Demo visitor"}[r.actor_type] }}</div></td>
+        <td>{{ labels.get(r.action, r.action) }}
+          {% if r.entity_type == "submission" and r.entity_id %}<div class="small"><a href="/app/submissions/{{ r.entity_id }}">View submission</a></div>
+          {% elif r.entity_type == "assessment" and r.entity_id %}<div class="small"><a href="/app/assessments/{{ r.entity_id }}">View assessment</a></div>{% endif %}</td>
+        <td class="small muted">{% for k, val in r.details.items() %}<span class="nowrap">{{ k|replace("_", " ") }}: <span class="mono">{{ val }}</span></span>{% if not loop.last %} · {% endif %}{% endfor %}</td>
+      </tr>
+    {% endfor %}
+    </tbody>
+  </table></div>
+  {% else %}<div class="empty"><h3>Nothing yet</h3><p>Actions appear here as your team works.</p></div>{% endif %}
+</div>
+{% endblock %}

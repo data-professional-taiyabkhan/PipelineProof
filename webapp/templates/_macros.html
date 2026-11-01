@@ -1,0 +1,77 @@
+{% macro logo(href="/") -%}
+<a class="logo" href="{{ href }}" aria-label="PipelineProof home">
+  <svg viewBox="0 0 32 32" fill="none" aria-hidden="true"><rect x="1" y="1" width="30" height="30" rx="8" fill="#0b1220"/><path d="M6.5 16.5h4.2" stroke="#94a3b8" stroke-width="2.4" stroke-linecap="round"/><path d="M11.8 16.4l3.6 3.7 8.6-9.3" stroke="#34d399" stroke-width="2.9" stroke-linecap="round" stroke-linejoin="round"/></svg>
+  <span>PipelineProof</span>
+</a>
+{%- endmacro %}
+
+{% macro csrf(ctx) -%}<input type="hidden" name="csrf_token" value="{{ ctx.csrf }}">{%- endmacro %}
+
+{% macro status_badge(status) -%}
+{%- set s = STATUS.get(status, (status, "neutral")) -%}
+<span class="badge b-{{ s[1] }}">{% if status in ("running", "queued", "preflight_running") %}<span class="spinner" style="width:10px;height:10px;border-width:2px"></span>{% else %}<span class="dot"></span>{% endif %}{{ s[0] }}</span>
+{%- endmacro %}
+
+{% macro rec_badge(rec) -%}
+{%- if rec -%}{%- set r = REC.get(rec, (rec, "neutral")) -%}<span class="badge b-{{ r[1] }}">{{ r[0] }}</span>{%- endif -%}
+{%- endmacro %}
+
+{% macro sev_badge(sev) -%}<span class="badge b-{{ sev }}">{{ SEVERITY.get(sev, sev) }}</span>{%- endmacro %}
+
+{% macro dial(score, size=74) -%}
+{%- set pct = (score or 0) / 100 -%}
+{%- set r = 30 -%}{%- set c = 188.5 -%}
+<svg class="dial" viewBox="0 0 74 74" width="{{ size }}" height="{{ size }}" role="img" aria-label="Overall score {{ score if score is not none else 'not available' }} out of 100">
+  <circle cx="37" cy="37" r="{{ r }}" fill="none" stroke="#e2e8f0" stroke-width="7"/>
+  {% if score is not none %}
+  <circle cx="37" cy="37" r="{{ r }}" fill="none" stroke="{{ {'good':'#12b76a','ok':'#66c61c','warn':'#f79009','bad':'#f04438'}[score|score_cls] }}"
+          stroke-width="7" stroke-linecap="round" stroke-dasharray="{{ '%.1f'|format(c * pct) }} {{ c }}" transform="rotate(-90 37 37)"/>
+  {% endif %}
+  <text x="37" y="43" text-anchor="middle">{{ score if score is not none else "–" }}</text>
+</svg>
+{%- endmacro %}
+
+{% macro claim_chart(ch, metric) -%}
+{%- if ch -%}
+<div class="chart">
+  <svg viewBox="0 0 {{ ch.width }} 150" role="img" aria-label="Claimed score, clean re-run and score on unseen customers on one axis">
+    {% if ch.gap %}
+      {% set small = ch.gap.value|abs < 0.03 %}
+      <rect class="gapband {{ 'small' if small }}" x="{{ ch.gap.x1 }}" y="76" width="{{ [ch.gap.x2 - ch.gap.x1, 2]|max }}" height="24" rx="4"/>
+      <text class="gaplabel {{ 'small' if small }}" x="{{ (ch.gap.x1 + ch.gap.x2) / 2 }}" y="118" text-anchor="middle">gap {{ "%.3f"|format(ch.gap.value) }}</text>
+    {% endif %}
+    <line class="axis" x1="36" y1="88" x2="{{ ch.width - 36 }}" y2="88"/>
+    {% for t in ch.ticks %}
+      <g class="tick"><line x1="{{ t.x }}" y1="83" x2="{{ t.x }}" y2="93"/><text x="{{ t.x }}" y="142" text-anchor="middle">{{ t.label }}</text></g>
+    {% endfor %}
+    {% for m in ch.markers %}
+      {% set ly = 18 if m.row == 0 else 48 %}
+      <line x1="{{ m.x }}" y1="{{ ly + 10 }}" x2="{{ m.x }}" y2="80" stroke="#cbd5e1" stroke-width="1"/>
+      <text class="mlabel" x="{{ m.x }}" y="{{ ly }}" text-anchor="{{ m.anchor }}">{{ m.label }}</text>
+      <text class="mvalue" x="{{ m.x }}" y="{{ ly + 14 }}" text-anchor="{{ m.anchor }}">{{ "%.3f"|format(m.value) }}</text>
+      <circle class="m-{{ m.kind }}" cx="{{ m.x }}" cy="88" r="{{ 8 if m.kind == 'claim' else 7 }}"/>
+      {% if m.kind == 'claim' and ch.merged %}<circle class="m-rerun" cx="{{ m.x }}" cy="88" r="3.5"/>{% endif %}
+    {% endfor %}
+  </svg>
+  <div class="legend"><span><i style="border:2.5px solid var(--claim);background:#fff"></i>Claimed in DECISIONS.md</span><span><i style="background:var(--rerun)"></i>Our clean re-run, declared seed</span><span><i style="background:var(--holdout)"></i>Unseen customers (holdout, scored outside the sandbox)</span></div>
+</div>
+{%- endif -%}
+{%- endmacro %}
+
+{% macro finding_card(f) -%}
+<div class="finding sev-{{ f.severity }}">
+  <div class="f-meta">{{ sev_badge(f.severity) }}<span>{{ NAMES.get(f.dimension, f.dimension) }}</span><span>·</span><span>{{ EVIDENCE.get(f.evidence, f.evidence|capitalize) }}</span><span class="f-code">{{ f.code }}</span></div>
+  <div class="f-title">{{ CODE_TITLES.get(f.code, f.code) }}</div>
+  <div class="f-detail">{{ f.detail }}</div>
+</div>
+{%- endmacro %}
+
+{% macro icon(name) -%}
+{%- if name == "assessments" -%}<svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="3" width="14" height="14" rx="2.5"/><path d="M7 8h6M7 11h6M7 14h3"/></svg>
+{%- elif name == "demo" -%}<svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M6 4.5v11l9-5.5-9-5.5z" stroke-linejoin="round"/></svg>
+{%- elif name == "tasks" -%}<svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 5.5h12M4 10h12M4 14.5h7"/></svg>
+{%- elif name == "rubric" -%}<svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 16V9M8.7 16V5M13.3 16v-5M18 16H2"/></svg>
+{%- elif name == "team" -%}<svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="7.5" cy="7" r="2.8"/><path d="M2.5 16c.6-2.6 2.6-4 5-4s4.4 1.4 5 4"/><circle cx="14" cy="7.8" r="2.2"/><path d="M13.6 12.1c1.9.1 3.4 1.4 3.9 3.4"/></svg>
+{%- elif name == "audit" -%}<svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="10" cy="10" r="7"/><path d="M10 6v4.3l2.8 1.7"/></svg>
+{%- endif -%}
+{%- endmacro %}

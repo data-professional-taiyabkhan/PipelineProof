@@ -1,0 +1,13 @@
+{% extends "auth/_layout.html" %}
+{% block title %}Sign in · PipelineProof{% endblock %}
+{% block card %}
+<h1 style="font-size:1.35rem">Sign in to your workspace</h1>
+{% if error %}<div class="alert alert-error" style="margin:12px 0" role="alert">{{ error }}</div>{% endif %}
+<form method="post" action="/login" class="stack" style="margin-top:14px">
+  <input type="hidden" name="next" value="{{ next }}">
+  <div class="field"><label for="email">Email</label><input id="email" name="email" type="email" autocomplete="email" required value="{{ email or '' }}" autofocus></div>
+  <div class="field"><label for="password">Password</label><input id="password" name="password" type="password" autocomplete="current-password" required></div>
+  <button class="btn btn-primary" type="submit" style="width:100%">Sign in</button>
+</form>
+{% endblock %}
+{% block below %}No account? <a href="/signup">Create one</a> · or <a href="/demo">open the assessor demo</a> without signing in{% endblock %}

@@ -1,0 +1,25 @@
+{% extends "app/_layout.html" %}
+{% from "_macros.html" import csrf %}
+{% block title %}New assessment · PipelineProof{% endblock %}
+{% block content %}
+<div class="crumbs" style="margin-bottom:8px"><a href="/app">Assessments</a> / New</div>
+<div class="page-head"><div><h1>New assessment</h1><p class="muted" style="margin:0">Choose a task, name the role, and set an optional deadline.</p></div></div>
+<form method="post" action="/app/assessments" class="card card-pad stack" style="max-width:720px">
+  {{ csrf(ctx) }}
+  <div class="field"><label for="title">Assessment name</label><input id="title" name="title" type="text" required maxlength="160" placeholder="e.g. ML engineer, spring 2027 intake"></div>
+  <div class="field"><label for="role_title">Role</label><input id="role_title" name="role_title" type="text" required maxlength="160" placeholder="e.g. Machine learning engineer"></div>
+  <div class="field">
+    <label>Task</label>
+    <div class="radio-cards">
+      {% for t in tasks %}
+      <label class="radio-card"><input type="radio" name="task_id" value="{{ t.id }}" {{ 'checked' if loop.first }} required>
+        <span>{{ t.title }}<small>{{ t.summary }} · {{ t.time_box }} · scored on {{ t.metric|upper|replace("_", " ") }}</small></span></label>
+      {% endfor %}
+    </div>
+    <div class="hint"><a href="/app/tasks">Read what each task tests</a> before choosing.</div>
+  </div>
+  <div class="field"><label for="deadline">Deadline <span class="hint">(optional)</span></label><input id="deadline" name="deadline" type="date" style="max-width:220px">
+    <div class="hint">Uploads close at 23:59 UK time on this day.</div></div>
+  <div class="row"><button class="btn btn-primary" type="submit">Create assessment</button><a class="btn btn-ghost" href="/app">Cancel</a></div>
+</form>
+{% endblock %}

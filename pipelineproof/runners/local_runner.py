@@ -25,6 +25,9 @@ from pathlib import Path
 from .base import INSTRUMENT_DIR, EnvSpec, RunResult, RunSpec, Runner, standard_env
 
 CONTAINER_ROOTS = ("/work", "/out", "/tmp", "/pp")
+_PASS_THROUGH = {"PATH", "SYSTEMROOT", "WINDIR", "COMSPEC", "PATHEXT", "SYSTEMDRIVE", "LANG", "LC_ALL", "LC_CTYPE",
+                 "USERPROFILE", "APPDATA", "LOCALAPPDATA", "PROGRAMDATA", "NUMBER_OF_PROCESSORS", "PROCESSOR_ARCHITECTURE",
+                 "OS", "TZ", "USER", "USERNAME", "LOGNAME"}
 
 
 class LocalRunner(Runner):
@@ -60,9 +63,8 @@ class LocalRunner(Runner):
                     return str(mapping[c] / value[len(c) + 1:]) if value != c else str(mapping[c])
             return value
 
-        env = dict(os.environ)
-        for k in ("PYTHONHOME", "PYTHONSTARTUP"):
-            env.pop(k, None)
+        # a minimal environment: no proxies, tokens or other secrets from this machine leak into the run
+        env = {k: v for k, v in os.environ.items() if k.upper() in _PASS_THROUGH}
         for k, v in standard_env(spec.env_vars).items():
             env[k] = to_local(v)
         env["PP_WORKDIR"] = str(mapping["/work"])

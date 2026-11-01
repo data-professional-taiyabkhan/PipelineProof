@@ -1,0 +1,93 @@
+{% extends "app/_layout.html" %}
+{% from "_macros.html" import csrf, status_badge, rec_badge %}
+{% block title %}{{ a.title }} · PipelineProof{% endblock %}
+{% block content %}
+<div class="crumbs" style="margin-bottom:8px"><a href="/app">Assessments</a> / {{ a.title }}</div>
+<div class="page-head">
+  <div>
+    <h1>{{ a.title }}</h1>
+    <div class="row small muted" style="gap:14px">
+      <span>{{ a.role_title }}</span><span>·</span><a href="/app/tasks/{{ a.task_id }}">{{ a.task_title }}</a><span>·</span>
+      <span>{% if a.deadline %}Deadline {{ a.deadline|dt }}{% else %}No deadline{% endif %}</span><span>·</span>
+      {% if a.status == "open" %}<span class="badge b-good"><span class="dot"></span>Open</span>{% else %}<span class="badge b-neutral">Closed {{ a.closed_at|date }}</span>{% endif %}
+    </div>
+  </div>
+  <div class="row">
+    {% if ctx.can("export") %}<a class="btn btn-secondary btn-sm" href="/app/assessments/{{ a.id }}/export.csv">Export CSV</a>{% endif %}
+    {% if ctx.can("assess") %}
+    <form method="post" action="/app/assessments/{{ a.id }}/status" class="inline">{{ csrf(ctx) }}
+      <input type="hidden" name="status" value="{{ 'closed' if a.status == 'open' else 'open' }}">
+      <button class="btn btn-ghost btn-sm" type="submit">{{ "Close assessment" if a.status == "open" else "Reopen" }}</button>
+    </form>
+    {% endif %}
+  </div>
+</div>
+
+{% if ctx.can("invite") and a.status == "open" %}
+<form method="post" action="/app/assessments/{{ a.id }}/invites" class="card card-pad" style="margin-bottom:22px">
+  {{ csrf(ctx) }}
+  <h3>Invite a candidate</h3>
+  <p class="small muted">Each candidate gets a private link to their own page: the brief, the data, the upload and, later, their feedback. No account needed.
+    PipelineProof does not send emails; send the link yourself.</p>
+  <div class="grid" style="grid-template-columns:1fr 1fr auto;align-items:end;gap:12px">
+    <div><label for="candidate_name">Candidate name</label><input id="candidate_name" name="candidate_name" type="text" required maxlength="120"></div>
+    <div><label for="candidate_email">Email <span class="hint">(optional, for your records)</span></label><input id="candidate_email" name="candidate_email" type="email" maxlength="200"></div>
+    <button class="btn btn-primary" type="submit">Create invite</button>
+  </div>
+</form>
+{% endif %}
+
+<div class="card">
+  <div class="card-head"><h2>Candidates</h2><span class="small muted">{{ candidates|length }} invited</span></div>
+  {% if candidates %}
+  <div class="table-wrap">
+    <table class="table">
+      <thead><tr><th>Candidate</th><th>Progress</th><th>Result</th><th>Decision</th><th class="right">Actions</th></tr></thead>
+      <tbody>
+      {% for c in candidates %}
+        <tr id="invite-{{ c.id }}">
+          <td>
+            <strong>{{ c.candidate_name }}</strong>
+            {% if c.is_synthetic %}<span class="badge b-synthetic" style="margin-left:4px">Synthetic</span>{% endif %}
+            {% if c.candidate_email %}<div class="small muted">{{ c.candidate_email }}</div>{% endif %}
+          </td>
+          <td>
+            {% if c.status == "withdrawn" %}<span class="badge b-neutral">Withdrawn</span>
+            {% elif c.sub_id %}{{ status_badge(c.sub_status) }}<div class="small muted">{% if c.submitted_at %}submitted {{ c.submitted_at|ago }}{% else %}uploaded {{ c.sub_created|ago }}, not submitted{% endif %}</div>
+            {% elif c.status == "opened" %}<span class="badge b-info">Opened link</span>
+            {% else %}<span class="badge b-neutral">Invited</span>{% endif %}
+          </td>
+          <td>
+            {% if c.sub_status in ("scored", "unscored") %}
+              <div class="row" style="gap:10px">{% if c.overall is not none and c.sub_status == "scored" %}<strong style="font-size:1.05rem;color:var(--ink);min-width:28px">{{ c.overall }}</strong>{% endif %}{{ rec_badge(c.recommendation) }}</div>
+            {% else %}<span class="faint">–</span>{% endif %}
+          </td>
+          <td class="small">
+            {% if c.review %}{{ "Confirmed" if c.review.decision == "confirm" else "Overridden" }}: {{ OUTCOMES[c.review.outcome] }}<div class="muted">{{ c.review.by }}</div>
+            {% elif c.sub_status in ("scored", "unscored") %}<span class="badge b-warn">Needs a decision</span>
+            {% else %}<span class="faint">–</span>{% endif %}
+            {% if c.feedback_at %}<div><span class="badge b-brand" style="margin-top:4px">Feedback released</span></div>{% endif %}
+            {% if c.open_contests %}<div><span class="badge b-high" style="margin-top:4px">Contested</span></div>{% endif %}
+          </td>
+          <td class="right nowrap">
+            {% if c.sub_id and c.sub_status not in ("uploaded", "preflight_running", "preflight_failed", "preflight_passed") %}<a class="btn btn-primary btn-sm" href="/app/submissions/{{ c.sub_id }}">Report</a>{% endif %}
+            {% if c.status != "withdrawn" %}
+              <button class="btn btn-secondary btn-sm" type="button" data-copy-text="{{ base }}/c/{{ c.token }}" title="Copy the candidate's private link">Copy link</button>
+              <a class="btn btn-ghost btn-sm" href="/c/{{ c.token }}" target="_blank" rel="noopener" title="Open the candidate's page" aria-label="Open {{ c.candidate_name }}'s candidate page">Open ↗</a>
+            {% endif %}
+            {% if ctx.can("invite") and c.status not in ("withdrawn", "submitted") and not c.is_synthetic %}
+            <details style="display:inline-block"><summary class="btn btn-ghost btn-sm">Withdraw</summary>
+              <form method="post" action="/app/invites/{{ c.id }}/withdraw" style="margin-top:6px">{{ csrf(ctx) }}<button class="btn btn-danger btn-sm" type="submit">Confirm withdraw</button></form>
+            </details>
+            {% endif %}
+          </td>
+        </tr>
+      {% endfor %}
+      </tbody>
+    </table>
+  </div>
+  {% else %}
+  <div class="empty"><h3>No candidates yet</h3><p>Invite a candidate above to create their private link.</p></div>
+  {% endif %}
+</div>
+{% endblock %}

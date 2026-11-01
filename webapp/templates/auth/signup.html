@@ -1,0 +1,21 @@
+{% extends "auth/_layout.html" %}
+{% block title %}Create an account · PipelineProof{% endblock %}
+{% block card %}
+<h1 style="font-size:1.35rem">Create your workspace</h1>
+{% if closed %}
+  <p class="muted">New workspaces are by invitation during the pilot. If a colleague has added you to their team, ask them for access, or
+    <a href="/demo">explore the assessor demo</a>.</p>
+{% else %}
+  <p class="small muted">If a colleague added your email to their team, use that email and leave the organisation blank to join them.</p>
+  {% if errors %}<div class="alert alert-error" style="margin:12px 0" role="alert"><ul style="margin:0;padding-left:18px">{% for e in errors %}<li>{{ e }}</li>{% endfor %}</ul></div>{% endif %}
+  <form method="post" action="/signup" class="stack" style="margin-top:14px">
+    <div class="field"><label for="name">Your name</label><input id="name" name="name" type="text" autocomplete="name" required value="{{ name or '' }}"></div>
+    <div class="field"><label for="email">Work email</label><input id="email" name="email" type="email" autocomplete="email" required value="{{ email or '' }}"></div>
+    <div class="field"><label for="password">Password</label><input id="password" name="password" type="password" autocomplete="new-password" minlength="10" required>
+      <div class="hint">At least 10 characters.</div></div>
+    <div class="field"><label for="organisation">Organisation</label><input id="organisation" name="organisation" type="text" value="{{ organisation or '' }}" placeholder="e.g. Acme Analytics Ltd"></div>
+    <button class="btn btn-primary" type="submit" style="width:100%">Create workspace</button>
+  </form>
+{% endif %}
+{% endblock %}
+{% block below %}Already have an account? <a href="/login">Sign in</a>{% endblock %}

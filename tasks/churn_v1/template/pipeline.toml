@@ -1,0 +1,4 @@
+# How PipelineProof runs your submission. Keep the commands as they are unless you rename files.
+python = "3.12"
+train = "python train.py"
+predict = "python predict.py"

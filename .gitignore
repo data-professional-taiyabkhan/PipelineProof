@@ -4,3 +4,4 @@ benchmark/out/
 .pytest_cache/
 tasks/*/holdout_features/
 .venv/
+.env

@@ -1,0 +1,53 @@
+{% extends "app/_layout.html" %}
+{% from "_macros.html" import csrf %}
+{% block title %}Team · PipelineProof{% endblock %}
+{% block content %}
+<div class="page-head"><div><h1>Team</h1><p class="muted" style="margin:0">Who can see candidates and reports in {{ ctx.org.name }}.</p></div></div>
+<div class="grid" style="grid-template-columns:minmax(0,1fr) 340px;gap:24px;align-items:start">
+  <div class="card">
+    <div class="table-wrap"><table class="table">
+      <thead><tr><th>Name</th><th>Role</th><th>Last sign-in</th><th></th></tr></thead>
+      <tbody>
+      {% for m in members %}
+        <tr>
+          <td><strong>{{ m.name }}</strong><div class="small muted">{{ m.email }}</div></td>
+          <td>{% if ctx.can("team") %}
+            <form method="post" action="/app/team/{{ m.id }}/role" class="row" style="gap:6px">{{ csrf(ctx) }}
+              <select name="role" aria-label="Role for {{ m.name }}" style="width:auto">{% for r in ("admin", "reviewer", "recruiter") %}<option value="{{ r }}" {{ 'selected' if m.role == r }}>{{ ROLE_LABELS[r] }}</option>{% endfor %}</select>
+              <button class="btn btn-ghost btn-sm" type="submit">Save</button></form>
+            {% else %}{{ ROLE_LABELS.get(m.role, m.role) }}{% endif %}</td>
+          <td class="small muted">{{ m.last_login_at|ago if m.last_login_at else "Never" }}</td>
+          <td class="right">{% if ctx.can("team") and m.id != ctx.user.id %}
+            <details style="display:inline-block"><summary class="btn btn-ghost btn-sm">Remove</summary>
+              <form method="post" action="/app/team/{{ m.id }}/remove" style="margin-top:6px">{{ csrf(ctx) }}<button class="btn btn-danger btn-sm" type="submit">Confirm remove</button></form></details>
+          {% endif %}</td>
+        </tr>
+      {% endfor %}
+      {% for p in pending %}
+        <tr><td><strong>{{ p.email }}</strong><div class="small muted">Invited {{ p.created_at|date }}; joins when they sign up with this email</div></td>
+          <td>{{ ROLE_LABELS.get(p.role, p.role) }} <span class="badge b-info">Pending</span></td><td></td>
+          <td class="right">{% if ctx.can("team") %}<form method="post" action="/app/team/pending/remove" class="inline">{{ csrf(ctx) }}<input type="hidden" name="email" value="{{ p.email }}"><button class="btn btn-ghost btn-sm" type="submit">Cancel</button></form>{% endif %}</td></tr>
+      {% endfor %}
+      </tbody>
+    </table></div>
+  </div>
+  <div class="stack">
+    {% if ctx.can("team") %}
+    <form method="post" action="/app/team" class="card card-pad stack">{{ csrf(ctx) }}
+      <h3>Add someone</h3>
+      <div class="field"><label for="email">Email</label><input id="email" name="email" type="email" required></div>
+      <div class="field"><label for="role">Role</label><select id="role" name="role">{% for r in ("reviewer", "recruiter", "admin") %}<option value="{{ r }}">{{ ROLE_LABELS[r] }}</option>{% endfor %}</select></div>
+      <button class="btn btn-primary" type="submit">Add to team</button>
+    </form>
+    {% endif %}
+    <div class="panel small">
+      <strong>Roles</strong>
+      <ul style="padding-left:18px;margin:8px 0 0">
+        <li><strong>Admin:</strong> everything, including the team and re-running evaluations.</li>
+        <li><strong>Reviewer:</strong> reads reports, records decisions, releases feedback, answers contests.</li>
+        <li><strong>Recruiter:</strong> creates assessments, invites candidates, tracks progress, exports.</li>
+      </ul>
+    </div>
+  </div>
+</div>
+{% endblock %}

@@ -46,6 +46,7 @@ class Task:
     cpus: float = 2
     memory_mb: int = 4096
     probes: dict = field(default_factory=dict)   # name -> regex over the candidate's code
+    _features_dir: Path | None = None
 
     @property
     def data_dir(self) -> Path:
@@ -53,7 +54,7 @@ class Task:
 
     @property
     def holdout_features_dir(self) -> Path:
-        return self.root / "holdout_features"          # contains only holdout_features.csv
+        return self._features_dir or self.root / "holdout_features"   # contains only holdout_features.csv
 
     @property
     def labels_path(self) -> Path:
@@ -74,13 +75,23 @@ class Task:
         return pd.read_csv(self.data_dir / "train.csv")
 
     def prepare(self) -> None:
-        """Keep the features-only holdout in its own directory so labels are never mounted."""
-        d = self.holdout_features_dir
-        d.mkdir(exist_ok=True)
+        """Keep the features-only holdout in its own directory so labels are never mounted.
+
+        Uses a temporary folder when the task folder is read-only (as in a deployed image)."""
         src = self.root / "holdout" / "holdout_features.csv"
+        d = self.root / "holdout_features"
         dst = d / "holdout_features.csv"
-        if not dst.exists() or dst.stat().st_mtime < src.stat().st_mtime:
+        if dst.exists() and dst.stat().st_mtime >= src.stat().st_mtime:
+            return
+        try:
+            d.mkdir(exist_ok=True)
             dst.write_bytes(src.read_bytes())
+        except OSError:
+            import tempfile
+            d = Path(tempfile.gettempdir()) / "pp_tasks" / self.root.name / "holdout_features"
+            d.mkdir(parents=True, exist_ok=True)
+            (d / "holdout_features.csv").write_bytes(src.read_bytes())
+            self._features_dir = d
 
 
 def load(root: str | Path) -> Task:

@@ -1,0 +1,32 @@
+{% extends "public/_layout.html" %}
+{% block title %}Assessor demo · PipelineProof{% endblock %}
+{% block content %}
+<section class="section" style="padding-bottom:20px">
+  <div class="wrap grid grid-2" style="gap:48px;align-items:start">
+    <div>
+      <div class="eyebrow">Assessor demo</div>
+      <h1 style="font-size:2.3rem">A sample employer workspace, ready to explore</h1>
+      <p class="sub" style="font-size:1.08rem">The demo is the real product with synthetic data: a fictional broadband company hiring a machine-learning
+        engineer, candidates whose submissions have already been evaluated, and live runs you can start yourself. No sign-up.</p>
+      {% if org %}
+      <form method="post" action="/demo/enter">
+        <button class="btn btn-primary btn-lg" type="submit">Enter the demo workspace</button>
+      </form>
+      <p class="small muted" style="margin-top:12px">Everything in the demo is synthetic. Changes you make are cleared daily.</p>
+      {% else %}
+      <div class="alert alert-warn">The demo workspace has not been set up on this deployment yet.</div>
+      {% endif %}
+    </div>
+    <div class="card card-pad">
+      <h3>Suggested route, about 10 minutes</h3>
+      <div class="steps" style="margin-top:14px">
+        <div class="step"><div><h4 style="margin:5px 0 2px">Open the sample assessment</h4><p class="small">{{ stats.candidates if stats else 7 }} synthetic candidates, each with a pre-scored report.</p></div></div>
+        <div class="step"><div><h4 style="margin:5px 0 2px">Compare a clean report with a leaky one</h4><p class="small">Amelia Hart's careful pipeline against Rohan Mehta's, which uses a field from the future.</p></div></div>
+        <div class="step"><div><h4 style="margin:5px 0 2px">Record a decision</h4><p class="small">Confirm or override a recommendation with a reason, then see it in the audit log.</p></div></div>
+        <div class="step"><div><h4 style="margin:5px 0 2px">Start a live run</h4><p class="small">Pick any of the 16 benchmark submissions and watch it run in the sandbox, step by step.</p></div></div>
+        <div class="step"><div><h4 style="margin:5px 0 2px">See the candidate's side</h4><p class="small">Open a candidate's private page: the brief, the data, the upload with its pre-flight check, and released feedback.</p></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock %}

@@ -1,0 +1,150 @@
+{% extends "base.html" %}
+{% from "_macros.html" import logo %}
+{% block title %}{{ inv.assessment_title }} · {{ inv.org_name }}{% endblock %}
+{% block head %}<meta name="robots" content="noindex">{% endblock %}
+{% block body %}
+<header class="site-header">
+  <div class="wrap" style="justify-content:space-between">
+    <div><strong style="color:var(--ink)">{{ inv.org_name }}</strong><span class="muted small"> · {{ inv.role_title }} take-home</span></div>
+    <span class="small muted row" style="gap:8px">Assessed with {{ logo("/candidates") }}</span>
+  </div>
+</header>
+{% if inv.is_demo %}<div class="demo-banner" style="padding-left:24px">Assessor demo · this is a synthetic candidate's page · uploads and messages are cleared daily</div>{% endif %}
+<main class="wrap-narrow stack-lg" style="padding-top:32px;padding-bottom:64px">
+  {% if flash %}<div class="alert alert-{{ flash.kind }}" role="status">{{ flash.text }}</div>{% endif %}
+
+  {% set consented = inv.consent_at is not none %}
+  {% set submitted = st.submitted is not none %}
+  <section>
+    <h1 style="font-size:1.9rem">Hello {{ inv.candidate_name }}</h1>
+    <p style="font-size:1.05rem">{{ inv.org_name }} has invited you to complete a take-home task for the <strong>{{ inv.role_title }}</strong> role:
+      <strong>{{ task.title }}</strong>.{% if inv.deadline %} Please submit by <strong>{{ inv.deadline|dt }}</strong> (UK time).{% endif %}</p>
+    <div class="pill-steps">
+      <span class="{{ 'done' if consented else 'now' }}">1 · Read the notice</span>
+      <span class="{{ 'done' if consented else '' }}">2 · Get the task</span>
+      <span class="{{ 'done' if submitted else ('now' if consented else '') }}">3 · Upload and check</span>
+      <span class="{{ 'done' if submitted else '' }}">4 · Submit</span>
+      <span class="{{ 'done' if st.feedback else ('now' if submitted else '') }}">5 · Feedback</span>
+    </div>
+    {% if closed and not submitted %}<div class="alert alert-warn" style="margin-top:16px">{{ closed }}</div>{% endif %}
+  </section>
+
+  {% if not consented %}
+  <section class="card card-pad stack" id="notice">
+    <h2>Before you start: how your work is assessed</h2>
+    <ul class="prose">
+      <li>Your code is run several times in a sealed environment with no internet access, on our servers, using only the files you submit and the data we provide.</li>
+      <li>Your model is tested on customers that are not in the training data, and that score is compared with the one you report.</li>
+      <li>The system records how your code splits and fits the data, to check whether test or future information reached training.</li>
+      <li>The result is a report for a person at {{ inv.org_name }}, who makes the decision. The software does not reject anyone on its own.</li>
+      <li>After review, {{ inv.org_name }} may release feedback to you on this page, including the evidence about your work. You can contest it here.</li>
+      <li>{{ inv.org_name }} is responsible for your data. It is kept for up to {{ inv.retention_days }} days after this assessment closes and then deleted.</li>
+    </ul>
+    <form method="post" action="/c/{{ inv.token }}/consent" class="stack">
+      <label class="check"><input type="checkbox" name="agree" value="1" required><span>I have read how my work will be assessed and want to continue.</span></label>
+      <div><button class="btn btn-primary" type="submit">Continue to the task</button></div>
+    </form>
+    <p class="small muted" style="margin:0">More about the process: <a href="/candidates" target="_blank" rel="noopener">what candidates can expect</a>.</p>
+  </section>
+  {% else %}
+
+  {% if st.feedback %}
+  <section class="card" id="feedback">
+    <div class="card-head"><h2>Feedback from {{ inv.org_name }}</h2><span class="small muted">{{ st.feedback.released_at|dt }}</span></div>
+    <div class="card-body stack">
+      <div class="msg from-employer">{{ st.feedback.message|nl2br }}</div>
+      {% if st.feedback.report %}
+        <p class="small muted" style="margin:0">The measurements and findings below come from re-running your submission. The scores are evidence for the reviewer; the decision was theirs.</p>
+        {% with report=st.feedback.report, v=st.feedback.v, candidate_view=True %}{% include "partials/report_body.html" %}{% endwith %}
+      {% endif %}
+      <div id="contest">
+        <h3>Think something is wrong?</h3>
+        {% for c in st.contests %}
+          <div class="msg" style="margin-bottom:8px"><div class="who">You · {{ c.created_at|dt }}</div>{{ c.message|nl2br }}</div>
+          {% if c.response %}<div class="msg from-employer" style="margin-bottom:8px"><div class="who">{{ inv.org_name }} · {{ c.responded_at|dt }}</div>{{ c.response|nl2br }}</div>{% endif %}
+        {% endfor %}
+        <form method="post" action="/c/{{ inv.token }}/contest" class="stack">
+          <textarea name="message" required minlength="20" aria-label="Your message" placeholder="Explain what you think the report got wrong, and why. A person will read it and reply here."></textarea>
+          <div><button class="btn btn-secondary" type="submit">Send to {{ inv.org_name }}</button></div>
+        </form>
+      </div>
+    </div>
+  </section>
+  {% endif %}
+
+  <section id="status">
+    {% include "partials/candidate_status.html" %}
+  </section>
+
+  {% if not submitted %}
+  <section class="card" id="upload">
+    <div class="card-head"><h2>Upload and check your submission</h2></div>
+    <div class="card-body stack">
+      {% if not closed %}
+      <form method="post" action="/c/{{ inv.token }}/upload" enctype="multipart/form-data" class="stack" data-busy="Uploading…">
+        <div class="file-drop">
+          <input id="file" name="file" type="file" accept=".zip,application/zip" required data-label="file-label" class="sr">
+          <label for="file" class="btn btn-secondary" style="display:inline-flex">Choose a .zip file</label>
+          <div id="file-label" class="small muted" style="margin-top:8px">Zip your submission folder. Up to {{ max_mb }} MB; leave the data out.</div>
+        </div>
+        <div><button class="btn btn-primary" type="submit">Upload and run the check</button></div>
+      </form>
+      {% endif %}
+      {% set latest = st.latest %}
+      {% if latest and latest.status == "preflight_passed" and not closed %}
+      <form method="post" action="/c/{{ inv.token }}/submit/{{ latest.id }}" class="panel stack">
+        <h3 style="margin:0">Submit {{ latest.filename }}</h3>
+        <p class="small" style="margin:0">After you submit, your work is locked and evaluated. You cannot change it.</p>
+        <label class="check"><input type="checkbox" name="confirm" value="1" required><span>This is my final submission, and the score in DECISIONS.md is one I measured.</span></label>
+        <div><button class="btn btn-primary" type="submit">Submit for evaluation</button></div>
+      </form>
+      {% endif %}
+      {% if st.subs %}
+      <details class="disclose"><summary>Your uploads ({{ st.subs|length }})</summary>
+        <table class="table table-compact" style="margin-top:8px"><tbody>
+        {% for s in st.subs %}<tr><td class="mono small">{{ s.filename }}</td><td class="small muted">{{ s.created_at|dt }}</td><td class="small">{{ STATUS.get(s.status, (s.status,))[0] }}</td></tr>{% endfor %}
+        </tbody></table></details>
+      {% endif %}
+    </div>
+  </section>
+  {% endif %}
+
+  <section class="card" id="task">
+    <div class="card-head"><h2>The task</h2>
+      <div class="row"><a class="btn btn-primary btn-sm" href="/c/{{ inv.token }}/train.csv">Download train.csv</a>
+        <a class="btn btn-secondary btn-sm" href="/c/{{ inv.token }}/starter-template.zip">Starter template</a></div></div>
+    <div class="card-body prose">{{ brief|md }}</div>
+  </section>
+
+  <section class="card">
+    <div class="card-head"><h2>Data dictionary</h2></div>
+    <div class="card-body prose">{{ dictionary|md }}</div>
+  </section>
+
+  <section class="card" id="guide">
+    <div class="card-head"><h2>Submission guide</h2></div>
+    <div class="card-body prose">
+      <p>Your zip must contain these files at the top level (the starter template has them all):</p>
+      <table>
+        <thead><tr><th>File</th><th>What it does</th></tr></thead>
+        <tbody>
+          <tr><td><code>pipeline.toml</code></td><td><code>python = "3.12"</code> (3.11 to 3.13), <code>train = "python train.py"</code>, <code>predict = "python predict.py"</code>. Notebooks can be run with <code>papermill</code>.</td></tr>
+          <tr><td><code>requirements.txt</code></td><td>Every package you import, pinned: <code>scikit-learn==1.5.2</code>. No URLs or index options.</td></tr>
+          <tr><td><code>DECISIONS.md</code></td><td>A line <code>claimed_metric: roc_auc = 0.812</code>, a line <code>seed: 42</code>, how you validated, and which AI tools you used.</td></tr>
+          <tr><td><code>README.md</code></td><td>How your pipeline works.</td></tr>
+        </tbody>
+      </table>
+      <p>When your code runs, these environment variables are set:</p>
+      <ul>
+        <li><strong>Training:</strong> <code>PP_DATA_DIR</code> (folder with <code>train.csv</code>), <code>PP_SEED</code> (use it for every random step), and
+          <code>PP_OUTPUT_DIR</code> (write your model and a <code>metrics.json</code> such as <code>{"roc_auc": 0.812}</code>).</li>
+        <li><strong>Prediction:</strong> <code>PP_MODEL_DIR</code> (the folder training wrote to), <code>PP_INPUT</code> (a CSV like <code>train.csv</code> without the target) and
+          <code>PP_PRED_OUT</code> (write a CSV with two columns: <code>row_id</code> and your predicted probability).</li>
+      </ul>
+      <p>There is no internet access while your code runs, and each run is limited in time and memory. Files outside your zip do not exist.</p>
+    </div>
+  </section>
+  {% endif %}
+  <p class="center small muted">Questions about the role or this task? Contact {{ inv.org_name }}. <a href="/candidates" target="_blank" rel="noopener">How PipelineProof assesses your work</a></p>
+</main>
+{% endblock %}

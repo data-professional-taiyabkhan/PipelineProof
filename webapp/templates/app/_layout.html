@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+{% from "_macros.html" import logo, icon, csrf %}
+{% block head %}<meta name="csrf-token" content="{{ ctx.csrf }}"><meta name="robots" content="noindex">{% endblock %}
+{% block body %}
+<div class="app-shell">
+  <aside class="sidebar" aria-label="Workspace navigation">
+    {{ logo("/app") }}
+    <div class="org-box">
+      <span class="small muted">{{ "Sample workspace" if ctx.org.is_demo else "Organisation" }}</span>
+      <strong>{{ ctx.org.name }}</strong>
+      <span class="small muted">{{ ROLE_LABELS.get(ctx.role, ctx.role) }}</span>
+      {% if ctx.orgs and ctx.orgs|length > 1 %}
+      <form method="post" action="/app/switch" style="margin-top:8px">{{ csrf(ctx) }}
+        <select name="org_id" aria-label="Switch organisation">{% for o in ctx.orgs %}<option value="{{ o.id }}" {{ 'selected' if o.id == ctx.org.id }}>{{ o.name }}</option>{% endfor %}</select>
+        <button class="btn btn-ghost btn-sm" type="submit" style="margin-top:6px">Switch</button>
+      </form>
+      {% endif %}
+    </div>
+    <nav class="side-nav">
+      <div class="side-label">Hiring</div>
+      <a href="/app" class="{{ 'active' if nav == 'assessments' }}">{{ icon("assessments") }}Assessments</a>
+      {% if ctx.org.is_demo %}<a href="/app/demo-runs" class="{{ 'active' if nav == 'demo' }}">{{ icon("demo") }}Live benchmark runs</a>{% endif %}
+      <a href="/app/tasks" class="{{ 'active' if nav == 'tasks' }}">{{ icon("tasks") }}Task library</a>
+      <a href="/app/rubric" class="{{ 'active' if nav == 'rubric' }}">{{ icon("rubric") }}Scoring rubric</a>
+    </nav>
+    <nav class="side-nav">
+      <div class="side-label">Organisation</div>
+      {% if not ctx.is_demo %}<a href="/app/team" class="{{ 'active' if nav == 'team' }}">{{ icon("team") }}Team</a>{% endif %}
+      <a href="/app/audit" class="{{ 'active' if nav == 'audit' }}">{{ icon("audit") }}Audit log</a>
+    </nav>
+    <div class="side-foot stack">
+      <div class="small muted">{{ ctx.label }}{% if ctx.user %}<br>{{ ctx.user.email }}{% endif %}</div>
+      <form method="post" action="/logout"><button class="btn btn-secondary btn-sm" type="submit">{{ "Leave demo" if ctx.is_demo else "Sign out" }}</button></form>
+      <a class="small" href="/">PipelineProof home</a>
+    </div>
+  </aside>
+  <div class="main">
+    {% if ctx.is_demo %}<div class="demo-banner">Assessor demo · all candidates and data are synthetic · changes are cleared daily · <a href="/">back to the product site</a></div>{% endif %}
+    <div class="content">
+      {% if flash %}<div class="alert alert-{{ flash.kind }}" role="status" style="margin-bottom:18px">{{ flash.text }}</div>{% endif %}
+      {% block content %}{% endblock %}
+    </div>
+  </div>
+</div>
+{% endblock %}

@@ -1,0 +1,1 @@
+"""PipelineProof web application."""

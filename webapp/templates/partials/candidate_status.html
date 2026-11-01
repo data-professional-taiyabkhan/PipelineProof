@@ -1,0 +1,31 @@
+{% set latest = st.latest %}
+<div id="cand-status" {% if latest and latest.status in ("uploaded", "preflight_running", "queued", "running") %}hx-get="/c/{{ inv.token }}/status" hx-trigger="every 3s" hx-swap="outerHTML"{% endif %}>
+{% if st.submitted %}
+  {% set s = st.submitted %}
+  <div class="panel">
+    {% if s.status in ("queued", "running") %}
+      <h3><span class="spinner"></span>&nbsp; Your submission is being evaluated</h3>
+      <p style="margin:0">Submitted {{ s.submitted_at|dt }}. Your code is running in a sealed environment. This usually takes a few minutes; you can close this page.</p>
+    {% elif s.status in ("scored", "unscored") %}
+      <h3>Evaluation complete</h3>
+      <p style="margin:0">Submitted {{ s.submitted_at|dt }}. A person at {{ inv.org_name }} will review the result.
+        {% if not st.feedback %}If they release feedback, it will appear on this page.{% endif %}</p>
+    {% elif s.status == "error" %}
+      <h3>Your submission is saved</h3>
+      <p style="margin:0">Submitted {{ s.submitted_at|dt }}. The evaluation hit a technical problem on our side; the employer can re-run it. You do not need to do anything.</p>
+    {% endif %}
+  </div>
+{% elif latest %}
+  {% if latest.status in ("uploaded", "preflight_running") %}
+    <div class="panel"><h3><span class="spinner"></span>&nbsp; Checking {{ latest.filename }}</h3>
+      <p style="margin:0">We are running your train and predict steps on a 400-row sample. This does not use the hidden test data and does not score your model.
+        The first check of a new set of packages can take a few minutes while they install.</p></div>
+  {% elif latest.status == "preflight_failed" %}
+    <div class="alert alert-warn"><strong>The check found problems with {{ latest.filename }}.</strong> Fix them and upload again:
+      <ul style="margin:8px 0 0">{% for p in (latest.preflight or {}).get("problems", []) %}<li>{{ p }}</li>{% endfor %}</ul></div>
+  {% elif latest.status == "preflight_passed" %}
+    <div class="alert alert-ok"><strong>{{ latest.filename }} passed the check.</strong> Your train and predict steps ran and wrote files in the right format.
+      {% set w = (latest.preflight or {}).get("warnings", []) %}{% if w %}<div class="small" style="margin-top:6px">Warnings: {{ w|join("; ") }}</div>{% endif %}</div>
+  {% endif %}
+{% endif %}
+</div>

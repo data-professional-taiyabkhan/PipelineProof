@@ -1,0 +1,67 @@
+{% extends "public/_layout.html" %}
+{% block title %}Security and data · PipelineProof{% endblock %}
+{% block content %}
+<section class="section" style="padding-bottom:24px">
+  <div class="wrap">
+    <div class="eyebrow">Security and data</div>
+    <h1 style="font-size:2.3rem;max-width:26ch">Running strangers' code safely, and keeping candidates' data in its place</h1>
+    <p class="sub" style="font-size:1.08rem">PipelineProof runs code written by people you have not hired yet. These are the rules it follows,
+      and where your data lives.</p>
+  </div>
+</section>
+<section style="padding-bottom:56px">
+  <div class="wrap grid grid-2" style="gap:24px;align-items:start">
+    <div class="card card-pad prose">
+      <h2 style="margin-top:0">Isolation for candidate code</h2>
+      <ul>
+        <li>Every run gets a fresh sandbox on Modal's gVisor runtime, which intercepts system calls instead of sharing the host kernel.</li>
+        <li><strong>No internet</strong> while candidate code runs. Packages are installed beforehand in a separate build step that sees no data.</li>
+        <li>CPU, memory and wall-clock time are capped for each run.</li>
+        <li>Nothing persists between runs: each sandbox is destroyed when its run ends, and only the output folder comes back.</li>
+        <li>No secrets or credentials are ever placed in a sandbox.</li>
+      </ul>
+    </div>
+    <div class="card card-pad prose">
+      <h2 style="margin-top:0">Integrity of the result</h2>
+      <ul>
+        <li><strong>Holdout answers never enter a sandbox.</strong> The model's predictions come out and are scored outside it, so code that
+          tampers with its own environment still cannot see the answers.</li>
+        <li>Telemetry from inside the sandbox is treated as untrusted: a run that produces no trace gets a finding of its own.</li>
+        <li>The holdout gap needs no telemetry at all, so it still works if tracing is defeated.</li>
+      </ul>
+    </div>
+    <div class="card card-pad prose">
+      <h2 style="margin-top:0">Where data lives</h2>
+      <ul>
+        <li>The database (accounts, assessments, submissions, reports, audit log) is Postgres hosted by Supabase in London (AWS eu-west-2),
+          encrypted at rest and reached only over TLS.</li>
+        <li>The application and the evaluations run on Modal{% if region %} in its {{ region }} region{% endif %}. Submissions are copied into a sandbox for each run and destroyed with it.</li>
+        {% if routing %}<li>Web requests, including uploads, enter Modal's network through its edge in {{ routing }}, then go to the application.</li>{% endif %}
+        <li>The database tables are not exposed through any public API; only the application's server code can reach them.</li>
+        <li>Pages load nothing from third parties: no analytics, no trackers, fonts served from this site.</li>
+      </ul>
+    </div>
+    <div class="card card-pad prose">
+      <h2 style="margin-top:0">Access and accountability</h2>
+      <ul>
+        <li>Roles inside each organisation: <strong>admin</strong> (everything, including team and re-runs), <strong>reviewer</strong> (read reports,
+          decide, release feedback) and <strong>recruiter</strong> (create assessments, invite candidates, track progress).</li>
+        <li>Passwords are hashed with Argon2id. Sessions are server-side, in secure HTTP-only cookies, with CSRF protection on every form.</li>
+        <li>Every decision, release, export and change is written to an append-only audit log with who did it and when.</li>
+        <li>Candidates reach only their own page, through a private link; they need no account.</li>
+      </ul>
+    </div>
+    <div class="card card-pad prose">
+      <h2 style="margin-top:0">Retention</h2>
+      <p>Each organisation sets a retention period (365 days by default). When an assessment has been closed for longer than that, a daily job
+        deletes its candidates, submissions, reports, reviews and feedback. The audit log keeps the record that the deletion happened.</p>
+    </div>
+    <div class="card card-pad prose">
+      <h2 style="margin-top:0">Human decisions</h2>
+      <p>PipelineProof makes recommendations, not decisions. A named reviewer must confirm or override each one with a written reason, candidates
+        are told how their work is assessed, and they can see the evidence about their own submission and contest it. This is designed to support
+        the safeguards UK law sets for significant automated decisions; each employer remains responsible for its own hiring process.</p>
+    </div>
+  </div>
+</section>
+{% endblock %}

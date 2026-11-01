@@ -18,7 +18,7 @@ import tempfile
 import time
 from pathlib import Path
 
-from .base import BASE_PACKAGES, INSTRUMENT_DIR, EnvSpec, RunResult, RunSpec, Runner, standard_env
+from .base import BASE_PACKAGES, INSTRUMENT_DIR, EnvBuildError, EnvSpec, RunResult, RunSpec, Runner, standard_env
 
 
 class DockerRunner(Runner):
@@ -99,6 +99,3 @@ class DockerRunner(Runner):
             return RunResult(124, (e.stdout or b"").decode(errors="replace")[-20000:] if isinstance(e.stdout, bytes) else (e.stdout or ""),
                              "TIMEOUT", round(time.time() - t0, 2), out_dir, timed_out=True)
 
-
-class EnvBuildError(RuntimeError):
-    pass

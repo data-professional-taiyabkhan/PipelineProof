@@ -12,6 +12,8 @@ import numpy as np
 import pandas as pd
 
 ALLOWED_PREFIXES = ("/data", "/work", "/out", "/tmp", "/model", "/input", "/pp")
+# processes the Python runtime itself starts (platform.uname / platform.processor), not candidate code
+_RUNTIME_PROCESSES = ("['uname', '-p']", "['uname', '-m']", "('uname',", 'cmd.exe /c "ver"', "cmd.exe /c ver")
 SEVERITY_ORDER = ["critical", "high", "medium", "low", "info", "suspect"]
 
 
@@ -64,7 +66,7 @@ def sandbox_findings(events):
         elif e["kind"] == "file_open" and not e["path"].startswith(ALLOWED_PREFIXES):
             out.append(finding("SANDBOX_OUTSIDE_FILE", "reproducibility", "high", "runtime trace",
                                f"reads a file outside the submission and dataset: {e['path']}{where(e.get('site'))}"))
-        elif e["kind"] == "process_spawn":
+        elif e["kind"] == "process_spawn" and not any(m in str(e.get("detail", "")) for m in _RUNTIME_PROCESSES):
             out.append(finding("SANDBOX_PROCESS", "reproducibility", "low", "runtime trace",
                                f"starts a process: {e['detail'][:120]}"))
     # one finding per code+detail

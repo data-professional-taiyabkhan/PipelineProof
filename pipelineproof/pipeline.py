@@ -12,6 +12,7 @@ from __future__ import annotations
 import json
 import shutil
 import time
+from concurrent.futures import ThreadPoolExecutor
 from pathlib import Path
 
 import numpy as np
@@ -19,8 +20,7 @@ import pandas as pd
 
 from . import analysis, contract, scoring, static_rules
 from .analysis import finding
-from .runners.base import EnvSpec, RunSpec
-from .runners.docker_runner import EnvBuildError
+from .runners.base import EnvBuildError, EnvSpec, RunSpec
 
 EXTRA_SEEDS = (101, 202)
 PREFLIGHT_ROWS = 400
@@ -164,15 +164,19 @@ def evaluate(task, submission_dir, runner, workdir, progress=None) -> dict:
     labels = pd.read_csv(task.labels_path)
     train_df = task.train_df()
 
-    # ---- Mechanism A
-    say("run1", f"Run 1: training with the declared seed ({sub.seed}) and predicting the holdout")
-    r1, ev1 = run_once(task, sub, runner, env_id, task.data_dir, sub.seed, workdir / f"seed_{sub.seed}", labels)
-    say("run2", f"Run 2: same seed again, to check the result is deterministic")
-    r1b, _ = run_once(task, sub, runner, env_id, task.data_dir, sub.seed, workdir / f"seed_{sub.seed}_repeat", labels)
-    others = []
-    for s in EXTRA_SEEDS:
-        say("seeds", f"Run with seed {s}, to measure how much the result depends on the seed")
-        others.append(run_once(task, sub, runner, env_id, task.data_dir, s, workdir / f"seed_{s}", labels)[0])
+    # ---- Mechanism A: four independent runs, executed in parallel where the runner allows it
+    say("runs", f"Training four times: the declared seed ({sub.seed}) twice, then seeds {EXTRA_SEEDS[0]} and "
+                f"{EXTRA_SEEDS[1]}; each run also predicts the holdout")
+    plan = [(sub.seed, f"seed_{sub.seed}"), (sub.seed, f"seed_{sub.seed}_repeat")] + \
+           [(s, f"seed_{s}") for s in EXTRA_SEEDS]
+    with ThreadPoolExecutor(max_workers=max(1, min(len(plan), getattr(runner, "max_parallel", 1)))) as ex:
+        futures = [ex.submit(run_once, task, sub, runner, env_id, task.data_dir, seed, workdir / d, labels)
+                   for seed, d in plan]
+        results = [f.result() for f in futures]
+    (r1, ev1), (r1b, _) = results[0], results[1]
+    others = [r for r, _ in results[2:]]
+    done = sum(1 for r in [r1, r1b] + others if r.get("holdout_metric") is not None)
+    say("runs_done", f"{done} of 4 runs completed training and prediction")
     report["runs"] = [r1, r1b] + others
     ok = r1.get("own_metric") is not None and r1.get("holdout_metric") is not None
     report["completed"] = ok
@@ -221,10 +225,22 @@ def evaluate(task, submission_dir, runner, workdir, progress=None) -> dict:
     F += tf
     report["trace"] = info
     report["ablations"] = []
-    for col, val in analysis.suspect_columns(task, train_df, set(info["used_columns"]), info["columns_unknown"]).items():
-        say("ablation", f"Ablation: re-running with '{col}' neutralised to see if the result depended on it")
+    suspects = analysis.suspect_columns(task, train_df, set(info["used_columns"]), info["columns_unknown"])
+    if suspects:
+        names = ", ".join(f"'{c}'" for c in suspects)
+        say("ablation", f"Ablation: re-running with {names} neutralised to see whether the result depends on it")
+    else:
+        say("ablation", "No suspicious input columns were used, so no ablation re-run was needed")
+
+    def _ablate(col, val):
         d = _ablated_data(task, col, val, workdir)
-        ra, _ = run_once(task, sub, runner, env_id, d, sub.seed, workdir / f"ablate_{col}", labels)
+        return run_once(task, sub, runner, env_id, d, sub.seed, workdir / f"ablate_{col}", labels)[0]
+
+    with ThreadPoolExecutor(max_workers=max(1, min(len(suspects) or 1, getattr(runner, "max_parallel", 1)))) as ex:
+        ablated = {col: ex.submit(_ablate, col, val) for col, val in suspects.items()}
+        ablated = {col: f.result() for col, f in ablated.items()}
+    for col, val in suspects.items():
+        ra = ablated[col]
         rec = {"column": col, "set_to": val, "own_before": r1["own_metric"], "own_after": ra.get("own_metric"),
                "holdout_before": r1["holdout_metric"], "holdout_after": ra.get("holdout_metric")}
         report["ablations"].append(rec)
